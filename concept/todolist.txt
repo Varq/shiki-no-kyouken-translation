@@ -1,0 +1,3 @@
+Finish Scripts 7 to 9 (Saichuu All-out tutorial)
+Add "//Scene: " and "//Status: " to all scripts
+Version control? :D
