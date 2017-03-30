@@ -1492,7 +1492,7 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 10;
-      _root.PS01t_str = "In rare situations, a clash";
+      _root.PS01t_str = "In rare cases, a clash";
       _root.PS02t_str = "[Situation] will start.";
       _root.PS03t_str = "";
    }

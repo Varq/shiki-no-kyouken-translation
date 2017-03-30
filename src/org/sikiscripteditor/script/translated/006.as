@@ -57,7 +57,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 1;
       _root.oKaoBan = 9;
-      _root.PS01_str = "That last part was little";
+      _root.PS01_str = "That last part was a little";
       _root.PS02_str = "difficult, but...";
       _root.PS03_str = "";
    }
@@ -69,7 +69,7 @@ function Serihu()
       _root.tManpuH = 0;
       _root.tKaoBan = 4;
       _root.PS01t_str = "With that, you're almost half";
-      _root.PS02t_str = "man, huh?";
+      _root.PS02t_str = "a man, huh?";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 5)
@@ -166,7 +166,7 @@ function Serihu()
    }
    if(_root.mojiSerihu == 13)
    {
-      _root.mojiJunji02 = 1;
+      _root.mojiJunji02 = 1
       _root.tKara();
       _root.tHukidasi = 1;
       _root.tManpuH = 6;
@@ -219,9 +219,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "All-out attacks are very";
-      _root.PS02t_str = "strong and have a pretty good";
-      _root.PS03t_str = "chance hit your enemies.";
+      _root.PS01t_str = "Of course, you can only do it";
+      _root.PS02t_str = "every once in a while.";
+      _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 18)
    {
