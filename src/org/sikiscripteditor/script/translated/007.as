@@ -1,4 +1,5 @@
-//PL: MiB3a All-out Tutorial
+// Scene: PL: MiB3a All-out Tutorial
+// Status: Not Started
 function Serihu()
 {
    _root.mojiJunji01 = 0;

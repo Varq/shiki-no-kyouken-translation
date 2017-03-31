@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 stop();
 §§push(function Serihu()
 {

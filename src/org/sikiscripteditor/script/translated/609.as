@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "三田村行脚はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "江戸で開かれた大走破大会に出場し";
 _parent.DText_mc.itibun03_mc.saigo03 = "超穴馬として、劇的な優勝劇を飾る";

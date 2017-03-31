@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "毒島髑髏兵衛はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "東山を滅ぼした逆賊として語り継がれた";
 _parent.DText_mc.itibun03_mc.saigo03 = "悪の権化、漆黒の妖魔として…永きに渡り…";

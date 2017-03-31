@@ -1,4 +1,5 @@
-//PL: PoB3a Won to Saichuu
+// Scene: PL: PoB3a Won to Saichuu
+// Status: Not Started
 function Serihu()
 {
    _root.mojiJunji01 = 0;

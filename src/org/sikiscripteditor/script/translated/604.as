@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "塚森倉之助、そして塚森瑞鶴はその姿を消した";
 _parent.DText_mc.itibun02_mc.saigo02 = "互いが互いの終焉を探し求め";
 _parent.DText_mc.itibun03_mc.saigo03 = "そしてついにたどり着いた結果だった";

@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "桜坂幸運はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "東海街を中心とした遊郭街の長に満場一致で決まり";
 _parent.DText_mc.itibun03_mc.saigo03 = "疎野紫闇と共に経営にせいを出しました。";

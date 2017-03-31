@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "これが二条両角、一晩の事";
 _parent.DText_mc.itibun02_mc.saigo02 = "夢などではない、彼の頭で常に動き続ける真実";
 _parent.DText_mc.itibun03_mc.saigo03 = "彼が何物にも疑問を抱かぬ所以";

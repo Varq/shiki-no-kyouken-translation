@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "暗中模索";
 _parent.DText_mc.itibun02_mc.saigo02 = "暗闇の中、手探りで探す事";
 _parent.DText_mc.itibun03_mc.saigo03 = "手がかりの無いまま色々と試してみる事";

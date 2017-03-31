@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "西中錬はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "いがみ合いながらも結局は仲良くなる兄貴肌として";
 _parent.DText_mc.itibun03_mc.saigo03 = "なんだかんだで信頼を勝ち取っていく事になる";

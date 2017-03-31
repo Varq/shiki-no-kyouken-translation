@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "銀狼はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "逆活の執拗な襲撃をことごとく打ち負かし";
 _parent.DText_mc.itibun03_mc.saigo03 = "逆活組はその機能を完全に停止させた";

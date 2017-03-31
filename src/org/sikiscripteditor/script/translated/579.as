@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "あ細亜と牙氷は協力して";
 _parent.DText_mc.itibun02_mc.saigo02 = "なん度も逃げ出そうとする愛餓男を火山の火口に";
 _parent.DText_mc.itibun03_mc.saigo03 = "たたき込みました、さすがにこ";

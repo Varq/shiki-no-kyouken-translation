@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "片山真はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "己の組織を息子の空也に引渡し、補佐に徹した";
 _parent.DText_mc.itibun03_mc.saigo03 = "当初は荒れに荒れたが、それが結果的に癌を燻し出した";

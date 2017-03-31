@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "吉原搾取はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "きっぱりはっきりと物を言う女として名を馳せた";
 _parent.DText_mc.itibun03_mc.saigo03 = "暗黙の了解がなければ脆い人間のなんと多いことか…";

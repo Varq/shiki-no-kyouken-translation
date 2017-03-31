@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "緋月絶阿はリーチェルディッヒの死後";
 _parent.DText_mc.itibun02_mc.saigo02 = "屋敷を纏める代表格としてその腕を振るい";
 _parent.DText_mc.itibun03_mc.saigo03 = "西中や万平太、健之助や牙氷、そして円琥と協力し";

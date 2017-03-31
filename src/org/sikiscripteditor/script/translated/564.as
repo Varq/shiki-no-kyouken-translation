@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "曳田不動はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "街中の若い者に喧嘩を売り、または売られ";
 _parent.DText_mc.itibun03_mc.saigo03 = "時に負け、時に勝ち、毎日を謳歌した。";

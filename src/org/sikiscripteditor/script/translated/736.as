@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 function Serihu()
 {
    _root.mojiJunji01 = 0;

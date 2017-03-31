@@ -2,4 +2,10 @@ Finish Scripts 8 to 9 (Saichuu All-out tutorial)
 Add "//Scene: " and "//Status: " to all scripts
 Version control? :D
 
-Green guy: "situation? Situation?"
+0 Not started
+1 Translation In Progress
+2 Translation Complete
+3 Editing In Progress
+4 Editing Complete
+5 Final
+

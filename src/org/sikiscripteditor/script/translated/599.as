@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "塚森瑞鶴の死体は";
 _parent.DText_mc.itibun02_mc.saigo02 = "彼の兄によって発見された";
 _parent.DText_mc.itibun03_mc.saigo03 = "誰も寄り付かぬ山奥の果て…そこには";

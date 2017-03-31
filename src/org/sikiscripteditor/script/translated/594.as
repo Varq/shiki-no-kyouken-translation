@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "壱智村香奈伊はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "街の治安を守りながら人々に笑顔と元気を与え";
 _parent.DText_mc.itibun03_mc.saigo03 = "東日本に知らぬもの無しと言われるまでとなった";

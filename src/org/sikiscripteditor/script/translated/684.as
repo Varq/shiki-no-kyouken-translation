@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "疎野紫闇はその後様々な一悶着の後";
 _parent.DText_mc.itibun02_mc.saigo02 = "亜細亜と再び店を経営する事となった";
 _parent.DText_mc.itibun03_mc.saigo03 = "抱えた荷を二人で分け合う、まさに理想の関係を";

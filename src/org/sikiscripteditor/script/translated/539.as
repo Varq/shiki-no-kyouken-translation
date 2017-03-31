@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "国松名言集";
 _parent.DText_mc.itibun02_mc.saigo02 = "国松さーん今何時？";
 _parent.DText_mc.itibun03_mc.saigo03 = "ググれ！！！";

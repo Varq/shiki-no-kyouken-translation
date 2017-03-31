@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "経詠は東日本から姿を消した";
 _parent.DText_mc.itibun02_mc.saigo02 = "彼女の役割は伝達者、本来戦うはずではなかった剣客";
 _parent.DText_mc.itibun03_mc.saigo03 = "戦いに興じたのはほんの気まぐれ";

@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "平賀文吾はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "街の活性のために様々な道具を作り上げ";
 _parent.DText_mc.itibun03_mc.saigo03 = "まさに彼の求める文化レベルの向上に大きく貢献した";

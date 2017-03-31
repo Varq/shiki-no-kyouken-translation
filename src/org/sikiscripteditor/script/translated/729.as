@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "キエマ・ブラック";
 _parent.DText_mc.itibun02_mc.saigo02 = "米国に生まれ育ち大学教授の親を持つ";
 _parent.DText_mc.itibun03_mc.saigo03 = "至極真面目に暮らしている中、己の吸引力に気づき";

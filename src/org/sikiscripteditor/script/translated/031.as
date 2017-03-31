@@ -1,4 +1,5 @@
-//PL: PoB3 I don't know
+// Scene: PL: PoB3 I don't know
+// Status: Not Started
 function Serihu()
 {
    _root.mojiJunji01 = 0;

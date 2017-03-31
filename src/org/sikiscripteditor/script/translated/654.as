@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "倉井五平はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "那由詫を東海総連に引き渡した逆賊として";
 _parent.DText_mc.itibun03_mc.saigo03 = "なんと東山総連の全ての人間と戦った";

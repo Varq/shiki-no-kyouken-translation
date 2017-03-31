@@ -1,4 +1,5 @@
-//PL: PrB3a Saichuu All-out Tutorial
+// Scene: PL: PrB3a Saichuu All-out Tutorial
+// Status: Not Started
 function Serihu()
 {
    _root.mojiJunji01 = 0;

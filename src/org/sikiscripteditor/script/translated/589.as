@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "壱智村信咲はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "若くして街の人気者の退いた後、電撃結婚";
 _parent.DText_mc.itibun03_mc.saigo03 = "報復を警戒して、新郎の名は隠されたが";

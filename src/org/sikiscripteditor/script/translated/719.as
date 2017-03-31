@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "逆活はその後、日本の各地を廻り";
 _parent.DText_mc.itibun02_mc.saigo02 = "圧倒的な力を見せつけ、様々な物の心を切り裂いた";
 _parent.DText_mc.itibun03_mc.saigo03 = "その姿はまさに天災、絶望と畏怖が各地に残った";

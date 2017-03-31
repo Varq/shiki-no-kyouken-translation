@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "志波尚はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "学校に戻り、今までどおりの生活を続けた";
 _parent.DText_mc.itibun03_mc.saigo03 = "老体には心境の変化はできても、日常の変化は耐え難かった";

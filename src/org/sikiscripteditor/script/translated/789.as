@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "緋月絶阿はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "どうなったかをここに書くまでもないだろう";
 _parent.DText_mc.itibun03_mc.saigo03 = "ていうか書いてたまるか";

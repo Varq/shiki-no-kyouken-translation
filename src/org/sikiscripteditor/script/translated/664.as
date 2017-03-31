@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "喜質勘はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "中央総連の協力の下、術法学校を開校した";
 _parent.DText_mc.itibun03_mc.saigo03 = "あえて戦闘用とは銘打たず、応用を目的とした術法";

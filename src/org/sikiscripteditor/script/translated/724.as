@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "フェイルバーロウペ";
 _parent.DText_mc.itibun02_mc.saigo02 = "北欧の貴族階級の家に生まれ育つ";
 _parent.DText_mc.itibun03_mc.saigo03 = "幼き頃より数多の才能を開花させ";

@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "亜細亜はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "二度と園屋や東海街に姿を見せる事は無かった。";
 _parent.DText_mc.itibun03_mc.saigo03 = "亜細亜には見えていなかった、自分の道が崖へ向いている事";

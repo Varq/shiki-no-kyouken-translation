@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "川上空也はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "片山を失った事を発端とする組織の抗争に参戦し";
 _parent.DText_mc.itibun03_mc.saigo03 = "持ち前のずるがしこさを総動員して、見事組織の頂点に立つ";

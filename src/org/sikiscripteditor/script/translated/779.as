@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "妖怪松田はその姿を消した";
 _parent.DText_mc.itibun02_mc.saigo02 = "同時に、東日本からは妖怪の気配は完全に消え去り";
 _parent.DText_mc.itibun03_mc.saigo03 = "長きにわたる人妖の争いは、人の勝利で幕を閉じた";

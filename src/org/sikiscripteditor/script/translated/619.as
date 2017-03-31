@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "遊侠勝機はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "経詠と共に江戸へと向かう事になるが、それはまた別の話";
 _parent.DText_mc.itibun03_mc.saigo03 = "遊侠勝機の物語はひとまず未完とさせていただこう";

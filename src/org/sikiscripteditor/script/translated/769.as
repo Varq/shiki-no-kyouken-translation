@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "大場遼太郎は結局、生涯子を持つことは無かった";
 _parent.DText_mc.itibun02_mc.saigo02 = "吉原にふられ続けた事もあったが、敷居が高すぎたのだ";
 _parent.DText_mc.itibun03_mc.saigo03 = "子の人生を決める事を幸運と感じる大場は";

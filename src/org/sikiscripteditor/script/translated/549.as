@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "駒内景緒はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "平賀文吾と共に楽器の開発に取り組み";
 _parent.DText_mc.itibun03_mc.saigo03 = "貞元理解の集めた音才達と共に";

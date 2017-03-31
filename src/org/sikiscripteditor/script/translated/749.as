@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "岡田呉羽はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "東山総連と会談で決着をつけ、白煙を除去し";
 _parent.DText_mc.itibun03_mc.saigo03 = "帰郷した後に婚約者と結婚し、子を授かる事になる";

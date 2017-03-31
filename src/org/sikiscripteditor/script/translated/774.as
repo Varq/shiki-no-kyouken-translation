@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "国松自己診断";
 _parent.DText_mc.itibun02_mc.saigo02 = "僕はみんなのバランサー";
 _parent.DText_mc.itibun03_mc.saigo03 = "僕は年上クリエイター";

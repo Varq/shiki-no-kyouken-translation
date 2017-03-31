@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "出雲学人、貞元理解、喜質勘";
 _parent.DText_mc.itibun02_mc.saigo02 = "志波尚の論術を受けたこの三人は、いずれも考えすぎていた";
 _parent.DText_mc.itibun03_mc.saigo03 = "貞元は理解力へと発展させ、喜質は脳を壊した";

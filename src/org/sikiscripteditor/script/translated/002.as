@@ -1,4 +1,5 @@
-//PL: PrB1 Cold Open
+// Scene: PL: PrB1 Cold Open
+// Status: Not Started
 function Serihu()
 {
    _root.mojiJunji01 = 0;

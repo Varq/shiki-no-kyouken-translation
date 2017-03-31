@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "楽宗流はその後、毒島髑髏兵衛の死の報せを聞いた";
 _parent.DText_mc.itibun02_mc.saigo02 = "彼らしい最後だった事以外、詳細は聞かなかった";
 _parent.DText_mc.itibun03_mc.saigo03 = "いずれ自分も彼のようになるため";

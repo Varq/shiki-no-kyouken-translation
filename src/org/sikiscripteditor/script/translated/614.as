@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "銃の暴発により、親友を失ってから";
 _parent.DText_mc.itibun02_mc.saigo02 = "まるで人が変わったかのように暗殺を続け";
 _parent.DText_mc.itibun03_mc.saigo03 = "死に場所を求めるようにさ迷い歩く…";

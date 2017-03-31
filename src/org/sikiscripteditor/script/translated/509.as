@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "龍双里観と緋月絶阿はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "仲睦まじい園屋の小さな恋人同士として";
 _parent.DText_mc.itibun03_mc.saigo03 = "東海街中に広まっていった";

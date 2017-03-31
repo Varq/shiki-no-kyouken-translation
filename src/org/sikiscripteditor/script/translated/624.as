@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "遊侠厳顔はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "遊侠勝機に爽快に負け、総連長を諦めた";
 _parent.DText_mc.itibun03_mc.saigo03 = "ここに、古き良き風の邁進は終わる";

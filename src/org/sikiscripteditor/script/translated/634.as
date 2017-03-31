@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "須藤健之助はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "牙氷との密談を続けつつも、外面は変わりなく";
 _parent.DText_mc.itibun03_mc.saigo03 = "皆に頼られる兄貴をずっと続けるのだった";

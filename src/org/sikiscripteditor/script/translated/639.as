@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "三田村万平太はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "再びリーチェルの屋敷に帰り、そこで暮らした";
 _parent.DText_mc.itibun03_mc.saigo03 = "絶阿や西中も喜び、屋敷は活気を取り戻した";

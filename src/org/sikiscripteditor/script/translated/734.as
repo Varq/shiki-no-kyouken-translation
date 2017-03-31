@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "サニーフォレスト";
 _parent.DText_mc.itibun02_mc.saigo02 = "中央阿弗利加圏で生まれ育った";
 _parent.DText_mc.itibun03_mc.saigo03 = "生粋の魔法の天才であり";

@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "那由詫はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "強さに裏打ちされた自信と共に改革を進め";
 _parent.DText_mc.itibun03_mc.saigo03 = "荒れていた東山街を纏め上げていった";

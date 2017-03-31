@@ -62,7 +62,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		
 		for(int i = 0; i < Script.NUMBER_OF_SCRIPTS; i++)
 		{
-			Script target = new Script(i+1, Script.NAME);
+			Script target = new Script(i+1);
 			frameNames[i] = target.getFrameName();
 			frameNames[i] = (i+1) + ":" + frameNames[i];
 		}

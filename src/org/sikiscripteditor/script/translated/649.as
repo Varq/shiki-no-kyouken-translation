@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "牙氷はぎりぎりのところで受け止められた";
 _parent.DText_mc.itibun02_mc.saigo02 = "吉原にとっての貞元のように、寄りかかれる存在を見つけた";
 _parent.DText_mc.itibun03_mc.saigo03 = "己の強さゆえに、その足以外で立つ事を知らなかった牙氷";

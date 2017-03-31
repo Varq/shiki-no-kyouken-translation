@@ -1,4 +1,5 @@
-//PL: PrB2 IN Kiki Kennosuke Richeru Gahyou
+// Scene: PL: PrB2 IN Kiki Kennosuke Richeru Gahyou
+// Status: Not Started
 function Serihu()
 {
    _root.mojiJunji01 = 0;

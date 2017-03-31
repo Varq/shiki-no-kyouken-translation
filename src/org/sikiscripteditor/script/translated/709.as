@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "新井瞬平はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "己の力に溺れるでもなく、弱きを助け続ける";
 _parent.DText_mc.itibun03_mc.saigo03 = "度々非道も通ったが、逆活の存在が良き抑制剤となった";

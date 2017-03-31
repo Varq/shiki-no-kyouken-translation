@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "江戸の将軍、試金石";
 _parent.DText_mc.itibun02_mc.saigo02 = "ただ一人、遊戯を俯瞰で見続けた…光の国から";
 _parent.DText_mc.itibun03_mc.saigo03 = "けして手の届かない存在は、少し戯れ、また消えた";

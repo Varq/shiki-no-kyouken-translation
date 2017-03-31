@@ -1,4 +1,5 @@
-//
+// Scene: 
+// Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "松田禍災はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "結局貞元理解とよりを戻す事は無かった";
 _parent.DText_mc.itibun03_mc.saigo03 = "だが、罵り合いはお互いの清涼剤になるのか度々行われ";
