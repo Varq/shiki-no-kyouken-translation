@@ -1,5 +1,5 @@
 // Scene: PL: PoB1 IN Zetsua Saichuu Manpeita
-// Status: Not Started
+// Status: Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;

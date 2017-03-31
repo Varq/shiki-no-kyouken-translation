@@ -18,6 +18,8 @@ class TextBoxDocumentListener implements DocumentListener
 	public static final int TOP_TEXT = 1;
 	public static final int BOT_TEXT = 2;
 	public static final int FRAME_NAME_TEXT = 3;
+	public static final int STATUS_TEXT = 4;
+	
 	
 	public TextBoxDocumentListener()
 	{

@@ -1,5 +1,5 @@
 // Scene: PL: MiB2 Kennosuke Basics Tutorial
-// Status: Not Started
+// Status: Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;

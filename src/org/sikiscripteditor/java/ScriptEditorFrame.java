@@ -18,6 +18,9 @@ import javax.swing.undo.UndoManager;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.Toolkit;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.File;
 import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 import javax.swing.text.BadLocationException;
@@ -30,7 +33,9 @@ import static org.sikiscripteditor.java.RXTextUtilities.centerLineInScrollPane;
  */
 public class ScriptEditorFrame extends javax.swing.JFrame
 {
-	private Script currentScript;
+	private Script[] scriptArray;
+	private int scriptArrayIndex;
+	//private Script scriptArray[scriptArrayIndex];
 	private UndoManager undoManager;
 	private Document doc;
 	private Clipboard clipboard;
@@ -41,33 +46,77 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	
 	private String[] frameNames;
 	
+	private boolean justSaved;
+	
 	/**
 	 * Creates new form ScriptEditorFrame
 	 */
 	public ScriptEditorFrame()
 	{
 		initComponents();
+		setWindowOptions();
 		setWKList();
 		setWindowIcon();
 		setClipboard();
 		setUndoManager();
+		setScriptArray();
 		setList();
 		setTextListeners();
+		justSaved = true;
+	}
+	
+	private void setWindowOptions()
+	{
+		// FIXME: Prevent window from closing when pressing cancel
+		addWindowListener(new WindowAdapter(){
+			public void windowClosing(WindowEvent e) {
+				checkSave();
+			}	
+		});
+	}
+	
+	// Sets the script array up
+	private void setScriptArray()
+	{
+		File directory;
+		File[] fileList;
+		String fileName;
+		int frameNumber;
+
+		directory = new File("E:/SageVarq/Dropbox/Private Projects/Programming/SikiScriptEditor/src/org/sikiscripteditor/script/translated");
+		fileList = directory.listFiles();
+		
+		scriptArray = new Script[fileList.length];
+
+		for(int i = 0; i < scriptArray.length; i++)
+		{
+			fileName = fileList[i].getName().substring(0,3);
+			frameNumber = Integer.valueOf(fileName);
+			scriptArray[i] = new Script(frameNumber);
+		}
 	}
 	
 	// Sets script list
 	private void setList()
 	{
-		frameNames = new String[Script.NUMBER_OF_SCRIPTS];
+		/*frameNames = new String[ScriptTools.NUMBER_OF_SCRIPTS];
 		
-		for(int i = 0; i < Script.NUMBER_OF_SCRIPTS; i++)
+		for(int i = 0; i < ScriptTools.NUMBER_OF_SCRIPTS; i++)
 		{
 			Script target = new Script(i+1);
 			frameNames[i] = target.getFrameName();
 			frameNames[i] = (i+1) + ":" + frameNames[i];
 		}
 		
-		scriptList.setListData(frameNames);
+		scriptList.setListData(frameNames);*/
+	    frameNames = new String[scriptArray.length];
+	    
+	    for(int i = 0; i < frameNames.length; i++)
+	    {
+			frameNames[i] = scriptArray[i].getFrame() + ":" + scriptArray[i].getFrameName();
+	    }
+	    
+	    scriptList.setListData(frameNames);
 	}
 	
 	// Sets text area listeners
@@ -158,7 +207,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	}
 	
 	// Sets the current script to edit
-	private void setScript(int frame)
+	private void setScript(int scriptNumber)
 	{
 		// TODO Get tabs working somehow
 		//tabbedPanel.addTab(scriptList.getSelectedValue().toString(), );
@@ -167,21 +216,21 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		allowSync = false;
 		
 		// Set the current frame
-		currentScript = new Script(frame);
+		scriptArrayIndex = scriptNumber;
 		
-		setFrameName();
+		setFrameAndStatus();
 		
 		// Sets the code area for display and edit
 		setCodeArea();
 		
 		// Set up the line slider for the current script
-		int maxValue = currentScript.getNumberOfLines() - 1;
+		int maxValue = scriptArray[scriptArrayIndex].getNumberOfLines() - 1;
 		if(maxValue < 1)
 			maxValue = 1;
 		currentLineSlider.setMaximum(maxValue);
 		currentLineSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, maxValue, 1));
 		
-		scriptList.setSelectedIndex(frame - 1);
+		scriptList.setSelectedIndex(scriptArrayIndex);
 		
 		// Get rid of all undoables
 		undoManager.discardAllEdits();
@@ -192,7 +241,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	private void setLine(int currentLine)
 	{
 		// If the line isn't within bounds, set to one in bounds
-		int validLine = currentScript.setIndex(currentLine - 1);
+		int validLine = scriptArray[scriptArrayIndex].setIndex(currentLine - 1);
 		currentLineSpinner.setValue(validLine  + 1);
 		setDisplay();
 		setCodeAreaCaret();
@@ -202,7 +251,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	private void setDisplay()
 	{
 		allowSync = false;
-		setFrameName();
+		setFrameAndStatus();
 		setPortraits();
 		setEmojis();
 		setTextBox();
@@ -212,10 +261,11 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		allowSync = true;
 	}
 	
-	private void setFrameName()
+	private void setFrameAndStatus()
 	{
-		frameNameText.setText(currentScript.getFrameName());
-		scriptNumberLabel.setText(currentScript.getFrame() + ": " + currentScript.getNumberOfLines());
+		frameNameText.setText(scriptArray[scriptArrayIndex].getFrameName());
+		scriptNumberLabel.setText(scriptArray[scriptArrayIndex].getFrame() + ": " + scriptArray[scriptArrayIndex].getNumberOfLines());
+		statusComboBox.setSelectedItem(scriptArray[scriptArrayIndex].getStatus());
 	}
 	
 	// Sets the portraits in visual dialogue
@@ -223,9 +273,9 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	{
 		ImageIcon topIcon, botIcon;
 		
-		try{ topIcon = new ImageIcon(getClass().getResource(currentScript.getLatestPortrait(Script.TOP))); }
+		try{ topIcon = new ImageIcon(getClass().getResource(scriptArray[scriptArrayIndex].getLatestPortrait(ScriptTools.TOP))); }
 		catch(NullPointerException | ArrayIndexOutOfBoundsException e) { topIcon = null;}
-		try{ botIcon = new ImageIcon(getClass().getResource(currentScript.getLatestPortrait(Script.BOT))); }
+		try{ botIcon = new ImageIcon(getClass().getResource(scriptArray[scriptArrayIndex].getLatestPortrait(ScriptTools.BOT))); }
 		catch(NullPointerException | ArrayIndexOutOfBoundsException e) { botIcon = null;}
 		
 		topPortrait.setIcon(topIcon);
@@ -237,9 +287,9 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	{
 		ImageIcon topIcon, botIcon;
 		
-		try{ topIcon = new ImageIcon(getClass().getResource(currentScript.getLatestEmoji(Script.TOP))); }
+		try{ topIcon = new ImageIcon(getClass().getResource(scriptArray[scriptArrayIndex].getLatestEmoji(ScriptTools.TOP))); }
 		catch(NullPointerException | ArrayIndexOutOfBoundsException e) { topIcon = null;}
-		try{ botIcon = new ImageIcon(getClass().getResource(currentScript.getLatestEmoji(Script.BOT))); }
+		try{ botIcon = new ImageIcon(getClass().getResource(scriptArray[scriptArrayIndex].getLatestEmoji(ScriptTools.BOT))); }
 		catch(NullPointerException | ArrayIndexOutOfBoundsException e) { botIcon = null;}
 		
 		topEmoji.setIcon(topIcon);
@@ -253,17 +303,17 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		Color dullGray = new Color(205, 205, 205);
 		
 		// Finds the latest line in the dialogue up to the current line
-		topOriginalText.setText(currentScript.getLatestLine(Script.TOP, Script.ORIGINAL));
-		botOriginalText.setText(currentScript.getLatestLine(Script.BOT, Script.ORIGINAL));
+		topOriginalText.setText(scriptArray[scriptArrayIndex].getLatestLine(ScriptTools.TOP, ScriptTools.ORIGINAL));
+		botOriginalText.setText(scriptArray[scriptArrayIndex].getLatestLine(ScriptTools.BOT, ScriptTools.ORIGINAL));
 		
 		// Set color of text background to match color of surrounding box
-		if(currentScript.getLines(Script.TRANSLATED)[currentScript.getIndex()].getLine(Script.TOP).trim().isEmpty()){
+		if(scriptArray[scriptArrayIndex].getLines(ScriptTools.TRANSLATED)[scriptArray[scriptArrayIndex].getIndex()].getLine(ScriptTools.TOP).trim().isEmpty()){
 			topTranslatedText.setBackground(dullGray);}
 		else{
 			topTranslatedText.setBackground(Color.WHITE);}
 		
 		// Same as above except for bottom
-		if(currentScript.getLines(Script.TRANSLATED)[currentScript.getIndex()].getLine(Script.BOT).trim().isEmpty()){
+		if(scriptArray[scriptArrayIndex].getLines(ScriptTools.TRANSLATED)[scriptArray[scriptArrayIndex].getIndex()].getLine(ScriptTools.BOT).trim().isEmpty()){
 			botTranslatedText.setBackground(dullGray);}
 		else{
 			botTranslatedText.setBackground(Color.WHITE);}
@@ -273,8 +323,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	// TODO: Figure out why this errors
 	private void setText()
 	{
-		String topText = currentScript.getLatestLine(Script.TOP, Script.TRANSLATED);
-		String botText = currentScript.getLatestLine(Script.BOT, Script.TRANSLATED);
+		String topText = scriptArray[scriptArrayIndex].getLatestLine(ScriptTools.TOP, ScriptTools.TRANSLATED);
+		String botText = scriptArray[scriptArrayIndex].getLatestLine(ScriptTools.BOT, ScriptTools.TRANSLATED);
 		try{
 		//System.out.println(topText + "\n" + botText);
 		topTranslatedText.setText(topText);
@@ -303,10 +353,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	// TODO: Temporarily set this as unresizable because of weird resizing bug.
 	private void setCodeArea()
 	{
-		originalCodeArea.setText(currentScript.getCode(Script.ORIGINAL));
+		originalCodeArea.setText(scriptArray[scriptArrayIndex].getCode(ScriptTools.ORIGINAL));
 		originalCodeArea.setCaretPosition(0);
 		
-		translatedCodeArea.setText(currentScript.getCode(Script.TRANSLATED));
+		translatedCodeArea.setText(scriptArray[scriptArrayIndex].getCode(ScriptTools.TRANSLATED));
 		translatedCodeArea.setCaretPosition(0);
 	}
 	
@@ -315,9 +365,9 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	{
 		ImageIcon topIcon, botIcon;
 		
-		try{ topIcon = new ImageIcon(getClass().getResource(currentScript.getLatestBox(Script.TOP))); }
+		try{ topIcon = new ImageIcon(getClass().getResource(scriptArray[scriptArrayIndex].getLatestBox(ScriptTools.TOP))); }
 		catch(NullPointerException | ArrayIndexOutOfBoundsException e) { topIcon = null;}
-		try{ botIcon = new ImageIcon(getClass().getResource(currentScript.getLatestBox(Script.BOT))); }
+		try{ botIcon = new ImageIcon(getClass().getResource(scriptArray[scriptArrayIndex].getLatestBox(ScriptTools.BOT))); }
 		catch(NullPointerException | ArrayIndexOutOfBoundsException e) { botIcon = null;}
 		
 		topTranslatedBox.setIcon(topIcon);
@@ -334,17 +384,17 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		
 		// Checks if the name is supposed to visible in the script
 		// and if true, sets the name and plate to visible
-		if(currentScript.getLines(Script.ORIGINAL)[currentScript.getIndex()].isNameVisible(Script.TOP))
+		if(scriptArray[scriptArrayIndex].getLines(ScriptTools.ORIGINAL)[scriptArray[scriptArrayIndex].getIndex()].isNameVisible(ScriptTools.TOP))
 		{
-			try{ topIcon = new ImageIcon(getClass().getResource(currentScript.getLatestName(Script.TOP))); }
+			try{ topIcon = new ImageIcon(getClass().getResource(scriptArray[scriptArrayIndex].getLatestName(ScriptTools.TOP))); }
 			catch(NullPointerException | ArrayIndexOutOfBoundsException e) { topIcon = null;}
 			topPlate.setVisible(true);
 		}
 		
 		// Same as above except for bottom
-		if(currentScript.getLines(Script.ORIGINAL)[currentScript.getIndex()].isNameVisible(Script.BOT))
+		if(scriptArray[scriptArrayIndex].getLines(ScriptTools.ORIGINAL)[scriptArray[scriptArrayIndex].getIndex()].isNameVisible(ScriptTools.BOT))
 		{
-			try{ botIcon = new ImageIcon(getClass().getResource(currentScript.getLatestName(Script.BOT))); }
+			try{ botIcon = new ImageIcon(getClass().getResource(scriptArray[scriptArrayIndex].getLatestName(ScriptTools.BOT))); }
 			catch(NullPointerException | ArrayIndexOutOfBoundsException e) { botIcon = null;}
 			botPlate.setVisible(true);
 		}
@@ -356,6 +406,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	// TODO: Get top/bot box syncing
 	private void syncBoxes(int type)
 	{
+		justSaved = false;
 		if(allowSync)
 		{
 			allowSync = false;
@@ -368,6 +419,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 			String preCodeChange;
 			String postCodeChange;
 			String changedCode;
+			String nextText;
 			
 			String line1;
 			String line2;
@@ -375,23 +427,51 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 			
 			switch(type)
 			{
+				case TextBoxDocumentListener.STATUS_TEXT:
+					nextText = translatedCodeArea.getText();
+					preCodeChange = nextText.substring(0, nextText.indexOf("// Status: ") + 11);
+					nextText = nextText.substring(nextText.indexOf("// Status: ") + 11);
+					textCheck = nextText.substring(0, nextText.indexOf("\n"));
+					nextText = nextText.substring(nextText.indexOf("\n"));
+					postCodeChange = nextText.substring(nextText.indexOf("\n"));
+					
+					changedCode = preCodeChange + statusComboBox.getSelectedItem().toString() + postCodeChange;
+					
+					if(!textCheck.equals(statusComboBox.getSelectedItem().toString()))
+					{
+						lastCaretPosition = translatedCodeArea.getCaretPosition();
+						translatedCodeArea.setText(changedCode);
+						translatedCodeArea.setCaretPosition(lastCaretPosition + (statusComboBox.getSelectedItem().toString().length() - textCheck.length()));
+						centerLineInScrollPane(translatedCodeArea);
+					}
+					break;
 				case TextBoxDocumentListener.CODE_TEXT:
-					currentScript.setCode(Script.TRANSLATED, translatedCodeArea.getText());
-					currentScript.setLines(Script.TRANSLATED, Script.decodeCode(currentScript.getCode(Script.TRANSLATED)));
+					nextText = translatedCodeArea.getText();
+					scriptArray[scriptArrayIndex].setCode(ScriptTools.TRANSLATED, nextText);
+					scriptArray[scriptArrayIndex].setLines(ScriptTools.TRANSLATED, ScriptTools.decodeCode(scriptArray[scriptArrayIndex].getCode(ScriptTools.TRANSLATED)));
 					setText();
 					
-					textCheck = translatedCodeArea.getText().substring(2, translatedCodeArea.getText().indexOf("\n"));
+					textCheck = nextText.substring(nextText.indexOf("// Scene: ") + 10, nextText.indexOf("\n"));
 
 					if(!textCheck.equals(frameNameText.getText()))
 						frameNameText.setText(textCheck);
+					
+					nextText = nextText.substring(nextText.indexOf("\n") + 1);
+					textCheck = nextText.substring(nextText.indexOf("// Status: ") + 11, nextText.indexOf("\n"));
+					
+					if(!textCheck.equals(statusComboBox.getSelectedItem().toString()))
+						statusComboBox.setSelectedItem(textCheck);
 					break;
 				case TextBoxDocumentListener.FRAME_NAME_TEXT:
-					textCheck = translatedCodeArea.getText().substring(2, translatedCodeArea.getText().indexOf("\n"));
-					preCodeChange = "//";
-					postCodeChange = translatedCodeArea.getText().substring(translatedCodeArea.getText().indexOf("\n"));
+					nextText = translatedCodeArea.getText();
+					preCodeChange = nextText.substring(0, nextText.indexOf("// Scene: ") + 10);
+					nextText = nextText.substring(nextText.indexOf("// Scene: ") + 10);
+					textCheck = nextText.substring(0, nextText.indexOf("\n"));
+					nextText = nextText.substring(nextText.indexOf("\n"));
+					postCodeChange = nextText.substring(nextText.indexOf("\n"));
 					
 					changedCode = preCodeChange + frameNameText.getText() + postCodeChange;
-
+					
 					if(!textCheck.equals(frameNameText.getText()))
 					{
 						lastCaretPosition = translatedCodeArea.getCaretPosition();
@@ -401,11 +481,11 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 					}
 					break;
 				case TextBoxDocumentListener.TOP_TEXT:
-					scriptLine = currentScript.getLatestLineNumber(Script.TOP);
+					/*scriptLine = scriptArray[scriptArrayIndex].getLatestLineNumber(ScriptTools.TOP);
 					target = "PS01_str = \"";
 					if(scriptLine >= 0)
 					{
-						textCheck = currentScript.getLatestLine(Script.TOP, Script.TRANSLATED);
+						textCheck = scriptArray[scriptArrayIndex].getLatestLine(ScriptTools.TOP, ScriptTools.TRANSLATED);
 						if(!textCheck.equals(topTranslatedText.getText()))
 						{
 							String text = topTranslatedText.getText();
@@ -425,14 +505,15 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 							translatedCodeArea.setText(changedCode);
 							setCodeAreaCaret();
 						}
-					}
+					}*/
+					break;
 				case TextBoxDocumentListener.BOT_TEXT:
-					scriptLine = currentScript.getLatestLineNumber(Script.BOT);
+					/*scriptLine = scriptArray[scriptArrayIndex].getLatestLineNumber(ScriptTools.BOT);
 					target = "PS01t_str = \"";
 					String text = botTranslatedText.getText();
 					if(scriptLine >= 0)
 					{
-						textCheck = currentScript.getLatestLine(Script.BOT, Script.TRANSLATED);
+						textCheck = scriptArray[scriptArrayIndex].getLatestLine(ScriptTools.BOT, ScriptTools.TRANSLATED);
 						if(!textCheck.equals(text))
 						{
 							line1 = text.substring(0, text.indexOf("\n"));
@@ -451,7 +532,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 							translatedCodeArea.setText(changedCode);
 							setCodeAreaCaret();
 						}
-					}
+					}*/
 					break;
 			}
 			
@@ -463,7 +544,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	private void setCodeAreaCaret()
 	{
 		// New line in code
-		String targetLine = "mojiSerihu == " + (currentScript.getIndex() + 1) + ")";
+		String targetLine = "mojiSerihu == " + (scriptArray[scriptArrayIndex].getIndex() + 1) + ")";
 		String targetTop = "PS01";
 		String targetBot = "PS01t";
 		int positionOffset = 8;
@@ -516,37 +597,46 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	// Temporary until tabs are implemented
 	private void changeScript(int scriptNumber)
 	{
-		if(undoManager.canUndo())
-		{
-			int response = JOptionPane.showConfirmDialog(null,
+		boolean goToNextScript = true;
+		
+		if(undoManager.canUndo() && justSaved == false)
+			goToNextScript = checkSave();
+		
+		if(goToNextScript)
+			setScript(scriptNumber);
+	}
+	
+	// Asks if the user has saved
+	public boolean checkSave()
+	{
+		int response = JOptionPane.showConfirmDialog(null,
 					"Do you wish to save?", "Confirm", JOptionPane.YES_NO_CANCEL_OPTION);
 
 			if(response == JOptionPane.YES_OPTION)
 			{
 				saveTranslatedCode();
-				setScript(scriptNumber);
+				justSaved = true;
+				return true;
 			}
 			else if(response == JOptionPane.NO_OPTION)
 			{
-				setScript(scriptNumber);
+				justSaved = true;
+				return true;
 			}
-		}
-		else
-		{
-			setScript(scriptNumber);
-		}
+			return false;
 	}
 	
 	private void saveTranslatedCode()
 	{
-		currentScript.setCode(Script.TRANSLATED, translatedCodeArea.getText());
-		currentScript.saveTranslationCode(currentScript.getFrame());
+		scriptArray[scriptArrayIndex].setCode(ScriptTools.TRANSLATED, translatedCodeArea.getText());
+		scriptArray[scriptArrayIndex].saveTranslationCode(scriptArray[scriptArrayIndex].getFrame());
 		
 		reencodeText();
 		
 		// Set list data to match upated names
-		currentScript.setFrameName(frameNameText.getText());
-		frameNames[currentScript.getFrame() - 1] = currentScript.getFrame() + ":" + frameNameText.getText();
+		scriptArray[scriptArrayIndex].setFrameName(frameNameText.getText());
+		scriptArray[scriptArrayIndex].setStatus(statusComboBox.getSelectedItem().toString());
+		frameNames[scriptArray[scriptArrayIndex].getFrame() - 1] = scriptArray[scriptArrayIndex].getFrame() + ":" + frameNameText.getText();
 		scriptList.setListData(frameNames);
 		
 		infoText.setText("Save Sucessful");
@@ -554,9 +644,9 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	
 	private void reencodeText()
 	{
-		currentScript.setCode(Script.TRANSLATED, translatedCodeArea.getText());
-		currentScript.setLines(Script.TRANSLATED, Script.decodeCode(currentScript.getCode(Script.TRANSLATED)));
-		//setLine(currentScript.getIndex() + 1);
+		scriptArray[scriptArrayIndex].setCode(ScriptTools.TRANSLATED, translatedCodeArea.getText());
+		scriptArray[scriptArrayIndex].setLines(ScriptTools.TRANSLATED, ScriptTools.decodeCode(scriptArray[scriptArrayIndex].getCode(ScriptTools.TRANSLATED)));
+		//setLine(scriptArray[scriptArrayIndex].getIndex() + 1);
 		setText();
 	}
 	
@@ -600,8 +690,9 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         botPlate = new javax.swing.JLabel();
         botEmoji = new javax.swing.JLabel();
         botPortrait = new javax.swing.JLabel();
-        scriptNumberLabel = new javax.swing.JLabel();
         frameNameText = new javax.swing.JTextField();
+        scriptNumberLabel = new javax.swing.JLabel();
+        statusComboBox = new javax.swing.JComboBox<>();
         infoText = new javax.swing.JTextArea();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -700,12 +791,14 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         visualDialogue.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        topTranslatedText.setEditable(false);
         topTranslatedText.setBackground(new java.awt.Color(205, 205, 205));
         topTranslatedText.setBorder(null);
         topTranslatedText.setFont(new java.awt.Font("HGｺﾞｼｯｸE", 0, 21)); // NOI18N
         visualDialogue.add(topTranslatedText);
         topTranslatedText.setBounds(530, 70, 338, 100);
 
+        botTranslatedText.setEditable(false);
         botTranslatedText.setBackground(new java.awt.Color(205, 205, 205));
         botTranslatedText.setBorder(null);
         botTranslatedText.setFont(new java.awt.Font("HGｺﾞｼｯｸE", 0, 21)); // NOI18N
@@ -804,10 +897,21 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         visualDialogue.add(portraitPane);
         portraitPane.setBounds(340, 30, 150, 330);
-        visualDialogue.add(scriptNumberLabel);
-        scriptNumberLabel.setBounds(10, 10, 300, 15);
         visualDialogue.add(frameNameText);
-        frameNameText.setBounds(10, 30, 300, 20);
+        frameNameText.setBounds(10, 30, 320, 20);
+        visualDialogue.add(scriptNumberLabel);
+        scriptNumberLabel.setBounds(10, 10, 50, 20);
+
+        statusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"", "Not Started", "Translation In Progress", "Translation Complete", "Editing In Progress", "Editing Complete", "Complete" }));
+        statusComboBox.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                statusComboBoxActionPerformed(evt);
+            }
+        });
+        visualDialogue.add(statusComboBox);
+        statusComboBox.setBounds(120, 10, 210, 20);
 
         javax.swing.GroupLayout currentScriptPaneLayout = new javax.swing.GroupLayout(currentScriptPane);
         currentScriptPane.setLayout(currentScriptPaneLayout);
@@ -982,7 +1086,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
     private void currentLineSliderStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_currentLineSliderStateChanged
     {//GEN-HEADEREND:event_currentLineSliderStateChanged
 		JSlider source = (JSlider)evt.getSource();
-		int scriptLength = currentScript.getLines(Script.ORIGINAL).length;
+		int scriptLength = scriptArray[scriptArrayIndex].getLines(ScriptTools.ORIGINAL).length;
 		
 		if(scriptLength > 1)
 			setLine(source.getValue());
@@ -1005,7 +1109,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 			int index = source.locationToIndex(evt.getPoint());
 			if(index >= 0)
 			{
-				changeScript(index + 1);
+				changeScript(index);
 			}
 		}
     }//GEN-LAST:event_scriptListMouseClicked
@@ -1045,31 +1149,36 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	// Go to the next line
     private void nextLineItemActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nextLineItemActionPerformed
     {//GEN-HEADEREND:event_nextLineItemActionPerformed
-		setLine(currentScript.getIndex() + 2);
+		setLine(scriptArray[scriptArrayIndex].getIndex() + 2);
     }//GEN-LAST:event_nextLineItemActionPerformed
 
 	// Go to the previous line
     private void prevLineItemActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_prevLineItemActionPerformed
     {//GEN-HEADEREND:event_prevLineItemActionPerformed
-		setLine(currentScript.getIndex());
+		setLine(scriptArray[scriptArrayIndex].getIndex());
     }//GEN-LAST:event_prevLineItemActionPerformed
 
 	// Go to the next script
     private void nextScriptItemActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nextScriptItemActionPerformed
     {//GEN-HEADEREND:event_nextScriptItemActionPerformed
-		changeScript(currentScript.getFrame() + 1);
+		changeScript(scriptArray[scriptArrayIndex].getFrame() + 1);
     }//GEN-LAST:event_nextScriptItemActionPerformed
 
 	// Go to previous script
     private void prevScriptItemActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_prevScriptItemActionPerformed
     {//GEN-HEADEREND:event_prevScriptItemActionPerformed
-		changeScript(currentScript.getFrame() - 1);
+		changeScript(scriptArray[scriptArrayIndex].getFrame() - 1);
     }//GEN-LAST:event_prevScriptItemActionPerformed
 
     private void downloadListActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_downloadListActionPerformed
     {//GEN-HEADEREND:event_downloadListActionPerformed
 		wklist.downloadList();
     }//GEN-LAST:event_downloadListActionPerformed
+
+    private void statusComboBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_statusComboBoxActionPerformed
+    {//GEN-HEADEREND:event_statusComboBoxActionPerformed
+		syncBoxes(TextBoxDocumentListener.STATUS_TEXT);
+    }//GEN-LAST:event_statusComboBoxActionPerformed
 
 	public void testing(String s)
 	{
@@ -1157,6 +1266,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
     private javax.swing.JScrollPane scriptListScrollPane;
     private javax.swing.JMenu scriptMenu;
     private javax.swing.JLabel scriptNumberLabel;
+    private javax.swing.JComboBox<String> statusComboBox;
     private javax.swing.JTabbedPane tabbedPanel;
     private javax.swing.JButton topCopyButton;
     private javax.swing.JLabel topEmoji;
@@ -1173,4 +1283,22 @@ public class ScriptEditorFrame extends javax.swing.JFrame
     private javax.swing.JMenu wkMenu;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
+
+	/*private int getStatusAsSelectionIndex(String s)
+	{
+		if(s.equals(ScriptTools.NOT_STARTED))
+			return 1;
+		else if(s.equals(ScriptTools.TRANSLATION_IN_PROGRESS))
+			return 2;
+		else if(s.equals(ScriptTools.TRANSLATIONG_COMPLETE))
+			return 3;
+		else if(s.equals(ScriptTools.EDITING_IN_PROGRESS))
+			return 4;
+		else if(s.equals(ScriptTools.EDITING_COMPLETE))
+			return 5;
+		else if(s.equals(ScriptTools.COMPLETE))
+			return 6;
+		else
+			return 0;
+	}*/
 }
