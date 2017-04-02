@@ -104,7 +104,7 @@ public class Script
     
     public void setStatus(String status)
     {
-	frameStatus = status;
+		frameStatus = status;
     }
 
     public ScriptLine[] getLines(boolean isOriginal)
@@ -137,19 +137,23 @@ public class Script
     {
 	    return index;
     }
+	
+	// Rettuns index - 1 because the index actuallys starts at 0
+	private int getRealIndex()
+	{
+		return index - 1;
+	}
 
     // If index that is set is out of bounds, set it as a index in bounds
     // TODO: Use error handling instead?
-    public int setIndex(int newIndex)
+    public void setIndex(int newIndex)
     {
-	    if(newIndex < 0)
-		    index = 0;
-	    else if(newIndex >= getNumberOfLines() - 1)
-		    index = getNumberOfLines() - 2;
+	    if(newIndex < 1)
+		    index = 1;
+	    else if(newIndex > getNumberOfLines())
+		    index = getNumberOfLines();
 	    else
 		    index = newIndex;
-
-	    return index;
     }
 
     public int getNumberOfLines()
@@ -178,7 +182,7 @@ public class Script
 	    int i;
 
 	    // Iterate backwards through lines until a non-empty line is found
-	    for(i = getIndex(); i >= 0; i--)
+	    for(i = getRealIndex(); i >= 0; i--)
 	    {
 		    if(!getLines(ScriptTools.ORIGINAL)[i].getLine(isTop).trim().isEmpty())
 		    {
@@ -188,6 +192,19 @@ public class Script
 
 	    return i;
     }
+	
+	public String getCurrentLine(boolean isTop, boolean isOriginal)
+	{
+	    String latestLine = "";
+	    int lineNumber = getRealIndex();
+
+	    if(lineNumber >= 0)
+	    {
+		    latestLine = getLines(isOriginal)[lineNumber].getLine(isTop);
+	    }
+
+	    return latestLine;
+	}
 
     public String getLatestLine(boolean isTop, boolean isOriginal)
     {
@@ -208,7 +225,7 @@ public class Script
 	    int expression = 0;
 
 	    // Iterate backward through lines until a valid portrait is found
-	    for(int i = getIndex(); i >= 0 && (charID.equals("999") || expression == 0); i--)
+	    for(int i = getRealIndex(); i >= 0 && (charID.equals("999") || expression == 0); i--)
 	    {
 		    if(!Characters.CharacterID.idToString(originalLines[i].getChar(isTop)).equals("999") &&
 				    charID.equals("999"))
@@ -234,7 +251,7 @@ public class Script
 	String emojiID = "99";
 
 	// Iterate backwards until a valid emoji is found
-	for(int i = getIndex(); i >= 0 && emojiID.equals("99"); i--)
+	for(int i = getRealIndex(); i >= 0 && emojiID.equals("99"); i--)
 	{
 	    if(!String.format("%02d", originalLines[i].getEmoji(isTop)).equals("99") &&
 			    emojiID.equals("99"))
@@ -253,7 +270,7 @@ public class Script
 	String charID = "999";
 
 	// Iterate backwards until a valid name is found
-	for(int i = getIndex(); i >= 0 && charID.equals("999"); i--)
+	for(int i = getRealIndex(); i >= 0 && charID.equals("999"); i--)
 	{
 	    if(!Characters.CharacterID.idToString(originalLines[i].getChar(isTop)).equals("999") &&
 			    charID.equals("999"))
@@ -273,13 +290,13 @@ public class Script
 	String filename;
 
 	// if not first time, sets the textbox to a dull grey instead of white
-	for(int i = getIndex(); i >= 0 && boxID.equals("1dull"); i--)
+	for(int i = getRealIndex(); i >= 0 && boxID.equals("1dull"); i--)
 	{
 		if(!String.format("%01d", originalLines[i].getBox(isTop)).equals("0"))
 		{
 			boxID = String.format("%01d", originalLines[i].getBox(isTop));
 
-			if(i != getIndex())
+			if(i != getRealIndex())
 				boxID += "dull";
 
 			filename = "/org/sikiscripteditor/images/chatbox/" + boxID + ".png";

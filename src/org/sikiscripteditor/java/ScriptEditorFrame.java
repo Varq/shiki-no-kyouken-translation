@@ -219,7 +219,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		setCodeArea();
 		
 		// Set up the line slider for the current script
-		int maxValue = scriptArray[scriptArrayIndex].getNumberOfLines() - 1;
+		int maxValue = scriptArray[scriptArrayIndex].getNumberOfLines();
 		if(maxValue < 1)
 			maxValue = 1;
 		currentLineSlider.setMaximum(maxValue);
@@ -233,13 +233,16 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	}
 	
 	// Sets the curernt line in the visual dialogue
-	private void setLine(int currentLine)
+	private void setLine(int targetLine)
 	{
 		// If the line isn't within bounds, set to one in bounds
-		int validLine = scriptArray[scriptArrayIndex].setIndex(currentLine - 1);
-		currentLineSpinner.setValue(validLine  + 1);
+		try{
+		scriptArray[scriptArrayIndex].setIndex(targetLine);
+		int validLine = scriptArray[scriptArrayIndex].getIndex();
+		currentLineSpinner.setValue(validLine);
 		setDisplay();
 		setCodeAreaCaret();
+		}catch(Exception e){System.out.println(e.getMessage());}
 	}
 	
 	// Sets up everything in the visual dialogue and the point in the code
@@ -297,21 +300,30 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		// Set a dull color for possible inactive texts
 		Color dullGray = new Color(205, 205, 205);
 		
+		//boolean topIsDull = scriptArray[scriptArrayIndex].getLines(ScriptTools.ORIGINAL)[scriptArray[scriptArrayIndex].getIndex()].getLine(ScriptTools.TOP).trim().isEmpty();
+		//boolean botIsDull = scriptArray[scriptArrayIndex].getLines(ScriptTools.ORIGINAL)[scriptArray[scriptArrayIndex].getIndex()].getLine(ScriptTools.BOT).trim().isEmpty();
+		boolean topIsDull = scriptArray[scriptArrayIndex].getCurrentLine(ScriptTools.TOP, ScriptTools.ORIGINAL).trim().isEmpty();
+		boolean botIsDull = scriptArray[scriptArrayIndex].getCurrentLine(ScriptTools.BOT, ScriptTools.ORIGINAL).trim().isEmpty();
+		
 		// Finds the latest line in the dialogue up to the current line
 		topOriginalText.setText(scriptArray[scriptArrayIndex].getLatestLine(ScriptTools.TOP, ScriptTools.ORIGINAL));
 		botOriginalText.setText(scriptArray[scriptArrayIndex].getLatestLine(ScriptTools.BOT, ScriptTools.ORIGINAL));
 		
+		
+		
 		// Set color of text background to match color of surrounding box
-		if(scriptArray[scriptArrayIndex].getLines(ScriptTools.TRANSLATED)[scriptArray[scriptArrayIndex].getIndex()].getLine(ScriptTools.TOP).trim().isEmpty()){
-			topTranslatedText.setBackground(dullGray);}
-		else{
-			topTranslatedText.setBackground(Color.WHITE);}
+		if(topIsDull)
+			topTranslatedText.setBackground(dullGray);
+		else
+			topTranslatedText.setBackground(Color.WHITE);
 		
 		// Same as above except for bottom
-		if(scriptArray[scriptArrayIndex].getLines(ScriptTools.TRANSLATED)[scriptArray[scriptArrayIndex].getIndex()].getLine(ScriptTools.BOT).trim().isEmpty()){
-			botTranslatedText.setBackground(dullGray);}
-		else{
-			botTranslatedText.setBackground(Color.WHITE);}
+		if(botIsDull)
+			botTranslatedText.setBackground(dullGray);
+		else
+			botTranslatedText.setBackground(Color.WHITE);
+		
+		// Highlights unknown kanji in the original boxes
 		highlightText(topOriginalText);
 		highlightText(botOriginalText);
 	}
@@ -537,6 +549,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	}
 	
 	// Sets the code area to vertically center the viewport to the caret
+	// FIXME: Does not center caret in the same position on both sides
 	private void setCodeAreaCaret()
 	{
 		// New line in code
@@ -663,12 +676,12 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         tabbedPanel = new javax.swing.JTabbedPane();
         currentScriptPane = new javax.swing.JPanel();
         codePane = new javax.swing.JPanel();
-        translatedScriptScrollPane = new javax.swing.JScrollPane();
-        translatedCodeArea = new javax.swing.JTextPane();
-        originalScriptScrollPane = new javax.swing.JScrollPane();
-        originalCodeArea = new javax.swing.JTextPane();
         currentLineSpinner = new javax.swing.JSpinner();
         currentLineSlider = new javax.swing.JSlider();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        originalCodeArea = new javax.swing.JTextPane();
+        translatedCodeArea = new javax.swing.JTextPane();
         visualDialogue = new javax.swing.JLayeredPane();
         topTranslatedText = new javax.swing.JTextPane();
         botTranslatedText = new javax.swing.JTextPane();
@@ -711,6 +724,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Shiki no Kyouken Translator");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setPreferredSize(new java.awt.Dimension(1150, 800));
 
         scriptList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         scriptList.setSelectionBackground(new java.awt.Color(102, 153, 255));
@@ -726,18 +740,6 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         tabbedPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         codePane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        translatedCodeArea.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        translatedCodeArea.setMaximumSize(new java.awt.Dimension(2147483647, 600));
-        translatedScriptScrollPane.setViewportView(translatedCodeArea);
-
-        originalScriptScrollPane.setMaximumSize(new java.awt.Dimension(32767, 600));
-
-        originalCodeArea.setEditable(false);
-        originalCodeArea.setBackground(new java.awt.Color(238, 238, 238));
-        originalCodeArea.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        originalCodeArea.setMaximumSize(new java.awt.Dimension(2147483647, 600));
-        originalScriptScrollPane.setViewportView(originalCodeArea);
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, currentLineSlider, org.jdesktop.beansbinding.ELProperty.create("${value}"), currentLineSpinner, org.jdesktop.beansbinding.BeanProperty.create("value"));
         bindingGroup.addBinding(binding);
@@ -757,35 +759,45 @@ public class ScriptEditorFrame extends javax.swing.JFrame
             }
         });
 
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jSplitPane1.setResizeWeight(0.5);
+
+        originalCodeArea.setEditable(false);
+        originalCodeArea.setBackground(new java.awt.Color(238, 238, 238));
+        originalCodeArea.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        originalCodeArea.setMaximumSize(new java.awt.Dimension(60, 600));
+        jSplitPane1.setLeftComponent(originalCodeArea);
+
+        translatedCodeArea.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        translatedCodeArea.setMaximumSize(new java.awt.Dimension(600, 600));
+        jSplitPane1.setRightComponent(translatedCodeArea);
+
+        jScrollPane1.setViewportView(jSplitPane1);
+
         javax.swing.GroupLayout codePaneLayout = new javax.swing.GroupLayout(codePane);
         codePane.setLayout(codePaneLayout);
         codePaneLayout.setHorizontalGroup(
             codePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(codePaneLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, codePaneLayout.createSequentialGroup()
                 .addGap(2, 2, 2)
-                .addGroup(codePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(codePaneLayout.createSequentialGroup()
-                        .addComponent(originalScriptScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(2, 2, 2)
-                        .addComponent(translatedScriptScrollPane))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, codePaneLayout.createSequentialGroup()
-                        .addComponent(currentLineSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(currentLineSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(currentLineSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(currentLineSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 891, Short.MAX_VALUE)
                 .addGap(2, 2, 2))
+            .addGroup(codePaneLayout.createSequentialGroup()
+                .addComponent(jScrollPane1)
+                .addGap(6, 6, 6))
         );
         codePaneLayout.setVerticalGroup(
             codePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(codePaneLayout.createSequentialGroup()
-                .addGap(2, 2, 2)
-                .addGroup(codePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(translatedScriptScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(originalScriptScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(codePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(currentLineSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(currentLineSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(currentLineSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         visualDialogue.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -917,9 +929,9 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         currentScriptPaneLayout.setHorizontalGroup(
             currentScriptPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(currentScriptPaneLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(visualDialogue, javax.swing.GroupLayout.PREFERRED_SIZE, 911, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
             .addComponent(codePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         currentScriptPaneLayout.setVerticalGroup(
@@ -1086,8 +1098,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
                     .addComponent(tabbedPanel)
                     .addComponent(scriptListScrollPane))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(infoText, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(infoText, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2))
         );
 
         bindingGroup.bind();
@@ -1163,25 +1175,25 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	// Go to the next line
     private void nextLineItemActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nextLineItemActionPerformed
     {//GEN-HEADEREND:event_nextLineItemActionPerformed
-		setLine(scriptArray[scriptArrayIndex].getIndex() + 2);
+		setLine(scriptArray[scriptArrayIndex].getIndex() + 1);
     }//GEN-LAST:event_nextLineItemActionPerformed
 
 	// Go to the previous line
     private void prevLineItemActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_prevLineItemActionPerformed
     {//GEN-HEADEREND:event_prevLineItemActionPerformed
-		setLine(scriptArray[scriptArrayIndex].getIndex());
+		setLine(scriptArray[scriptArrayIndex].getIndex() - 1);
     }//GEN-LAST:event_prevLineItemActionPerformed
 
 	// Go to the next script
     private void nextScriptItemActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nextScriptItemActionPerformed
     {//GEN-HEADEREND:event_nextScriptItemActionPerformed
-		changeScript(scriptArray[scriptArrayIndex].getFrame() + 1);
+		changeScript(scriptArrayIndex + 1);
     }//GEN-LAST:event_nextScriptItemActionPerformed
 
 	// Go to previous script
     private void prevScriptItemActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_prevScriptItemActionPerformed
     {//GEN-HEADEREND:event_prevScriptItemActionPerformed
-		changeScript(scriptArray[scriptArrayIndex].getFrame() - 1);
+		changeScript(scriptArrayIndex - 1);
     }//GEN-LAST:event_prevScriptItemActionPerformed
 
     private void downloadListItemActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_downloadListItemActionPerformed
@@ -1225,12 +1237,13 @@ public class ScriptEditorFrame extends javax.swing.JFrame
     private javax.swing.JTextField frameNameText;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JTextArea infoText;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem nameListItem;
     private javax.swing.JMenuItem nextLineItem;
     private javax.swing.JMenuItem nextScriptItem;
     private javax.swing.JTextPane originalCodeArea;
-    private javax.swing.JScrollPane originalScriptScrollPane;
     private javax.swing.JLayeredPane portraitPane;
     private javax.swing.JMenuItem prevLineItem;
     private javax.swing.JMenuItem prevScriptItem;
@@ -1252,7 +1265,6 @@ public class ScriptEditorFrame extends javax.swing.JFrame
     private javax.swing.JLabel topTranslatedBox;
     private javax.swing.JTextPane topTranslatedText;
     private javax.swing.JTextPane translatedCodeArea;
-    private javax.swing.JScrollPane translatedScriptScrollPane;
     private javax.swing.JMenuItem undoItem;
     private javax.swing.JLayeredPane visualDialogue;
     private javax.swing.JMenu wkMenu;
