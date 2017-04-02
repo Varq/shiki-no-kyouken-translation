@@ -6,6 +6,7 @@
 package org.sikiscripteditor.java;
 
 import java.awt.Color;
+import java.awt.Component;
 import javax.swing.ImageIcon;
 import javax.swing.JList;
 import javax.swing.JSlider;
@@ -21,6 +22,7 @@ import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import javax.swing.DefaultListCellRenderer;
 import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 import javax.swing.text.BadLocationException;
@@ -35,7 +37,6 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 {
 	private Script[] scriptArray;
 	private int scriptArrayIndex;
-	//private Script scriptArray[scriptArrayIndex];
 	private UndoManager undoManager;
 	private Document doc;
 	private Clipboard clipboard;
@@ -70,7 +71,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		// FIXME: Prevent window from closing when pressing cancel
 		addWindowListener(new WindowAdapter(){
 			public void windowClosing(WindowEvent e) {
-				checkSave();
+				if(undoManager.canUndo() && justSaved == false)
+					checkSave();
 			}	
 		});
 	}
@@ -83,7 +85,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		String fileName;
 		int frameNumber;
 
-		directory = new File("E:/SageVarq/Dropbox/Private Projects/Programming/SikiScriptEditor/src/org/sikiscripteditor/script/translated");
+		directory = new File("src/org/sikiscripteditor/script/translated");
 		fileList = directory.listFiles();
 		
 		scriptArray = new Script[fileList.length];
@@ -99,16 +101,6 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	// Sets script list
 	private void setList()
 	{
-		/*frameNames = new String[ScriptTools.NUMBER_OF_SCRIPTS];
-		
-		for(int i = 0; i < ScriptTools.NUMBER_OF_SCRIPTS; i++)
-		{
-			Script target = new Script(i+1);
-			frameNames[i] = target.getFrameName();
-			frameNames[i] = (i+1) + ":" + frameNames[i];
-		}
-		
-		scriptList.setListData(frameNames);*/
 	    frameNames = new String[scriptArray.length];
 	    
 	    for(int i = 0; i < frameNames.length; i++)
@@ -117,6 +109,9 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	    }
 	    
 	    scriptList.setListData(frameNames);
+		
+		// TODO: Get this to work!!!!!
+		scriptList.setCellRenderer(new MyCellRenderer());
 	}
 	
 	// Sets text area listeners
@@ -320,6 +315,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		highlightText(topOriginalText);
 		highlightText(botOriginalText);
 	}
+	
 	// TODO: Figure out why this errors
 	private void setText()
 	{
@@ -606,7 +602,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 			setScript(scriptNumber);
 	}
 	
-	// Asks if the user has saved
+	// Asks if the user has saved, returns false if user chooses cancel
 	public boolean checkSave()
 	{
 		int response = JOptionPane.showConfirmDialog(null,
@@ -615,7 +611,6 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 			if(response == JOptionPane.YES_OPTION)
 			{
 				saveTranslatedCode();
-				justSaved = true;
 				return true;
 			}
 			else if(response == JOptionPane.NO_OPTION)
@@ -636,10 +631,12 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		// Set list data to match upated names
 		scriptArray[scriptArrayIndex].setFrameName(frameNameText.getText());
 		scriptArray[scriptArrayIndex].setStatus(statusComboBox.getSelectedItem().toString());
-		frameNames[scriptArray[scriptArrayIndex].getFrame() - 1] = scriptArray[scriptArrayIndex].getFrame() + ":" + frameNameText.getText();
+		frameNames[scriptArrayIndex] = scriptArray[scriptArrayIndex].getFrame() + ":" + frameNameText.getText();
 		scriptList.setListData(frameNames);
 		
 		infoText.setText("Save Sucessful");
+		
+		justSaved = true;
 	}
 	
 	private void reencodeText()
@@ -707,7 +704,9 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         nextScriptItem = new javax.swing.JMenuItem();
         prevScriptItem = new javax.swing.JMenuItem();
         wkMenu = new javax.swing.JMenu();
-        downloadList = new javax.swing.JMenuItem();
+        downloadListItem = new javax.swing.JMenuItem();
+        helpMenu = new javax.swing.JMenu();
+        nameListItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Shiki no Kyouken Translator");
@@ -1040,18 +1039,33 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         wkMenu.setText("WK");
 
-        downloadList.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, java.awt.event.InputEvent.CTRL_MASK));
-        downloadList.setText("Download List");
-        downloadList.addActionListener(new java.awt.event.ActionListener()
+        downloadListItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, java.awt.event.InputEvent.CTRL_MASK));
+        downloadListItem.setText("Download List");
+        downloadListItem.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                downloadListActionPerformed(evt);
+                downloadListItemActionPerformed(evt);
             }
         });
-        wkMenu.add(downloadList);
+        wkMenu.add(downloadListItem);
 
         menuBar.add(wkMenu);
+
+        helpMenu.setText("Help");
+
+        nameListItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        nameListItem.setText("Names List");
+        nameListItem.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                nameListItemActionPerformed(evt);
+            }
+        });
+        helpMenu.add(nameListItem);
+
+        menuBar.add(helpMenu);
 
         setJMenuBar(menuBar);
 
@@ -1170,68 +1184,27 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		changeScript(scriptArray[scriptArrayIndex].getFrame() - 1);
     }//GEN-LAST:event_prevScriptItemActionPerformed
 
-    private void downloadListActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_downloadListActionPerformed
-    {//GEN-HEADEREND:event_downloadListActionPerformed
+    private void downloadListItemActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_downloadListItemActionPerformed
+    {//GEN-HEADEREND:event_downloadListItemActionPerformed
 		wklist.downloadList();
-    }//GEN-LAST:event_downloadListActionPerformed
+    }//GEN-LAST:event_downloadListItemActionPerformed
 
     private void statusComboBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_statusComboBoxActionPerformed
     {//GEN-HEADEREND:event_statusComboBoxActionPerformed
 		syncBoxes(TextBoxDocumentListener.STATUS_TEXT);
     }//GEN-LAST:event_statusComboBoxActionPerformed
 
-	public void testing(String s)
-	{
-		System.out.println(s + originalScriptScrollPane.getHeight());
-	}
-	
-	/**
-	 * @param args the command line arguments
-	 */
-	/*public static void main(String args[])
-	{
-		// Set the Nimbus look and feel
-        ///<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        // If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-		// For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-		
-		try
-		{
-			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-			{
-				if ("Nimbus".equals(info.getName()))
-				{
-					javax.swing.UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
-		} catch (ClassNotFoundException ex)
-		{
-			java.util.logging.Logger.getLogger(ScriptEditorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (InstantiationException ex)
-		{
-			java.util.logging.Logger.getLogger(ScriptEditorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (IllegalAccessException ex)
-		{
-			java.util.logging.Logger.getLogger(ScriptEditorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (javax.swing.UnsupportedLookAndFeelException ex)
-		{
-			java.util.logging.Logger.getLogger(ScriptEditorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		}
-        //</editor-fold>
-
-		ScriptEditorFrame frame = new ScriptEditorFrame();
-		
-		// Create and display the form
-		java.awt.EventQueue.invokeLater(new Runnable()
-		{
-			public void run()
-			{
-				frame.setVisible(true);
-				frame.testing();
-			}
-		});
-	}*/
+    private void nameListItemActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nameListItemActionPerformed
+    {//GEN-HEADEREND:event_nameListItemActionPerformed
+        HelpNames namesListWindow = new HelpNames();
+		namesListWindow.setName("Character Names");
+		ImageIcon icon;
+		try{
+			icon = new ImageIcon(getClass().getResource("/org/sikiscripteditor/images/icon/icon.png")); 
+			this.setIconImage(icon.getImage());
+		}catch(NullPointerException | ArrayIndexOutOfBoundsException e) { icon = null;}
+		namesListWindow.setVisible(true);
+    }//GEN-LAST:event_nameListItemActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botCopyButton;
@@ -1246,12 +1219,14 @@ public class ScriptEditorFrame extends javax.swing.JFrame
     private javax.swing.JSlider currentLineSlider;
     private javax.swing.JSpinner currentLineSpinner;
     private javax.swing.JPanel currentScriptPane;
-    private javax.swing.JMenuItem downloadList;
+    private javax.swing.JMenuItem downloadListItem;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JTextField frameNameText;
+    private javax.swing.JMenu helpMenu;
     private javax.swing.JTextArea infoText;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenuItem nameListItem;
     private javax.swing.JMenuItem nextLineItem;
     private javax.swing.JMenuItem nextScriptItem;
     private javax.swing.JTextPane originalCodeArea;
@@ -1283,22 +1258,40 @@ public class ScriptEditorFrame extends javax.swing.JFrame
     private javax.swing.JMenu wkMenu;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
-
-	/*private int getStatusAsSelectionIndex(String s)
+	
+	// Used to color the script list
+	private class MyCellRenderer extends DefaultListCellRenderer
 	{
-		if(s.equals(ScriptTools.NOT_STARTED))
-			return 1;
-		else if(s.equals(ScriptTools.TRANSLATION_IN_PROGRESS))
-			return 2;
-		else if(s.equals(ScriptTools.TRANSLATIONG_COMPLETE))
-			return 3;
-		else if(s.equals(ScriptTools.EDITING_IN_PROGRESS))
-			return 4;
-		else if(s.equals(ScriptTools.EDITING_COMPLETE))
-			return 5;
-		else if(s.equals(ScriptTools.COMPLETE))
-			return 6;
-		else
-			return 0;
-	}*/
+		public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus)
+		{
+			super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+			
+			switch(scriptArray[index].getStatus())
+			{
+			case ScriptTools.NOT_STARTED:
+				setBackground(Color.LIGHT_GRAY);
+				break;
+			case ScriptTools.TRANSLATION_IN_PROGRESS:
+				setBackground(Color.PINK);
+				break;
+			case ScriptTools.TRANSLATIONG_COMPLETE:
+				setBackground(Color.CYAN);
+				break;
+			case ScriptTools.EDITING_IN_PROGRESS:
+				setBackground(Color.YELLOW);
+				break;
+			case ScriptTools.EDITING_COMPLETE:
+				setBackground(Color.ORANGE);
+				break;
+			case ScriptTools.COMPLETE:
+				setBackground(Color.GREEN);
+				break;
+			default:
+				setBackground(Color.RED);
+				break;
+			}
+
+			return this;
+		}
+	}
 }

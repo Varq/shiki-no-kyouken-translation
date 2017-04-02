@@ -1,5 +1,5 @@
-// Scene: 
-// Status: Not Started
+// Scene: PL: PoB4 Won to Kiki
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,7 +32,7 @@ function Serihu()
       _root.oKaoBan = 17;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "か、勝てた…";
+      _root.PS01_str = "I-I won...";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -46,8 +46,8 @@ function Serihu()
       _root.tKaoBan = 4;
       _root.tKaoBBan = 33.5;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "おっめでとーー！！";
-      _root.PS02t_str = "よくがんばったね絶阿～";
+      _root.PS01t_str = "Good job--!! You really tried";
+      _root.PS02t_str = "your best, Zetsua～";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 3)
@@ -58,7 +58,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 12;
       _root.oKaoBan = 8;
-      _root.PS01_str = "な、なんかぜんぜん嬉しくねぇ…";
+      _root.PS01_str = "You don't sound happy at all.";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -70,8 +70,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "いやいや、喜んでいいよ";
-      _root.PS02t_str = "私を倒したのは事実なんだから";
+      _root.PS01t_str = "No, no. I'm glad. I was";
+      _root.PS02t_str = "really beaten by you.";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 5)
@@ -82,9 +82,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 12;
       _root.oKaoBan = 14;
-      _root.PS01_str = "くぅ、なめられきってるのな俺…";
-      _root.PS02_str = "へこむよ…";
-      _root.PS03_str = "";
+      _root.PS01_str = "Ugh, you're just trying to";
+      _root.PS02_str = "butter me up... This is";
+      _root.PS03_str = "demeaning...";
    }
    if(_root.mojiSerihu == 6)
    {
@@ -94,9 +94,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 2;
       _root.tKaoBan = 7;
-      _root.PS01t_str = "ちょ、ちょ、ちょ！！";
-      _root.PS02t_str = "私との戦いでへこんだりしないでよ！";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Hey, hey, hey!! ";
+      _root.PS02t_str = "I'm supposed to be the one";
+      _root.PS03t_str = "who's supposed to be sad!";
    }
    if(_root.mojiSerihu == 7)
    {
@@ -106,8 +106,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 12;
       _root.oKaoBan = 14;
-      _root.PS01_str = "だって姫喜姉";
-      _root.PS02_str = "ぜんっぜん本気出してないじゃん";
+      _root.PS01_str = "But you probably weren't even";
+      _root.PS02_str = "trying.";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 8)
@@ -118,9 +118,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 1;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "でも本気で相手するわけには";
-      _root.PS02t_str = "いかないでしょ～？も～";
-      _root.PS03t_str = "わかってよ～";
+      _root.PS01t_str = "But I can't go all out since";
+      _root.PS02t_str = "it's training～? Right～?";
+      _root.PS03t_str = "Get it～";
    }
    if(_root.mojiSerihu == 9)
    {
@@ -130,9 +130,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 16;
       _root.oKaoBan = 6;
-      _root.PS01_str = "わかったよ…じゃあ";
-      _root.PS02_str = "いつか俺が強くなったら";
-      _root.PS03_str = "その時は本気で相手してくれよ！！";
+      _root.PS01_str = "I understand... but when I get";
+      _root.PS02_str = "stronger, I want you to be";
+      _root.PS03_str = "absolutely serious!!";
    }
    if(_root.mojiSerihu == 10)
    {
@@ -142,7 +142,7 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 8;
-      _root.PS01t_str = "うん！約束したよ！！";
+      _root.PS01t_str = "Okay! That's a promise!!";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -154,9 +154,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 4;
       _root.oKaoBan = 7;
-      _root.PS01_str = "くっそ～";
-      _root.PS02_str = "どいつもこいつも手を抜いて";
-      _root.PS03_str = "かかってきやがって～";
+      _root.PS01_str = "Damn it～ You are always";
+      _root.PS02_str = "treating me like I'm weak.";
+      _root.PS03_str = "Just fight for real～";
    }
    if(_root.mojiSerihu == 12)
    {
@@ -166,9 +166,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 11;
       _root.oKaoBan = 8;
-      _root.PS01_str = "まぁ、どうあがいても俺は";
-      _root.PS02_str = "戦闘初心者なんだから";
-      _root.PS03_str = "考えてみりゃそりゃそうか…";
+      _root.PS01_str = "Hmph, how will I ever grow if";
+      _root.PS02_str = "I keep getting treated like a";
+      _root.PS03_str = "beginner...";
    }
    if(_root.mojiSerihu == 13)
    {
@@ -178,9 +178,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 14;
       _root.oKaoBan = 14;
-      _root.PS01_str = "でもなぁ、本気の戦いじゃないと";
-      _root.PS02_str = "なんというか…見えてこない物が";
-      _root.PS03_str = "あると言うか…う～ん";
+      _root.PS01_str = "But you're telling me not to";
+      _root.PS02_str = "get into serious fights... I";
+      _root.PS03_str = "don't get it... Hmph.";
    }
    if(_root.mojiSerihu == 14)
    {

@@ -1,5 +1,5 @@
-// Scene: 
-// Status: Not Started
+// Scene: PL: PrB3a Rematch Saichuu
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,8 +32,8 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 32;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "お？お？";
-      _root.PS02t_str = "負け犬の返り咲きかな？";
+      _root.PS01t_str = "Oh, ho, ho? The loser's back";
+      _root.PS02t_str = "for a rematch?";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 2)
@@ -46,9 +46,9 @@ function Serihu()
       _root.oKaoBan = 7;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "否定はしねえよ";
-      _root.PS02_str = "でも、負け犬は返上しに来たぜ！";
-      _root.PS03_str = "";
+      _root.PS01_str = "I won't deny I lost, but";
+      _root.PS02_str = "this loser isn't going to";
+      _root.PS03_str = "quit!";
    }
    if(_root.mojiSerihu == 3)
    {
@@ -58,9 +58,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 6;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "おいおい、無理すんなって";
-      _root.PS02t_str = "いかんともし難い実力差は";
-      _root.PS03t_str = "そうそう埋めれるもんじゃねえって";
+      _root.PS01t_str = "It's pointless, anyway.";
+      _root.PS02t_str = "There's such a big difference";
+      _root.PS03t_str = "in skill, I'll still win.";
    }
    if(_root.mojiSerihu == 4)
    {
@@ -70,8 +70,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 6;
-      _root.PS01_str = "減らず口もそこまでだぜ…";
-      _root.PS02_str = "";
+      _root.PS01_str = "Talk all you want after you";
+      _root.PS02_str = "win...";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 5)
@@ -82,9 +82,9 @@ function Serihu()
       _root.oHukidasi = 3;
       _root.oManpuH = 0;
       _root.oKaoBan = 3;
-      _root.PS01_str = "とにかく、";
-      _root.PS02_str = "「特攻」の条件が揃ったら";
-      _root.PS03_str = "少し待ってみよう…";
+      _root.PS01_str = "Alright, I just need to wait";
+      _root.PS02_str = "and use the all-out attack...";
+      _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 6)
    {
@@ -94,9 +94,9 @@ function Serihu()
       _root.oHukidasi = 3;
       _root.oManpuH = 0;
       _root.oKaoBan = 7;
-      _root.PS01_str = "攻撃値を上昇させて、";
-      _root.PS02_str = "少しでも「特攻」の威力を";
-      _root.PS03_str = "上昇させるんだ！！！";
+      _root.PS01_str = "If I wait for my attack power";
+      _root.PS02_str = "to be high, my all-out attack";
+      _root.PS03_str = "will surely win!!!";
    }
    if(_root.mojiSerihu == 7)
    {

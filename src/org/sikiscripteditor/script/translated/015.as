@@ -1,4 +1,4 @@
-// Scene: TEST
+// Scene: PL: PrB3b Rematch Manpeita
 // Status: Not Started
 function Serihu()
 {

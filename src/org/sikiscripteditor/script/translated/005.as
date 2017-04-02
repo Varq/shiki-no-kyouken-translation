@@ -1,5 +1,5 @@
 // Scene: PL: MiB2 Kennosuke Basics Tutorial
-// Status: Complete
+// Status: Editing Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -2166,8 +2166,8 @@ function Serihu()
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
       _root.PS01t_str = "I mentioned this before. These";
-      _root.PS02t_str = "are for situations like [Clash],";
-      _root.PS03t_str = "[Face-off], and [Back-to-back].";
+      _root.PS02t_str = "are for situations like";
+      _root.PS03t_str = "[Locked Swords] or [Face-off].";
    }
    if(_root.mojiSerihu == 175)
    {

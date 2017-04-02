@@ -1,5 +1,5 @@
-// Scene: PL: PoB3 I don't know
-// Status: Not Started
+// Scene: PL: PoB3 Living on the mountain Context
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,7 +32,7 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 32;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "おう、絶阿ー";
+      _root.PS01t_str = "Hey, Zetsua.";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -46,7 +46,7 @@ function Serihu()
       _root.oKaoBan = 22;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "いよー、";
+      _root.PS01_str = "What's up?";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -60,7 +60,7 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "おうー、揃ってるなぁ";
+      _root.PS01t_str = "Good, we're all here.";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -72,8 +72,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 3;
-      _root.PS01_str = "しっかし、いつも集まる場所が";
-      _root.PS02_str = "決まってるのな俺達";
+      _root.PS01_str = "Hey, why is this where we";
+      _root.PS02_str = "always meet up?";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 5)
@@ -86,9 +86,9 @@ function Serihu()
       _root.tKaoBan = 3;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "仕方ねぇよ";
-      _root.PS02t_str = "おいら達が自由に動ける範囲は";
-      _root.PS03t_str = "この山の一角だけだかんな";
+      _root.PS01t_str = "It can't be helped. We're";
+      _root.PS02t_str = "not allowed to leave this";
+      _root.PS03t_str = "side of the mountain.";
    }
    if(_root.mojiSerihu == 6)
    {
@@ -100,8 +100,8 @@ function Serihu()
       _root.oKaoBan = 2;
       _root.oKaoBBan = 32;
       _root.oKaoBHenkou();
-      _root.PS01_str = "俺はそれで十分だぜ";
-      _root.PS02_str = "走り回る分には問題ねぇ";
+      _root.PS01_str = "This place also has a lot of";
+      _root.PS02_str = "space I can run through.";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 7)
@@ -114,9 +114,9 @@ function Serihu()
       _root.tKaoBan = 8;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "ん～、まぁそうだけどさ…";
-      _root.PS02t_str = "たまには山を降りてもっと遠くに";
-      _root.PS03t_str = "いってみたくなる時とか無いか？";
+      _root.PS01t_str = "Hm～ Even then... Sometimes";
+      _root.PS02t_str = "I just want to go climb down";
+      _root.PS03t_str = "and maybe look for a bit.";
    }
    if(_root.mojiSerihu == 8)
    {
@@ -128,8 +128,8 @@ function Serihu()
       _root.oKaoBan = 6;
       _root.oKaoBBan = 31;
       _root.oKaoBHenkou();
-      _root.PS01_str = "何言ってるんだよ絶阿！";
-      _root.PS02_str = "それは絶対禁止にされてるぞ！！";
+      _root.PS01_str = "Watch your mouth, Zetsua!";
+      _root.PS02_str = "That's absolutely forbidden!!";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 9)
@@ -140,9 +140,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 1;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "い、いやそうだけどよ…";
-      _root.PS02t_str = "禁止されてるからこそ";
-      _root.PS03t_str = "見てみたいと言うか…";
+      _root.PS01t_str = "We-Well, even if it's not";
+      _root.PS02t_str = "allowed, I still want to see,";
+      _root.PS03t_str = "you know what I'm saying?";
    }
    if(_root.mojiSerihu == 10)
    {
@@ -154,9 +154,9 @@ function Serihu()
       _root.oKaoBan = 8;
       _root.oKaoBBan = 32;
       _root.oKaoBHenkou();
-      _root.PS01_str = "あん？お前規則を破るつもり？";
-      _root.PS02_str = "ていうかその前兆があると";
-      _root.PS03_str = "見ていいのかこれ？";
+      _root.PS01_str = "And? What're going to do if";
+      _root.PS02_str = "someone finds out? Are you";
+      _root.PS03_str = "willing to take the hit?";
    }
    if(_root.mojiSerihu == 11)
    {
@@ -166,9 +166,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 2;
       _root.tKaoBan = 9;
-      _root.PS01t_str = "い、いや…";
-      _root.PS02t_str = "軽く言ってみただけだからさ…";
-      _root.PS03t_str = "そんな恐い顔すんなって…";
+      _root.PS01t_str = "N-No... I just wanted to talk";
+      _root.PS02t_str = "about it... You don't need to";
+      _root.PS03t_str = "make such a scary face...";
    }
    if(_root.mojiSerihu == 12)
    {
@@ -180,8 +180,8 @@ function Serihu()
       _root.oKaoBan = 10;
       _root.oKaoBBan = 31;
       _root.oKaoBHenkou();
-      _root.PS01_str = "軽くでも言っちゃいけないことも";
-      _root.PS02_str = "あるよぉ";
+      _root.PS01_str = "Even talking about it in the";
+      _root.PS02_str = "slightest isn't allowed.";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 13)
@@ -192,8 +192,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 12;
       _root.tKaoBan = 8;
-      _root.PS01t_str = "わ、悪かったって！";
-      _root.PS02t_str = "もう言わねぇからさ！！";
+      _root.PS01t_str = "S-Sorry! I won't talk about it";
+      _root.PS02t_str = "anymore!!";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 14)
@@ -206,8 +206,8 @@ function Serihu()
       _root.oKaoBan = 6;
       _root.oKaoBBan = 32;
       _root.oKaoBHenkou();
-      _root.PS01_str = "ったく、";
-      _root.PS02_str = "しらける事言うんじゃねぇよ！";
+      _root.PS01_str = "Seriously, I better not";
+      _root.PS02_str = "hear about this anymore!!";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 15)
@@ -218,9 +218,9 @@ function Serihu()
       _root.tHukidasi = 3;
       _root.tManpuH = 10;
       _root.tKaoBan = 23;
-      _root.PS01t_str = "でも…あれぇ？おかしいな";
-      _root.PS02t_str = "こいつら数年前までは俺と同じで";
-      _root.PS03t_str = "山を降りたがってたはずなのに…";
+      _root.PS01t_str = "But, really? It's strange";
+      _root.PS02t_str = "that we were allowed to climb";
+      _root.PS03t_str = "back down a few years ago...";
    }
    if(_root.mojiSerihu == 16)
    {
@@ -232,8 +232,8 @@ function Serihu()
       _root.oKaoBan = 6;
       _root.oKaoBBan = 31;
       _root.oKaoBHenkou();
-      _root.PS01_str = "絶阿…";
-      _root.PS02_str = "ま～だ納得してない顔してる";
+      _root.PS01_str = "Zetsua... You better not be";
+      _root.PS02_str = "thinking about it.";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 17)
@@ -246,9 +246,9 @@ function Serihu()
       _root.tKaoBan = 4;
       _root.tKaoBBan = 32;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "そりゃつまりあれだ";
-      _root.PS02t_str = "俺達にしごき入れてほしいって";
-      _root.PS03t_str = "いう事だろ？";
+      _root.PS01t_str = "We could just beat the";
+      _root.PS02t_str = "thoughts out of him, can't we?";
+      _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 18)
    {
@@ -260,8 +260,8 @@ function Serihu()
       _root.oKaoBan = 14;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "そりゃあまりにも無茶な";
-      _root.PS02_str = "解釈ってもんですぜ西中さん…";
+      _root.PS01_str = "That's going too far, please,";
+      _root.PS02_str = "Saichuu...";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 19)
@@ -274,9 +274,9 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "まぁ、遅ればせながらも絶阿も";
-      _root.PS02t_str = "戦闘訓練を受けて、晴れて";
-      _root.PS03t_str = "俺達と同じになれたわけだ";
+      _root.PS01t_str = "Well, once Zetsua catches up";
+      _root.PS02t_str = "on his lessons, we should";
+      _root.PS03t_str = "finally be all the same level.";
    }
    if(_root.mojiSerihu == 20)
    {
@@ -288,9 +288,9 @@ function Serihu()
       _root.oKaoBan = 2;
       _root.oKaoBBan = 32;
       _root.oKaoBHenkou();
-      _root.PS01_str = "山に入ってくる不審者を";
-      _root.PS02_str = "許可無くぶっ殺せる権利を";
-      _root.PS03_str = "絶阿ももらったってわけだ";
+      _root.PS01_str = "Except for Zetsua, we all have";
+      _root.PS02_str = "the authorization to take down";
+      _root.PS03_str = "strangers on this mountain.";
    }
    if(_root.mojiSerihu == 21)
    {
@@ -302,7 +302,7 @@ function Serihu()
       _root.tKaoBan = 9;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "あ～、まぁなぁ";
+      _root.PS01t_str = "Ah, yeah.";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -314,9 +314,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 6;
       _root.oKaoBan = 4;
-      _root.PS01_str = "お、絶阿びびってるよ～";
-      _root.PS02_str = "まぁいきなりじゃ恐いわな";
-      _root.PS03_str = "絶阿ちゃんには";
+      _root.PS01_str = "Oh, Zetsua's nervous～ Is";
+      _root.PS02_str = "little Zetsua scared all of";
+      _root.PS03_str = "a sudden?";
    }
    if(_root.mojiSerihu == 23)
    {
@@ -328,9 +328,9 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "心配すんな絶阿";
-      _root.PS02t_str = "おいら達より強い奴には";
-      _root.PS03t_str = "そうそう遭うもんじゃねぇよ";
+      _root.PS01t_str = "Don't worry, Zetsua. We're";
+      _root.PS02t_str = "stronger than anyone who ";
+      _root.PS03t_str = "we'll encounter.";
    }
    if(_root.mojiSerihu == 24)
    {
@@ -342,9 +342,9 @@ function Serihu()
       _root.oKaoBan = 14;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "いや、そういうことじゃなくてさ…";
-      _root.PS02_str = "そんな弱いのわかってる奴と";
-      _root.PS03_str = "戦っても意味無いんじゃねえか？";
+      _root.PS01_str = "No, that's not it. What if";
+      _root.PS02_str = "it's someone who doesn't even";
+      _root.PS03_str = "know what's going on？";
    }
    if(_root.mojiSerihu == 25)
    {
@@ -356,9 +356,9 @@ function Serihu()
       _root.tKaoBan = 6;
       _root.tKaoBBan = 32;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "おい、自分の事を考えすぎだぜ？";
-      _root.PS02t_str = "そいつが俺らの探りを入れに来た";
-      _root.PS03t_str = "密偵だったらどうするんだ？";
+      _root.PS01t_str = "You're overthinkg it. What";
+      _root.PS02t_str = "reason would anyone but a spy";
+      _root.PS03t_str = "want to be doing up here?";
    }
    if(_root.mojiSerihu == 26)
    {
@@ -370,9 +370,9 @@ function Serihu()
       _root.oKaoBan = 10;
       _root.oKaoBBan = 31;
       _root.oKaoBHenkou();
-      _root.PS01_str = "おいら達はそういう風に";
-      _root.PS02_str = "言われてんだ";
-      _root.PS03_str = "言われたとおりするだけだぁよ";
+      _root.PS01_str = "Random people wouldn't go";
+      _root.PS02_str = "this way, either. They'd be";
+      _root.PS03_str = "taking the path or the road.";
    }
    if(_root.mojiSerihu == 27)
    {
@@ -384,7 +384,7 @@ function Serihu()
       _root.tKaoBan = 8;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "う、まぁそうだけどな…";
+      _root.PS01t_str = "But, what if...";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -398,9 +398,9 @@ function Serihu()
       _root.oKaoBan = 4;
       _root.oKaoBBan = 32;
       _root.oKaoBHenkou();
-      _root.PS01_str = "よーし、今度不審者見つけたら";
-      _root.PS02_str = "真っ先に絶阿に報告してやっからよ";
-      _root.PS03_str = "一人でどうにかしてみろよ！！";
+      _root.PS01_str = "Alright, next time we see";
+      _root.PS02_str = "someone alone, let's let";
+      _root.PS03_str = "Zetsua deal with them!!";
    }
    if(_root.mojiSerihu == 29)
    {
@@ -412,9 +412,9 @@ function Serihu()
       _root.tKaoBan = 4;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "そだなぁ";
-      _root.PS02t_str = "一回は一人で何とかした方が";
-      _root.PS03t_str = "いい経験になるよぉ";
+      _root.PS01t_str = "Okay, just once. What can one";
+      _root.PS02t_str = "guy do anyway? It'll be a good";
+      _root.PS03t_str = "experience for you.";
    }
    if(_root.mojiSerihu == 30)
    {
@@ -426,8 +426,8 @@ function Serihu()
       _root.oKaoBan = 21;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "うわ！";
-      _root.PS02_str = "こいつら何考えてやがんだ！！！";
+      _root.PS01_str = "Wah! You guys can't really be";
+      _root.PS02_str = "serious with this!!!";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 31)
@@ -440,9 +440,9 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 32;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "死んだら俺が仇とってやるからよ";
-      _root.PS02t_str = "腹の中から安心して戦えよ～";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "If you die, I'll pick up where";
+      _root.PS02t_str = "you left off. Your bloody mess";
+      _root.PS03t_str = "can rest in peace afterwards.";
    }
    if(_root.mojiSerihu == 32)
    {
@@ -454,8 +454,8 @@ function Serihu()
       _root.oKaoBan = 8;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "てめ…本気で言ってるなそれ…";
-      _root.PS02_str = "";
+      _root.PS01_str = "Why you... You probably mean";
+      _root.PS02_str = "that too...";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 33)
@@ -468,7 +468,7 @@ function Serihu()
       _root.tKaoBan = 4;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "あははははは";
+      _root.PS01t_str = "Ahahahahaha!";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }

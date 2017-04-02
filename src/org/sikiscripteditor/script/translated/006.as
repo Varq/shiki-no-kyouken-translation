@@ -220,9 +220,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "Of course, you can only do it";
-      _root.PS02t_str = "every once in a while.";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "It's a attack that has a";
+      _root.PS02t_str = "pretty high chance to hit,";
+      _root.PS03t_str = "and even hurts really hard.";
    }
    if(_root.mojiSerihu == 18)
    {

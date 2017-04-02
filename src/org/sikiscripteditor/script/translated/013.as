@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: PL: PoB3b Lost to Manpeita
 // Status: Not Started
 function Serihu()
 {

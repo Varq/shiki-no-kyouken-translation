@@ -1,5 +1,5 @@
 // Scene: PL: MiB3a All-out Tutorial
-// Status: Not Started
+// Status: Editing Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,7 +32,7 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 32;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "Alright, take a look at this～";
+      _root.PS01t_str = "Alright, take a look at these～";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -51,8 +51,8 @@ function Serihu()
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
       _root.PS01t_str = "Hm? What about those? That's";
-      _root.PS02t_str = "just the styles, right? You";
-      _root.PS03t_str = "also have [ActAct]?";
+      _root.PS02t_str = "just the styles, right? Oh,";
+      _root.PS03t_str = "you have [ActAct], too?";
    }
    if(_root.mojiSerihu == 4)
    {
@@ -184,7 +184,7 @@ function Serihu()
       _root.tKaoBHenkou();
       _root.PS01t_str = "Press it twice quickly...?";
       _root.PS02t_str = "I have to be careful so I";
-      _root.PS03t_str = "don't accidently do it.";
+      _root.PS03t_str = "don't it by accident.";
    }
    if(_root.mojiSerihu == 15)
    {
@@ -196,8 +196,8 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 32;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "It's pretty easy to do by";
-      _root.PS02t_str = "accident. You just need to be";
+      _root.PS01t_str = "Yeah, it's pretty easy to do";
+      _root.PS02t_str = "randomly. You just need to be";
       _root.PS03t_str = "more cautious with your presses.";
    }
    if(_root.mojiSerihu == 16)
@@ -461,8 +461,8 @@ function Serihu()
       _root.tKaoBBan = 32;
       _root.tKaoBHenkou();
       _root.PS01t_str = "Yeah, but that's all I know";
-      _root.PS02t_str = "for the time. We both know";
-      _root.PS03t_str = "the same things now!!";
+      _root.PS02t_str = "for the time. We're both";
+      _root.PS03t_str = "on the same level now!!";
    }
    if(_root.mojiSerihu == 36)
    {

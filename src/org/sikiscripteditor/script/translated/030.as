@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: PL: PrB4 Rematch Kiki
 // Status: Not Started
 function Serihu()
 {

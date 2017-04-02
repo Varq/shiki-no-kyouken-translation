@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="namesScrollPane" min="-2" pref="407" max="-2" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="namesScrollPane" pref="528" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="namesScrollPane">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="namesPanel">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="originalNameList" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="translatedNameList" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="originalNameList" alignment="3" max="32767" attributes="0"/>
+                          <Component id="translatedNameList" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JList" name="originalNameList">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="HG&#xff7a;&#xff9e;&#xff7c;&#xff6f;&#xff78;E" size="18" style="0"/>
+                </Property>
+                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                  <StringArray count="60">
+                    <StringItem index="0" value="&#x7dcb;&#x6708;&#x7d76;&#x963f;"/>
+                    <StringItem index="1" value="&#x9f8d;&#x53cc;&#x91cc;&#x89b3;"/>
+                    <StringItem index="2" value="&#x9280;&#x72fc;"/>
+                    <StringItem index="3" value="&#x51fa;&#x96f2;&#x5b66;&#x4eba;"/>
+                    <StringItem index="4" value="&#x6075;"/>
+                    <StringItem index="5" value="&#x543e;&#x5df2;"/>
+                    <StringItem index="6" value="&#x6bd4;&#x5609;&#x7dcf;&#x4e00;&#x90ce;"/>
+                    <StringItem index="7" value="&#x7530;&#x795e;&#x6885;&#x5343;&#x4ee3;"/>
+                    <StringItem index="8" value="&#x7af9;&#x5343;&#x4ee3;"/>
+                    <StringItem index="9" value="&#x5e73;&#x8cc0;&#x6587;&#x543e;"/>
+                    <StringItem index="10" value="&#x6885;&#x677e;"/>
+                    <StringItem index="11" value="&#x56fd;&#x677e;"/>
+                    <StringItem index="12" value="&#x7af9;&#x677e;"/>
+                    <StringItem index="13" value="&#x99d2;&#x5185;&#x666f;&#x7dd2;"/>
+                    <StringItem index="14" value="&#x685c;&#x5742;&#x5e78;&#x904b;"/>
+                    <StringItem index="15" value="&#x8302;&#x4f5c;"/>
+                    <StringItem index="16" value="&#x66f3;&#x7530;&#x4e0d;&#x52d5;"/>
+                    <StringItem index="17" value="&#x4e8c;&#x91cd;&#x677e;"/>
+                    <StringItem index="18" value="&#x6bd2;&#x5cf6;&#x9ad1;&#x9acf;&#x5175;&#x885b;"/>
+                    <StringItem index="19" value="&#x611b;&#x9913;&#x7537;"/>
+                    <StringItem index="20" value="&#x4e9c;&#x7d30;&#x4e9c;"/>
+                    <StringItem index="21" value="&#x58f1;&#x667a;&#x6751;&#x4fe1;&#x54b2;"/>
+                    <StringItem index="22" value="&#x58f1;&#x667a;&#x6751;&#x9999;&#x5948;&#x4f0a;"/>
+                    <StringItem index="23" value="&#x585a;&#x68ee;&#x745e;&#x9db4;"/>
+                    <StringItem index="24" value="&#x585a;&#x68ee;&#x5009;&#x4e4b;&#x52a9;"/>
+                    <StringItem index="25" value="&#x4e09;&#x7530;&#x6751;&#x884c;&#x811a;"/>
+                    <StringItem index="26" value="&#x5ca1;&#x7530;&#x5449;&#x7fbd;"/>
+                    <StringItem index="27" value="&#x5cb8;&#x90e8;&#x72ec;&#x773c;&#x6d41;"/>
+                    <StringItem index="28" value="&#x904a;&#x4fa0;&#x52dd;&#x6a5f;"/>
+                    <StringItem index="29" value="&#x904a;&#x4fa0;&#x53b3;&#x9854;"/>
+                    <StringItem index="30" value="&#x5ddd;&#x4e0a;&#x7a7a;&#x4e5f;"/>
+                    <StringItem index="31" value="&#x9808;&#x85e4;&#x5065;&#x4e4b;&#x52a9;"/>
+                    <StringItem index="32" value="&#x4e07;&#x5e73;&#x592a;"/>
+                    <StringItem index="33" value="&#x897f;&#x4e2d;&#x7df4;"/>
+                    <StringItem index="34" value="&#x7259;&#x6c37;"/>
+                    <StringItem index="35" value="&#x59eb;&#x559c;&#x5186;&#x7425;"/>
+                    <StringItem index="36" value="&#x5009;&#x4e95;&#x4e94;&#x5e73;"/>
+                    <StringItem index="37" value="&#x4e8c;&#x6761;&#x4e21;&#x89d2;"/>
+                    <StringItem index="38" value="&#x90a3;&#x7531;&#x8a6b;"/>
+                    <StringItem index="39" value="&#x559c;&#x8cea;&#x52d8;"/>
+                    <StringItem index="40" value="&#x697d;&#x5b97;&#x6d41;"/>
+                    <StringItem index="41" value="&#x6211;&#x5fd8;&#x4e38;"/>
+                    <StringItem index="42" value="&#x8c9e;&#x5143;&#x7406;&#x89e3;"/>
+                    <StringItem index="43" value="&#x8c9e;&#x5143;"/>
+                    <StringItem index="44" value="&#x5fd7;&#x6ce2;&#x5c1a;"/>
+                    <StringItem index="45" value="&#x758e;&#x91ce;&#x7d2b;&#x95c7;"/>
+                    <StringItem index="46" value="&#x7d4c;&#x8a60;"/>
+                    <StringItem index="47" value="&#x8a66;&#x91d1;&#x77f3;"/>
+                    <StringItem index="48" value="&#x5409;&#x539f;&#x643e;&#x53d6;"/>
+                    <StringItem index="49" value="&#x5927;&#x5834;&#x907c;&#x592a;&#x90ce;"/>
+                    <StringItem index="50" value="&#x7247;&#x5c71;&#x771f;"/>
+                    <StringItem index="51" value="&#x65b0;&#x4e95;&#x77ac;&#x5e73;"/>
+                    <StringItem index="52" value="&#x677e;&#x7530;&#x798d;&#x707d;"/>
+                    <StringItem index="53" value="&#x677e;&#x7530;&#x5996;&#x602a;"/>
+                    <StringItem index="54" value="&#x9006;&#x6d3b;"/>
+                    <StringItem index="55" value="&#x30d5;&#x30a7;&#x30a4;&#x30eb;&#x30d0;&#x30fc;&#x30fb;&#x30ed;&#x30a6;&#x30da;"/>
+                    <StringItem index="56" value="&#x30ad;&#x30a8;&#x30de;&#x30fb;&#x30d6;&#x30e9;&#x30c3;&#x30af;"/>
+                    <StringItem index="57" value="&#x30ae;&#x30e4;&#x30de;&#x30f3;"/>
+                    <StringItem index="58" value="&#x30b5;&#x30cb;"/>
+                    <StringItem index="59" value="&#x30ea;&#x30fc;&#x30c1;&#x30a7;&#x30eb;&#x30fb;&#x30c7;&#x30a3;&#x30c3;&#x30d2;"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="originalNameListValueChanged"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JList" name="translatedNameList">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="HG&#xff7a;&#xff9e;&#xff7c;&#xff6f;&#xff78;E" size="18" style="0"/>
+                </Property>
+                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                  <StringArray count="60">
+                    <StringItem index="0" value="HIZUKI ZETSUA"/>
+                    <StringItem index="1" value="RYUUSOU SATOMI"/>
+                    <StringItem index="2" value="GINROU"/>
+                    <StringItem index="3" value="IZUMO GAKUTO"/>
+                    <StringItem index="4" value="MEGUMI"/>
+                    <StringItem index="5" value="AKO"/>
+                    <StringItem index="6" value="HIGA SOUICHIROU"/>
+                    <StringItem index="7" value="TAGAMI UMECHIYO"/>
+                    <StringItem index="8" value="TAKECHIYO"/>
+                    <StringItem index="9" value="HIRAGA BUNGO"/>
+                    <StringItem index="10" value="UMEMATSU"/>
+                    <StringItem index="11" value="KUNIMATSU"/>
+                    <StringItem index="12" value="TAKEMATSU"/>
+                    <StringItem index="13" value="KOMAUCHI KEIO"/>
+                    <StringItem index="14" value="SAKURAZAKA KOUUN"/>
+                    <StringItem index="15" value="MOSAKU"/>
+                    <StringItem index="16" value="HIKITA FUDOU"/>
+                    <StringItem index="17" value="NIJYUUMATSU"/>
+                    <StringItem index="18" value="BUSUJIMA DOKUROBEE"/>
+                    <StringItem index="19" value="AI UEO"/>
+                    <StringItem index="20" value="AJIA"/>
+                    <StringItem index="21" value="ICHIMURA SHINSHYOU"/>
+                    <StringItem index="22" value="ICHIMURA KANAI"/>
+                    <StringItem index="23" value="TSUKAMORI ZUIKAKU"/>
+                    <StringItem index="24" value="TSUKAMORI KURANOSOKE"/>
+                    <StringItem index="25" value="MITAMURA ANGYA"/>
+                    <StringItem index="26" value="OKADA KUREHA"/>
+                    <StringItem index="27" value="KISHIBE DOKUGANRYUU"/>
+                    <StringItem index="28" value="YUUKYOU SYOUKI"/>
+                    <StringItem index="29" value="YUUKYOU GENGAN"/>
+                    <StringItem index="30" value="KAWAKAMI KUUYA"/>
+                    <StringItem index="31" value="SUDOU KENNOSUKE"/>
+                    <StringItem index="32" value="MANPEITA"/>
+                    <StringItem index="33" value="SAICHUU REN"/>
+                    <StringItem index="34" value="GAHYOU"/>
+                    <StringItem index="35" value="KIKI ENKU"/>
+                    <StringItem index="36" value="KURAI GOHEI"/>
+                    <StringItem index="37" value="NIJYOU RYOUKAKU"/>
+                    <StringItem index="38" value="NAYUTA"/>
+                    <StringItem index="39" value="SASHICHI KAN"/>
+                    <StringItem index="40" value="RAKU ZOURU"/>
+                    <StringItem index="41" value="GABOUMARU"/>
+                    <StringItem index="42" value="SADAMOTO RIKAI"/>
+                    <StringItem index="43" value="SADAMOTO"/>
+                    <StringItem index="44" value="SHIBA SHYOU"/>
+                    <StringItem index="45" value="SONO SHIAN"/>
+                    <StringItem index="46" value="GYOUEI"/>
+                    <StringItem index="47" value="SHIKINSEKI"/>
+                    <StringItem index="48" value="YOSHIHARA SAKUSHYU"/>
+                    <StringItem index="49" value="OOBA RYOUTAROU"/>
+                    <StringItem index="50" value="KATAYAMA MAKOTO"/>
+                    <StringItem index="51" value="ARAI SHYUNPEI"/>
+                    <StringItem index="52" value="MATSUDA KASAI"/>
+                    <StringItem index="53" value="MATSUDA YOUKAI"/>
+                    <StringItem index="54" value="SAKAIKI"/>
+                    <StringItem index="55" value="FEIRUBAA ROUPE"/>
+                    <StringItem index="56" value="KIEMA BURAKKU"/>
+                    <StringItem index="57" value="GIYAMAN"/>
+                    <StringItem index="58" value="SANI"/>
+                    <StringItem index="59" value="RIICHERU DI-HI"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="translatedNameListValueChanged"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

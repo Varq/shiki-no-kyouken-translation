@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: PL: PoB4 Lost to Kiki
 // Status: Not Started
 function Serihu()
 {

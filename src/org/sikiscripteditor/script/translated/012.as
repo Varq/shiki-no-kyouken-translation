@@ -1,5 +1,5 @@
-// Scene: 
-// Status: Not Started
+// Scene: PL: MiB3b Dodging Tutorial
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,7 +32,7 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "おー、万平太は「静動」だな";
+      _root.PS01t_str = "Oh, you have [StillAct].";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -46,8 +46,8 @@ function Serihu()
       _root.tKaoBan = 4;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "うん、絶阿は「動動」だね";
-      _root.PS02t_str = "じゃあまずはここに注目～";
+      _root.PS01t_str = "Uh huh, and you have [ActAct].";
+      _root.PS02t_str = "Alright, observe right here～";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 3)
@@ -64,8 +64,8 @@ function Serihu()
       _root.tKaoBan = 3;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "そこは…";
-      _root.PS02t_str = "攻撃値だな";
+      _root.PS01t_str = "That's... the attack powers,";
+      _root.PS02t_str = "right?";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 5)
@@ -78,8 +78,8 @@ function Serihu()
       _root.tKaoBan = 3;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "敵の攻撃を避ける条件は…";
-      _root.PS02t_str = "";
+      _root.PS01t_str = "In order to dodge your";
+      _root.PS02t_str = "opponent's attacks...";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 6)
@@ -90,9 +90,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 5;
-      _root.PS01t_str = "「敵よりも攻撃値が上である」";
-      _root.PS02t_str = "「敵の得意範囲にいない」";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "You must have more power than";
+      _root.PS02t_str = "your opponent AND not in their";
+      _root.PS03t_str = "sweet spot.";
    }
    if(_root.mojiSerihu == 7)
    {
@@ -102,7 +102,7 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "と、言う事なんだ～";
+      _root.PS01t_str = "So, what did I just say～";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -116,8 +116,8 @@ function Serihu()
       _root.tKaoBan = 9;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "な、なんか条件厳しいな～";
-      _root.PS02t_str = "";
+      _root.PS01t_str = "Wh-What were those";
+      _root.PS02t_str = "conditions again～";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 9)
@@ -130,9 +130,9 @@ function Serihu()
       _root.tKaoBan = 9;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "ま、絶阿はちょっと";
-      _root.PS02t_str = "意識してかわすのは";
-      _root.PS03t_str = "難しいかもしんないな～";
+      _root.PS01t_str = "Come now, Zetsua. I know you";
+      _root.PS02t_str = "hate lessons, but it's not";
+      _root.PS03t_str = "that hard～";
    }
    if(_root.mojiSerihu == 10)
    {
@@ -144,9 +144,9 @@ function Serihu()
       _root.tKaoBan = 20;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "と言う事はよ、戦う時は";
-      _root.PS02t_str = "攻撃値を意識して攻撃しなきゃ";
-      _root.PS03t_str = "いけないって事だよな？";
+      _root.PS01t_str = "You said something about";
+      _root.PS02t_str = "attack power and sweet spots,";
+      _root.PS03t_str = "right?";
    }
    if(_root.mojiSerihu == 11)
    {
@@ -158,9 +158,9 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "そだな～";
-      _root.PS02t_str = "相手より攻撃値が高かったら";
-      _root.PS03t_str = "攻めまくればいいな～";
+      _root.PS01t_str = "Yes～ Your power has to more";
+      _root.PS02t_str = "than your opopnent's in order";
+      _root.PS03t_str = "to dodge～";
    }
    if(_root.mojiSerihu == 12)
    {
@@ -170,9 +170,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 5;
-      _root.PS01t_str = "逆に相手より攻撃値が低かったら";
-      _root.PS02t_str = "逃げに徹したりとか…";
-      _root.PS03t_str = "まぁとりあえずやってみるかぁ";
+      _root.PS01t_str = "As well, if your power is less";
+      _root.PS02t_str = "than your opopnents, they";
+      _root.PS03t_str = "can dodge too. You'll see.";
    }
    if(_root.mojiSerihu == 13)
    {
@@ -182,8 +182,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "おいらに向かって";
-      _root.PS02t_str = "攻撃してみな～";
+      _root.PS01t_str = "Now, attack me with all you've";
+      _root.PS02t_str = "got～";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 14)
@@ -196,7 +196,7 @@ function Serihu()
       _root.tKaoBan = 6;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "お、おう！！！";
+      _root.PS01t_str = "Um, okay!!!";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -214,8 +214,8 @@ function Serihu()
       _root.tKaoBan = 21;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "うお！！！";
-      _root.PS02t_str = "よけられた！！！！";
+      _root.PS01t_str = "Whoa!!! You dodged it!!!!";
+      _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 17)
@@ -228,7 +228,7 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "こんな感じかな～";
+      _root.PS01t_str = "What a feeling～";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -242,8 +242,8 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "うわ～、実際の戦いでよけられると";
-      _root.PS02t_str = "結構きついな～";
+      _root.PS01t_str = "Yeah～ Knowing how to dodge is";
+      _root.PS02t_str = "a really great tool to have～";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 19)
@@ -256,9 +256,9 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "そだな、まぁあんまり意識しないで";
-      _root.PS02t_str = "敵よりも攻撃値が高い時は";
-      _root.PS03t_str = "ぶんぶん振り回す…くらいでいいぞ～";
+      _root.PS01t_str = "Yeah. Always try to pay";
+      _root.PS02t_str = "attention to your power. When";
+      _root.PS03t_str = "it's high, it's time to strike.";
    }
    if(_root.mojiSerihu == 20)
    {
@@ -270,7 +270,7 @@ function Serihu()
       _root.tKaoBan = 8;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "どいつもこいつも大雑把だな…";
+      _root.PS01t_str = "That's going to be rough...";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -284,8 +284,8 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "いきなり細かい事を言っても";
-      _root.PS02t_str = "覚えらんないよ";
+      _root.PS01t_str = "Even if it was a short";
+      _root.PS02t_str = "lesson, try not to forget it.";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 22)
@@ -296,9 +296,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 7;
       _root.tKaoBan = 9;
-      _root.PS01t_str = "ほんじゃ、いっちょやってみっかな";
-      _root.PS02t_str = "絶阿～";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Well then, maybe I'll take";
+      _root.PS02t_str = "you up on that training offer,";
+      _root.PS03t_str = "Zetusa～";
    }
    if(_root.mojiSerihu == 23)
    {
@@ -310,7 +310,7 @@ function Serihu()
       _root.tKaoBan = 6;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "お、おう！！いくぜ！！！";
+      _root.PS01t_str = "Oh, really!! Let's go then!!!";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }

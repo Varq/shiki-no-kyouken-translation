@@ -1,5 +1,5 @@
-// Scene: 
-// Status: Not Started
+// Scene: PL: PrB3b Manpeita Dodging Tutorial
+// Status: Editing Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,9 +32,9 @@ function Serihu()
       _root.tKaoBan = 4;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "お、絶阿～";
-      _root.PS02t_str = "健之助に教えてもらってきたか～？";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Oh, Zetsua～";
+      _root.PS02t_str = "You've finished your lesson";
+      _root.PS03t_str = "with Kennosuke～?";
    }
    if(_root.mojiSerihu == 2)
    {
@@ -46,19 +46,19 @@ function Serihu()
       _root.oKaoBan = 13;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "おう！完璧よ！！";
-      _root.PS02_str = "早速だけど、相手してもらうぜ";
-      _root.PS03_str = "万平太！！";
+      _root.PS01_str = "Yep! I'm all done!! You";
+      _root.PS02_str = "and I should start training";
+      _root.PS03_str = "now, Manpeita!!";
    }
    if(_root.mojiSerihu == 3)
    {
-      _root.mojiJunji02 = 1;
+      _root.mojiJunji02 = 1
       _root.tKara();
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "あはは、";
-      _root.PS02t_str = "さっきは誘っといてなんだけど";
+      _root.PS01t_str = "Ahaha, well, that's a nice";
+      _root.PS02t_str = "offer, but...";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 4)
@@ -68,9 +68,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "おいらは絶阿にとって";
-      _root.PS02t_str = "戦いにくい相手なんじゃないかな？";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "I don't think having you";
+      _root.PS02t_str = "as a training partner would";
+      _root.PS03t_str = "work, you know?";
    }
    if(_root.mojiSerihu == 5)
    {
@@ -80,7 +80,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 1;
       _root.oKaoBan = 15;
-      _root.PS01_str = "へ？どういう事？";
+      _root.PS01_str = "Huh? What do you mean by that?";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -91,9 +91,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 6;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "おいらの間合いからなら";
-      _root.PS02t_str = "絶阿の攻撃はそう簡単には";
-      _root.PS03t_str = "当たらないよぉ";
+      _root.PS01t_str = "I like to keep my distance,";
+      _root.PS02t_str = "so your attacks wouldn't even";
+      _root.PS03t_str = "come close to hitting me.";
    }
    if(_root.mojiSerihu == 7)
    {
@@ -103,9 +103,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 3;
-      _root.PS01_str = "あ、そういや万平太って";
-      _root.PS02_str = "「静動」なんだ";
-      _root.PS03_str = "兄貴と同じってのは羨ましいな";
+      _root.PS01_str = "Oh, come to think of it, you";
+      _root.PS02_str = "use [StillAct] like Brother.";
+      _root.PS03_str = "I'm a little jealous.";
    }
    if(_root.mojiSerihu == 8)
    {
@@ -114,8 +114,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "ん～、まぁどの流季も一長一短";
-      _root.PS02t_str = "良いとこも悪いとこもあるよ";
+      _root.PS01t_str = "Hm～ Well, each style has it's";
+      _root.PS02t_str = "own ups and downs.";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 9)
@@ -125,8 +125,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 9;
-      _root.PS01t_str = "例えばおいらは絶阿みたいな";
-      _root.PS02t_str = "「動動」に対しては";
+      _root.PS01t_str = "From my perspective, looking";
+      _root.PS02t_str = "at your [ActAct] style...";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 10)
@@ -136,9 +136,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "一度主導権を握られると";
-      _root.PS02t_str = "なかなか取り返し難くなってるよ";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "You would take control of the";
+      _root.PS02t_str = "flow of battle. Also, it's";
+      _root.PS03t_str = "easier for you to recover.";
    }
    if(_root.mojiSerihu == 11)
    {
@@ -147,9 +147,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "んで、絶阿はおいらみたいな";
-      _root.PS02t_str = "「静動」相手だと";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "On the other hand, if you were";
+      _root.PS02t_str = "to look at my [StillAct]";
+      _root.PS03t_str = "style...";
    }
    if(_root.mojiSerihu == 12)
    {
@@ -158,9 +158,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 12;
       _root.tKaoBan = 8;
-      _root.PS01t_str = "いくら攻撃を当てても";
-      _root.PS02t_str = "たったの二、三撃であっさりと";
-      _root.PS03t_str = "逆転される可能性があるよ";
+      _root.PS01t_str = "'How many hits would it take";
+      _root.PS02t_str = "for him to turn the tides?";
+      _root.PS03t_str = "Two? Possibly three?'";
    }
    if(_root.mojiSerihu == 13)
    {
@@ -170,9 +170,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 1;
       _root.oKaoBan = 9;
-      _root.PS01_str = "そっか、兄貴が「静動」は";
-      _root.PS02_str = "攻撃力が高いって言ってたけど";
-      _root.PS03_str = "そんなに差があるのか…";
+      _root.PS01_str = "I see, Brother did say that";
+      _root.PS02_str = "about [StillAct], but is it";
+      _root.PS03_str = "really that different?";
    }
    if(_root.mojiSerihu == 14)
    {
@@ -181,9 +181,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 5;
-      _root.PS01t_str = "それに、おいらは絶阿の攻撃を";
-      _root.PS02t_str = "避けることができるけど…";
-      _root.PS03t_str = "絶阿は避けられない…";
+      _root.PS01t_str = "Well anyway, I'd still dodge";
+      _root.PS02t_str = "all of your attacks... but";
+      _root.PS03t_str = "you wouldn't dodge any.";
    }
    if(_root.mojiSerihu == 15)
    {
@@ -193,9 +193,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 9;
       _root.oKaoBan = 6;
-      _root.PS01_str = "あ！！そうだ！！";
-      _root.PS02_str = "兄貴も攻撃の避け方は";
-      _root.PS03_str = "教えてくれなかったんだ！！！";
+      _root.PS01_str = "Hey!! That's right!! Brother";
+      _root.PS02_str = "never taught me about that!!!";
+      _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 16)
    {
@@ -204,9 +204,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "おいらも第二段階の訓練で";
-      _root.PS02t_str = "教えてもらった事だし…";
-      _root.PS03t_str = "絶阿は避けれないし";
+      _root.PS01t_str = "Well, I've already had the";
+      _root.PS02t_str = "second lesson... It makes";
+      _root.PS03t_str = "sense you don't know.";
    }
    if(_root.mojiSerihu == 17)
    {
@@ -216,9 +216,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 3;
-      _root.PS01_str = "ひょっとして、";
-      _root.PS02_str = "敵の攻撃を避けれるのって";
-      _root.PS03_str = "「静動」だけなのか？";
+      _root.PS01_str = "So wait, does having the";
+      _root.PS02_str = "[StillAct] style make it";
+      _root.PS03_str = "easier to dodge attacks?";
    }
    if(_root.mojiSerihu == 18)
    {
@@ -227,9 +227,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "や、そんな事はないよ";
-      _root.PS02t_str = "攻撃値の問題だからさぁ";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Well, a little. The thing";
+      _root.PS02t_str = "you need to worry about is";
+      _root.PS03t_str = "attack power.";
    }
    if(_root.mojiSerihu == 19)
    {
@@ -239,9 +239,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 5;
       _root.oKaoBan = 11;
-      _root.PS01_str = "おいおい、俺聞いてないぞ！？";
-      _root.PS02_str = "ちょっと教えてくれよ！！！！";
-      _root.PS03_str = "";
+      _root.PS01_str = "Hey, hey, wait a second!!";
+      _root.PS02_str = "I don't want to go through";
+      _root.PS03_str = "another lesson!!!!";
    }
    if(_root.mojiSerihu == 20)
    {
@@ -250,9 +250,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 11;
       _root.tKaoBan = 5;
-      _root.PS01t_str = "ん～、しょうがないな～";
-      _root.PS02t_str = "んじゃちょっと";
-      _root.PS03t_str = "戦闘態勢とってみるか～";
+      _root.PS01t_str = "Hm～ It can't be helped～";
+      _root.PS02t_str = "You can never be too prepared";
+      _root.PS03t_str = "for combat～";
    }
    if(_root.mojiSerihu == 21)
    {
