@@ -60,9 +60,9 @@ function Serihu()
       _root.tKaoBan = 6;
       _root.tKaoBBan = 33.5;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "Hm...How many are there...";
-      _root.PS02t_str = "There's quite a few of them.";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Hm... There's quite a few...";
+      _root.PS02t_str = "They happen all the time and";
+      _root.PS03t_str = "I've never stopped and counted.";
    }
    if(_root.mojiSerihu == 4)
    {
@@ -72,9 +72,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "I'm not sure how many there";
-      _root.PS02t_str = "are, but I can just show you";
-      _root.PS03t_str = "them as we go.";
+      _root.PS01t_str = "I'm not sure, but I can just";
+      _root.PS02t_str = "show you them as they come";
+      _root.PS03t_str = "to me.";
    }
    if(_root.mojiSerihu == 5)
    {
@@ -84,8 +84,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 15;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "For the first one, let's do";
-      _root.PS02t_str = "[Locked Swords].";
+      _root.PS01t_str = "Well, for the first one,";
+      _root.PS02t_str = "let's do [Locked Swords].";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 6)
@@ -97,7 +97,7 @@ function Serihu()
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
       _root.PS01t_str = "Locked swords can happen";
-      _root.PS02t_str = "somtimes whenever you clash";
+      _root.PS02t_str = "sometimes whenever you clash";
       _root.PS03t_str = "with your opponent.";
    }
    if(_root.mojiSerihu == 7)
@@ -110,9 +110,9 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "Only sometimes...?";
-      _root.PS02t_str = "Well, I guess it makes sense,";
-      _root.PS03t_str = "or we'd always be locking swords.";
+      _root.PS01t_str = "Only sometimes...? Well, I";
+      _root.PS02t_str = "guess that makes sense, or we'd";
+      _root.PS03t_str = "always be locking swords.";
    }
    if(_root.mojiSerihu == 8)
    {
@@ -181,8 +181,8 @@ function Serihu()
       _root.tManpuH = 0;
       _root.tKaoBan = 4;
       _root.PS01t_str = "Alright, next is [Face-off].";
-      _root.PS02t_str = "This one is easy to get.";
-      _root.PS03t_str = "";
+      _root.PS02t_str = "This one's easy and not too";
+      _root.PS03t_str = "scary.";
    }
    if(_root.mojiSerihu == 14)
    {
@@ -338,9 +338,9 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "Oh, this happens after an";
-      _root.PS02t_str = "all-out attack hits!";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Oh, this usually happens";
+      _root.PS02t_str = "after an all-out attack";
+      _root.PS03t_str = "connects!";
    }
    if(_root.mojiSerihu == 27)
    {
@@ -440,7 +440,7 @@ function Serihu()
       _root.tKaoBan = 4;
       _root.tKaoBBan = 33.5;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "Hey, here comes big sister,";
+      _root.PS01t_str = "Well, here comes big sister,";
       _root.PS02t_str = "ready or not～!!";
       _root.PS03t_str = "";
    }

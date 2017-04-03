@@ -1,5 +1,5 @@
 // Scene: PL: PrB3b Manpeita Dodging Tutorial
-// Status: Editing Complete
+// Status: Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -158,9 +158,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 12;
       _root.tKaoBan = 8;
-      _root.PS01t_str = "'How many hits would it take";
+      _root.PS01t_str = "\"How many hits would it take";
       _root.PS02t_str = "for him to turn the tides?";
-      _root.PS03t_str = "Two? Possibly three?'";
+      _root.PS03t_str = "Two? Possibly three?\"";
    }
    if(_root.mojiSerihu == 13)
    {

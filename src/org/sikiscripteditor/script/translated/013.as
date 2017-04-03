@@ -32,7 +32,7 @@ function Serihu()
       _root.tKaoBan = 17;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "うご…負け…た…";
+      _root.PS01t_str = "Ugh... I... lost...";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -46,9 +46,9 @@ function Serihu()
       _root.oKaoBan = 4;
       _root.oKaoBBan = 31;
       _root.oKaoBHenkou();
-      _root.PS01_str = "あはは、いいとこまで行ってたよ～";
-      _root.PS02_str = "でももうちょい攻撃に";
-      _root.PS03_str = "正確さがあればな～";
+      _root.PS01_str = "Ahaha, you really know how to";
+      _root.PS02_str = "to move, but you sure don't";
+      _root.PS03_str = "know where you're attacking～";
    }
    if(_root.mojiSerihu == 3)
    {
@@ -58,7 +58,7 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 3;
       _root.tKaoBan = 14;
-      _root.PS01t_str = "や、やっぱり俺の攻撃は";
+      _root.PS01t_str = "My";
       _root.PS02t_str = "雑…なのか？";
       _root.PS03t_str = "";
    }

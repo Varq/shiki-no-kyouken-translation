@@ -138,7 +138,7 @@ public class ScriptTools
 		    if(line.charAt(startIndex) == '"')
 		    {
 			    startIndex += 1;
-			    endIndex = startIndex + line.substring(startIndex).indexOf("\"");
+			    endIndex = startIndex + line.substring(startIndex).indexOf("\";");
 		    }
 		    else
 		    {

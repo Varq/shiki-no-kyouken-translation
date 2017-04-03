@@ -1,5 +1,5 @@
 // Scene: PL: MiB3b Dodging Tutorial
-// Status: Translation Complete
+// Status: Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -158,7 +158,7 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "Yes～ Your power has to more";
+      _root.PS01t_str = "Yes～ Your power has to be more";
       _root.PS02t_str = "than your opopnent's in order";
       _root.PS03t_str = "to dodge～";
    }
@@ -170,8 +170,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 5;
-      _root.PS01t_str = "As well, if your power is less";
-      _root.PS02t_str = "than your opopnents, they";
+      _root.PS01t_str = "Also, if your power is less";
+      _root.PS02t_str = "than your opponents, they";
       _root.PS03t_str = "can dodge too. You'll see.";
    }
    if(_root.mojiSerihu == 13)
@@ -242,7 +242,7 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "Yeah～ Knowing how to dodge is";
+      _root.PS01t_str = "Wow～ Knowing how to dodge is";
       _root.PS02t_str = "a really great tool to have～";
       _root.PS03t_str = "";
    }

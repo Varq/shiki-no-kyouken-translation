@@ -333,7 +333,9 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	{
 		String topText = scriptArray[scriptArrayIndex].getLatestLine(ScriptTools.TOP, ScriptTools.TRANSLATED);
 		String botText = scriptArray[scriptArrayIndex].getLatestLine(ScriptTools.BOT, ScriptTools.TRANSLATED);
-		try{
+                topText = topText.replace("\\", "");
+                botText = botText.replace("\\", "");
+                try{
 		//System.out.println(topText + "\n" + botText);
 		topTranslatedText.setText(topText);
 		botTranslatedText.setText(botText);
@@ -553,7 +555,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	private void setCodeAreaCaret()
 	{
 		// New line in code
-		String targetLine = "mojiSerihu == " + (scriptArray[scriptArrayIndex].getIndex() + 1) + ")";
+		String targetLine = "mojiSerihu == " + (scriptArray[scriptArrayIndex].getIndex()) + ")";
 		String targetTop = "PS01";
 		String targetBot = "PS01t";
 		int positionOffset = 8;
@@ -667,8 +669,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	 */
 	@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         scriptListScrollPane = new javax.swing.JScrollPane();
@@ -728,10 +729,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         scriptList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         scriptList.setSelectionBackground(new java.awt.Color(102, 153, 255));
-        scriptList.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        scriptList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 scriptListMouseClicked(evt);
             }
         });
@@ -751,10 +750,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         currentLineSlider.setPaintLabels(true);
         currentLineSlider.setPaintTicks(true);
         currentLineSlider.setValue(1);
-        currentLineSlider.addChangeListener(new javax.swing.event.ChangeListener()
-        {
-            public void stateChanged(javax.swing.event.ChangeEvent evt)
-            {
+        currentLineSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 currentLineSliderStateChanged(evt);
             }
         });
@@ -839,10 +836,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         botOriginalText.setBounds(10, 260, 338, 100);
 
         topCopyButton.setText("Copy");
-        topCopyButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        topCopyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 topCopyButtonActionPerformed(evt);
             }
         });
@@ -850,10 +845,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         topCopyButton.setBounds(10, 180, 80, 23);
 
         botCopyButton.setText("Copy");
-        botCopyButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        botCopyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botCopyButtonActionPerformed(evt);
             }
         });
@@ -914,10 +907,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         scriptNumberLabel.setBounds(10, 10, 50, 20);
 
         statusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"", "Not Started", "Translation In Progress", "Translation Complete", "Editing In Progress", "Editing Complete", "Complete" }));
-        statusComboBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        statusComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 statusComboBoxActionPerformed(evt);
             }
         });
@@ -953,10 +944,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         saveItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         saveItem.setText("Save");
-        saveItem.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        saveItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveItemActionPerformed(evt);
             }
         });
@@ -968,10 +957,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         undoItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
         undoItem.setText("Undo");
-        undoItem.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        undoItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 undoItemActionPerformed(evt);
             }
         });
@@ -979,10 +966,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         redoItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         redoItem.setText("Redo");
-        redoItem.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        redoItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 redoItemActionPerformed(evt);
             }
         });
@@ -994,10 +979,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         reencodeItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         reencodeItem.setText("Re-encode");
-        reencodeItem.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        reencodeItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reencodeItemActionPerformed(evt);
             }
         });
@@ -1005,10 +988,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         nextLineItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_J, java.awt.event.InputEvent.CTRL_MASK));
         nextLineItem.setText("Next Line");
-        nextLineItem.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        nextLineItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextLineItemActionPerformed(evt);
             }
         });
@@ -1016,10 +997,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         prevLineItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.CTRL_MASK));
         prevLineItem.setText("Previous Line");
-        prevLineItem.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        prevLineItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 prevLineItemActionPerformed(evt);
             }
         });
@@ -1027,10 +1006,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         nextScriptItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
         nextScriptItem.setText("Next Script");
-        nextScriptItem.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        nextScriptItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextScriptItemActionPerformed(evt);
             }
         });
@@ -1038,10 +1015,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         prevScriptItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
         prevScriptItem.setText("Previous Script");
-        prevScriptItem.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        prevScriptItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 prevScriptItemActionPerformed(evt);
             }
         });
@@ -1053,10 +1028,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         downloadListItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, java.awt.event.InputEvent.CTRL_MASK));
         downloadListItem.setText("Download List");
-        downloadListItem.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        downloadListItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 downloadListItemActionPerformed(evt);
             }
         });
@@ -1068,10 +1041,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         nameListItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         nameListItem.setText("Names List");
-        nameListItem.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        nameListItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameListItemActionPerformed(evt);
             }
         });

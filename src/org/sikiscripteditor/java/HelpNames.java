@@ -26,82 +26,61 @@ public class HelpNames extends javax.swing.JFrame
 	 */
 	@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
-        namesScrollPane = new javax.swing.JScrollPane();
-        namesPanel = new javax.swing.JPanel();
+        scrollPane = new javax.swing.JScrollPane();
+        splitPane = new javax.swing.JSplitPane();
         originalNameList = new javax.swing.JList<>();
         translatedNameList = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        namesScrollPane.setBorder(null);
+        scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         originalNameList.setFont(new java.awt.Font("HGｺﾞｼｯｸE", 0, 18)); // NOI18N
-        originalNameList.setModel(new javax.swing.AbstractListModel<String>()
-        {
+        originalNameList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "緋月絶阿", "龍双里観", "銀狼", "出雲学人", "恵", "吾已", "比嘉総一郎", "田神梅千代", "竹千代", "平賀文吾", "梅松", "国松", "竹松", "駒内景緒", "桜坂幸運", "茂作", "曳田不動", "二重松", "毒島髑髏兵衛", "愛餓男", "亜細亜", "壱智村信咲", "壱智村香奈伊", "塚森瑞鶴", "塚森倉之助", "三田村行脚", "岡田呉羽", "岸部独眼流", "遊侠勝機", "遊侠厳顔", "川上空也", "須藤健之助", "万平太", "西中練", "牙氷", "姫喜円琥", "倉井五平", "二条両角", "那由詫", "喜質勘", "楽宗流", "我忘丸", "貞元理解", "貞元", "志波尚", "疎野紫闇", "経詠", "試金石", "吉原搾取", "大場遼太郎", "片山真", "新井瞬平", "松田禍災", "松田妖怪", "逆活", "フェイルバー・ロウペ", "キエマ・ブラック", "ギヤマン", "サニ", "リーチェル・ディッヒ" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        originalNameList.addListSelectionListener(new javax.swing.event.ListSelectionListener()
-        {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt)
-            {
+        originalNameList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 originalNameListValueChanged(evt);
             }
         });
+        splitPane.setLeftComponent(originalNameList);
 
         translatedNameList.setFont(new java.awt.Font("HGｺﾞｼｯｸE", 0, 18)); // NOI18N
-        translatedNameList.setModel(new javax.swing.AbstractListModel<String>()
-        {
+        translatedNameList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "HIZUKI ZETSUA", "RYUUSOU SATOMI", "GINROU", "IZUMO GAKUTO", "MEGUMI", "AKO", "HIGA SOUICHIROU", "TAGAMI UMECHIYO", "TAKECHIYO", "HIRAGA BUNGO", "UMEMATSU", "KUNIMATSU", "TAKEMATSU", "KOMAUCHI KEIO", "SAKURAZAKA KOUUN", "MOSAKU", "HIKITA FUDOU", "NIJYUUMATSU", "BUSUJIMA DOKUROBEE", "AI UEO", "AJIA", "ICHIMURA SHINSHYOU", "ICHIMURA KANAI", "TSUKAMORI ZUIKAKU", "TSUKAMORI KURANOSOKE", "MITAMURA ANGYA", "OKADA KUREHA", "KISHIBE DOKUGANRYUU", "YUUKYOU SYOUKI", "YUUKYOU GENGAN", "KAWAKAMI KUUYA", "SUDOU KENNOSUKE", "MANPEITA", "SAICHUU REN", "GAHYOU", "KIKI ENKU", "KURAI GOHEI", "NIJYOU RYOUKAKU", "NAYUTA", "SASHICHI KAN", "RAKU ZOURU", "GABOUMARU", "SADAMOTO RIKAI", "SADAMOTO", "SHIBA SHYOU", "SONO SHIAN", "GYOUEI", "SHIKINSEKI", "YOSHIHARA SAKUSHYU", "OOBA RYOUTAROU", "KATAYAMA MAKOTO", "ARAI SHYUNPEI", "MATSUDA KASAI", "MATSUDA YOUKAI", "SAKAIKI", "FEIRUBAA ROUPE", "KIEMA BURAKKU", "GIYAMAN", "SANI", "RIICHERU DI-HI" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        translatedNameList.addListSelectionListener(new javax.swing.event.ListSelectionListener()
-        {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt)
-            {
+        translatedNameList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 translatedNameListValueChanged(evt);
             }
         });
+        splitPane.setRightComponent(translatedNameList);
 
-        javax.swing.GroupLayout namesPanelLayout = new javax.swing.GroupLayout(namesPanel);
-        namesPanel.setLayout(namesPanelLayout);
-        namesPanelLayout.setHorizontalGroup(
-            namesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, namesPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(originalNameList)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(translatedNameList)
-                .addGap(6, 6, 6))
-        );
-        namesPanelLayout.setVerticalGroup(
-            namesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, namesPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(namesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(originalNameList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(translatedNameList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        namesScrollPane.setViewportView(namesPanel);
+        scrollPane.setViewportView(splitPane);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(namesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(namesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(6, 6, 6)
+                .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+                .addGap(6, 6, 6))
         );
 
         pack();
@@ -120,9 +99,9 @@ public class HelpNames extends javax.swing.JFrame
     }//GEN-LAST:event_translatedNameListValueChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel namesPanel;
-    private javax.swing.JScrollPane namesScrollPane;
     private javax.swing.JList<String> originalNameList;
+    private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JSplitPane splitPane;
     private javax.swing.JList<String> translatedNameList;
     // End of variables declaration//GEN-END:variables
 }

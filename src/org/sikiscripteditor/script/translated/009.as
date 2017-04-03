@@ -107,8 +107,8 @@ function Serihu()
       _root.oManpuH = 12;
       _root.oKaoBan = 8;
       _root.PS01_str = "Ugh...... I guess you can't";
-      _root.PS02_str = "help it if Kiki's the one";
-      _root.PS03_str = "to tell you...";
+      _root.PS02_str = "help it if it's Kiki giving";
+      _root.PS03_str = "the orders...";
    }
    if(_root.mojiSerihu == 8)
    {
@@ -119,8 +119,8 @@ function Serihu()
       _root.oManpuH = 0;
       _root.oKaoBan = 7;
       _root.PS01_str = "But this means that she";
-      _root.PS02_str = "doesn't think I can handle";
-      _root.PS03_str = "myself!";
+      _root.PS02_str = "doesn't think I can take care";
+      _root.PS03_str = "of myself!";
    }
    if(_root.mojiSerihu == 9)
    {

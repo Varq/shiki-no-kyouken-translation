@@ -71,7 +71,7 @@ function Serihu()
       _root.oKaoBan = 2;
       _root.PS01_str = "Yeah, but if I could, the";
       _root.PS02_str = "outcome would have been";
-      _root.PS03_str = "different if I could.";
+      _root.PS03_str = "different.";
    }
    if(_root.mojiSerihu == 5)
    {
@@ -116,8 +116,8 @@ function Serihu()
       _root.tManpuH = 1;
       _root.tKaoBan = 8;
       _root.PS01t_str = "...............";
-      _root.PS02t_str = "You never talk like this,";
-      _root.PS03t_str = "Manpeita...";
+      _root.PS02t_str = "Uh, Manpeita... I've never";
+      _root.PS03t_str = "heard you talk like that...";
    }
    if(_root.mojiSerihu == 9)
    {

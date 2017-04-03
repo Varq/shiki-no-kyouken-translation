@@ -1,5 +1,5 @@
 // Scene: PL: PoB1 IN Zetsua Saichuu Manpeita
-// Status: Editing Complete
+// Status: Editing In Progress
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -45,9 +45,9 @@ function Serihu()
       _root.tKaoBan = 4;
       _root.tKaoBBan = 32;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "Uhaha,";
-      _root.PS02t_str = "You'll never win against me.";
-      _root.PS03t_str = "Count on it, Zetsua～";
+      _root.PS01t_str = "Uhaha, You'll never win";
+      _root.PS02t_str = "against me. Count on it,";
+      _root.PS03t_str = "Zetsua～";
    }
    if(_root.mojiSerihu == 3)
    {
@@ -56,9 +56,9 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 4;
       _root.oKaoBan = 11;
-      _root.PS01_str = "Why you...";
-      _root.PS02_str = "Think what you want, but";
-      _root.PS03_str = "that was just beginner's luck!";
+      _root.PS01_str = "Why you... Think what you";
+      _root.PS02_str = "want, but that was just";
+      _root.PS03_str = "beginner's luck!";
    }
    if(_root.mojiSerihu == 4)
    {
@@ -90,8 +90,8 @@ function Serihu()
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
       _root.PS01t_str = "Hey now, we're about the same";
-      _root.PS02t_str = "age. I'm just stronger.";
-      _root.PS03t_str = "Am I wrong?";
+      _root.PS02t_str = "age. I'm just stronger. Ain't";
+      _root.PS03t_str = "that right?";
    }
    if(_root.mojiSerihu == 7)
    {
@@ -215,9 +215,9 @@ function Serihu()
       _root.oKaoBan = 4;
       _root.oKaoBBan = 32;
       _root.oKaoBHenkou();
-      _root.PS01_str = "No, no, no.";
-      _root.PS02_str = "We were just having a man to ";
-      _root.PS03_str = "man chat. Right, Zetsua?";
+      _root.PS01_str = "No, no, no. We were just";
+      _root.PS02_str = "having a man to man talk.";
+      _root.PS03_str = "Isn't that right, Zetsua?";
    }
    if(_root.mojiSerihu == 17)
    {
@@ -226,9 +226,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 1;
       _root.tKaoBan = 9;
-      _root.PS01t_str = "Yeah, just beating the crap";
-      _root.PS02t_str = "out of each other...";
-      _root.PS03t_str = "That's chatting all right...";
+      _root.PS01t_str = "Oh yeah, just beating the crap";
+      _root.PS02t_str = "out of each other... That's";
+      _root.PS03t_str = "talking all right...";
    }
    if(_root.mojiSerihu == 18)
    {
@@ -240,9 +240,9 @@ function Serihu()
       _root.oKaoBan = 6;
       _root.oKaoBBan = 31;
       _root.oKaoBHenkou();
-      _root.PS01_str = "Oh, I see...";
-      _root.PS02_str = "Training without me again.";
-      _root.PS03_str = "You always do this!";
+      _root.PS01_str = "Oh, I see... Training without";
+      _root.PS02_str = "me again? You guys always";
+      _root.PS03_str = "leave me out...";
    }
    if(_root.mojiSerihu == 19)
    {
@@ -291,7 +291,7 @@ function Serihu()
       _root.tManpuH = 0;
       _root.tKaoBan = 8;
       _root.PS01t_str = "Why don't you guys just";
-      _root.PS02t_str = "let me join in!? Huh?";
+      _root.PS02t_str = "let me join in, huh?";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 23)
@@ -339,8 +339,8 @@ function Serihu()
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
       _root.PS01_str = "Ugh, fighting isn't supposed";
-      _root.PS02_str = "to be about 'working";
-      _root.PS03_str = "together'...";
+      _root.PS02_str = "to be about \"working";
+      _root.PS03_str = "together\"...";
    }
    if(_root.mojiSerihu == 27)
    {

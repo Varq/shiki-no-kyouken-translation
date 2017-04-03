@@ -1,5 +1,5 @@
 // Scene: PL: PrB4 Kiki Battle
-// Status: Translation Complete
+// Status: Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -72,7 +72,7 @@ function Serihu()
       _root.oKaoBan = 8;
       _root.PS01_str = "What did you put Manpeita and";
       _root.PS02_str = "Saichuu up to!? They were";
-      _root.PS03_str = "going easy on me!!";
+      _root.PS03_str = "trying to go easy on me!!";
    }
    if(_root.mojiSerihu == 5)
    {
@@ -179,8 +179,8 @@ function Serihu()
       _root.oManpuH = 6;
       _root.oKaoBan = 5;
       _root.PS01_str = "Don't worry, I'll be fine!!!";
-      _root.PS02_str = "Well, if you really want to";
-      _root.PS03_str = "help, I guess you can.";
+      _root.PS02_str = "But if you really wanted to";
+      _root.PS03_str = "help, isn't there a better way?";
    }
    if(_root.mojiSerihu == 14)
    {
@@ -190,8 +190,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 6;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "You want me to help～?";
-      _root.PS02t_str = "";
+      _root.PS01t_str = "You still want me to help";
+      _root.PS02t_str = "you～?";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 15)
@@ -203,8 +203,8 @@ function Serihu()
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
       _root.PS01t_str = "Well then, your big sister";
-      _root.PS02t_str = "can help by being your";
-      _root.PS03t_str = "training partner.";
+      _root.PS02t_str = "can be your training partner";
+      _root.PS03t_str = "and help you with combat.";
    }
    if(_root.mojiSerihu == 16)
    {
@@ -238,9 +238,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 7;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "That's right, this way I can";
-      _root.PS02t_str = "watch and gently help a";
-      _root.PS03t_str = "beginner out～";
+      _root.PS01t_str = "That's right! This way I can";
+      _root.PS02t_str = "see how you're doing and push";
+      _root.PS03t_str = "you in the right direction～";
    }
    if(_root.mojiSerihu == 19)
    {
@@ -276,7 +276,7 @@ function Serihu()
       _root.oKaoBan = 19;
       _root.PS01_str = "No, no! I'm just saying if I";
       _root.PS02_str = "was your partner, it would";
-      _root.PS03_str = "be really hard on me!";
+      _root.PS03_str = "be hard for me to keep up!";
    }
    if(_root.mojiSerihu == 22)
    {
@@ -298,7 +298,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 12;
       _root.oKaoBan = 8;
-      _root.PS01_str = "そんな、的";
+      _root.PS01_str = "Okay, you better promise me...";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -323,8 +323,8 @@ function Serihu()
       _root.oManpuH = 10;
       _root.oKaoBan = 2;
       _root.PS01_str = "Situations? Are you talking";
-      _root.PS02_str = "when those balances show up?";
-      _root.PS03_str = "";
+      _root.PS02_str = "about when those balances";
+      _root.PS03_str = "show up?";
    }
    if(_root.mojiSerihu == 26)
    {
@@ -334,9 +334,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "Yep, that's right! There are";
-      _root.PS02t_str = "lots of situations, so I'll";
-      _root.PS03t_str = "just give an overview.";
+      _root.PS01t_str = "Yep, that's right! There's";
+      _root.PS02t_str = "a lot to it, so I'll just give";
+      _root.PS03t_str = "you an overview.";
    }
    if(_root.mojiSerihu == 27)
    {

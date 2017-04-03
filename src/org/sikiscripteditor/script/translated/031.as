@@ -1,5 +1,5 @@
 // Scene: PL: PoB3 Living on the mountain Context
-// Status: Translation Complete
+// Status: Editing In Progress
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -115,8 +115,8 @@ function Serihu()
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
       _root.PS01t_str = "Hm～ Even then... Sometimes";
-      _root.PS02t_str = "I just want to go climb down";
-      _root.PS03t_str = "and maybe look for a bit.";
+      _root.PS02t_str = "I just want to climb down";
+      _root.PS03t_str = "and maybe take a look around.";
    }
    if(_root.mojiSerihu == 8)
    {
@@ -154,8 +154,8 @@ function Serihu()
       _root.oKaoBan = 8;
       _root.oKaoBBan = 32;
       _root.oKaoBHenkou();
-      _root.PS01_str = "And? What're going to do if";
-      _root.PS02_str = "someone finds out? Are you";
+      _root.PS01_str = "And? What're you going to do";
+      _root.PS02_str = "if someone finds out? Are you";
       _root.PS03_str = "willing to take the hit?";
    }
    if(_root.mojiSerihu == 11)
@@ -275,8 +275,8 @@ function Serihu()
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
       _root.PS01t_str = "Well, once Zetsua catches up";
-      _root.PS02t_str = "on his lessons, we should";
-      _root.PS03t_str = "finally be all the same level.";
+      _root.PS02t_str = "on his lessons, we should all";
+      _root.PS03t_str = "finally be the same level.";
    }
    if(_root.mojiSerihu == 20)
    {
@@ -289,8 +289,8 @@ function Serihu()
       _root.oKaoBBan = 32;
       _root.oKaoBHenkou();
       _root.PS01_str = "Except for Zetsua, we all have";
-      _root.PS02_str = "the authorization to take down";
-      _root.PS03_str = "strangers on this mountain.";
+      _root.PS02_str = "permission to take down any";
+      _root.PS03_str = "strangers we see around here.";
    }
    if(_root.mojiSerihu == 21)
    {
@@ -302,7 +302,7 @@ function Serihu()
       _root.tKaoBan = 9;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "Ah, yeah.";
+      _root.PS01t_str = "Ah... yeah.";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -314,9 +314,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 6;
       _root.oKaoBan = 4;
-      _root.PS01_str = "Oh, Zetsua's nervous～ Is";
-      _root.PS02_str = "little Zetsua scared all of";
-      _root.PS03_str = "a sudden?";
+      _root.PS01_str = "Oh, he's nervous～ Is little";
+      _root.PS02_str = "Zetsua scared all of a";
+      _root.PS03_str = "sudden?";
    }
    if(_root.mojiSerihu == 23)
    {
@@ -329,8 +329,8 @@ function Serihu()
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
       _root.PS01t_str = "Don't worry, Zetsua. We're";
-      _root.PS02t_str = "stronger than anyone who ";
-      _root.PS03t_str = "we'll encounter.";
+      _root.PS02t_str = "stronger than anyone who";
+      _root.PS03t_str = "will show up here.";
    }
    if(_root.mojiSerihu == 24)
    {
@@ -356,7 +356,7 @@ function Serihu()
       _root.tKaoBan = 6;
       _root.tKaoBBan = 32;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "You're overthinkg it. What";
+      _root.PS01t_str = "You're overthinking it. What";
       _root.PS02t_str = "reason would anyone but a spy";
       _root.PS03t_str = "want to be doing up here?";
    }
@@ -398,9 +398,9 @@ function Serihu()
       _root.oKaoBan = 4;
       _root.oKaoBBan = 32;
       _root.oKaoBHenkou();
-      _root.PS01_str = "Alright, next time we see";
-      _root.PS02_str = "someone alone, let's let";
-      _root.PS03_str = "Zetsua deal with them!!";
+      _root.PS01_str = "Alright, how about this. Next";
+      _root.PS02_str = "time we spot someone alone,";
+      _root.PS03_str = "you can deal with them!!";
    }
    if(_root.mojiSerihu == 29)
    {
