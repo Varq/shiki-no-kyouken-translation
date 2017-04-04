@@ -147,7 +147,7 @@ function Serihu()
       _root.tKaoBan = 4;
       _root.PS01t_str = "After this, we should start";
       _root.PS02t_str = "mass-producing weapons.";
-      _root.PS03t_str = "Zetsu! Let's get to work!";
+      _root.PS03t_str = "Zetsua! Let's get to work!";
    }
    if(_root.mojiSerihu == 12)
    {
@@ -303,9 +303,9 @@ function Serihu()
       _root.oKaoBan = 8;
       _root.oKaoBBan = 32;
       _root.oKaoBHenkou();
-      _root.PS01_str = "What!! Among us, you're";
-      _root.PS02_str = "probably the strongest. You ";
-      _root.PS03_str = "don't need training with us!!";
+      _root.PS01_str = "What!! You're probably the";
+      _root.PS02_str = "strongest one. You don't need";
+      _root.PS03_str = "to be training with us!!";
    }
    if(_root.mojiSerihu == 24)
    {
@@ -349,9 +349,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 9;
-      _root.PS01t_str = "Oh, Zetsua, I almost forgot.";
-      _root.PS02t_str = "Brother has been asking to see";
-      _root.PS03t_str = "you.";
+      _root.PS01t_str = "Hmph～ Oh, Zetsua, I almost";
+      _root.PS02t_str = "forgot. Brother has been";
+      _root.PS03t_str = "asking to see you.";
    }
    if(_root.mojiSerihu == 28)
    {
@@ -372,8 +372,8 @@ function Serihu()
       _root.tManpuH = 0;
       _root.tKaoBan = 9;
       _root.PS01t_str = "Yeah, he said he wanted to";
-      _root.PS02t_str = "teach you the fundamentals";
-      _root.PS03t_str = "of battle.";
+      _root.PS02t_str = "go through the fundamentals";
+      _root.PS03t_str = "with you.";
    }
    if(_root.mojiSerihu == 30)
    {
@@ -384,7 +384,7 @@ function Serihu()
       _root.oKaoBan = 15;
       _root.PS01_str = "What! Are you sure it wasn't";
       _root.PS02_str = "something else he wanted to";
-      _root.PS03_str = "teach me?";
+      _root.PS03_str = "try teaching me!?";
    }
    if(_root.mojiSerihu == 31)
    {
@@ -404,8 +404,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 4;
       _root.oKaoBan = 11;
-      _root.PS01_str = "I've already done enough";
-      _root.PS02_str = "basics with him! I'm going to";
+      _root.PS01_str = "I don't need to be taught";
+      _root.PS02_str = "basics by him! I'd be glad to";
       _root.PS03_str = "beat some sense into that guy!";
    }
    if(_root.mojiSerihu == 33)

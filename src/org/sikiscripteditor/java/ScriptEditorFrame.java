@@ -110,7 +110,6 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	    
 	    scriptList.setListData(frameNames);
 		
-		// TODO: Get this to work!!!!!
 		scriptList.setCellRenderer(new MyCellRenderer());
 	}
 	
@@ -225,6 +224,18 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		currentLineSlider.setMaximum(maxValue);
 		currentLineSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, maxValue, 1));
 		
+		// TODO: Do I want this to work?
+		// Sets currentLineSlider's tick display depending on how many lines there are
+		/*if(maxValue > 200)
+			currentLineSlider.setMajorTickSpacing(20);
+		else if(maxValue > 100)
+			currentLineSlider.setMajorTickSpacing(15);
+		else if(maxValue > 50)
+			currentLineSlider.setMajorTickSpacing(10);
+		else
+			currentLineSlider.setMajorTickSpacing(5);*/
+		
+		
 		scriptList.setSelectedIndex(scriptArrayIndex);
 		
 		// Get rid of all undoables
@@ -333,13 +344,12 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	{
 		String topText = scriptArray[scriptArrayIndex].getLatestLine(ScriptTools.TOP, ScriptTools.TRANSLATED);
 		String botText = scriptArray[scriptArrayIndex].getLatestLine(ScriptTools.BOT, ScriptTools.TRANSLATED);
-                topText = topText.replace("\\", "");
-                botText = botText.replace("\\", "");
-                try{
-		//System.out.println(topText + "\n" + botText);
+		topText = topText.replace("\\", "");
+		botText = botText.replace("\\", "");
+		try{
 		topTranslatedText.setText(topText);
 		botTranslatedText.setText(botText);
-		}catch(Exception e){System.out.println("HERE");}
+		}catch(Exception e){ System.out.println(topText + "\n" + botText); System.out.println("HERE"); }
 	}
 	
 	private void highlightText(JTextPane pane)
@@ -491,7 +501,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 					}
 					break;
 				case TextBoxDocumentListener.TOP_TEXT:
-					/*scriptLine = scriptArray[scriptArrayIndex].getLatestLineNumber(ScriptTools.TOP);
+					scriptLine = scriptArray[scriptArrayIndex].getLatestLineNumber(ScriptTools.TOP);
 					target = "PS01_str = \"";
 					if(scriptLine >= 0)
 					{
@@ -499,13 +509,17 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 						if(!textCheck.equals(topTranslatedText.getText()))
 						{
 							String text = topTranslatedText.getText();
+							
 							line1 = text.substring(0, text.indexOf("\n"));
 							text = text.substring(text.indexOf("\n") + 1);
 							line2 = text.substring(0, text.indexOf("\n"));
 							text = text.substring(text.indexOf("\n") + 1);
 							line3 = text;
+							
 							endIndex1 = translatedCodeArea.getText().indexOf(target, translatedCodeArea.getText().indexOf("mojiSerihu == " + scriptLine));
 							startIndex2 = translatedCodeArea.getText().indexOf("}", endIndex1);
+							
+							
 							preCodeChange = translatedCodeArea.getText().substring(0, endIndex1);
 							postCodeChange = translatedCodeArea.getText().substring(startIndex2);
 							changedCode =	preCodeChange + target + line1 + "\";\n" +
@@ -513,12 +527,16 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 											"      _root.PS03_str = \"" + line3 + "\";\n   " +
 											postCodeChange;
 							translatedCodeArea.setText(changedCode);
+							
+							nextText = translatedCodeArea.getText();
+							scriptArray[scriptArrayIndex].setCode(ScriptTools.TRANSLATED, nextText);
+							scriptArray[scriptArrayIndex].setLines(ScriptTools.TRANSLATED, ScriptTools.decodeCode(scriptArray[scriptArrayIndex].getCode(ScriptTools.TRANSLATED)));
 							setCodeAreaCaret();
 						}
-					}*/
+					}
 					break;
 				case TextBoxDocumentListener.BOT_TEXT:
-					/*scriptLine = scriptArray[scriptArrayIndex].getLatestLineNumber(ScriptTools.BOT);
+					scriptLine = scriptArray[scriptArrayIndex].getLatestLineNumber(ScriptTools.BOT);
 					target = "PS01t_str = \"";
 					String text = botTranslatedText.getText();
 					if(scriptLine >= 0)
@@ -540,9 +558,13 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 											"      _root.PS03t_str = \"" + line3 + "\";\n   " +
 											postCodeChange;
 							translatedCodeArea.setText(changedCode);
+							
+							nextText = translatedCodeArea.getText();
+							scriptArray[scriptArrayIndex].setCode(ScriptTools.TRANSLATED, nextText);
+							scriptArray[scriptArrayIndex].setLines(ScriptTools.TRANSLATED, ScriptTools.decodeCode(scriptArray[scriptArrayIndex].getCode(ScriptTools.TRANSLATED)));
 							setCodeAreaCaret();
 						}
-					}*/
+					}
 					break;
 			}
 			
@@ -552,12 +574,12 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	
 	// Sets the code area to vertically center the viewport to the caret
 	// FIXME: Does not center caret in the same position on both sides
+	// TODO: Figure out how to set position ahead by 1 for BOT lines
 	private void setCodeAreaCaret()
 	{
 		// New line in code
 		String targetLine = "mojiSerihu == " + (scriptArray[scriptArrayIndex].getIndex()) + ")";
-		String targetTop = "PS01";
-		String targetBot = "PS01t";
+		String target = "PS01";
 		int positionOffset = 8;
 		
 		// Searches the translated code
@@ -573,35 +595,32 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 				position = searchTextTranslated.indexOf(targetBot, position) + targetBot.length() + positionOffset;
 			}
 			else */
-			if(searchTextTranslated.contains(targetTop))
+			if(searchTextTranslated.contains(target))
 			{
-				position = searchTextTranslated.indexOf(targetTop, position) + targetTop.length() +  positionOffset;
+				position = searchTextTranslated.indexOf(target, position) + target.length() +  positionOffset;
 			}
 			
 			translatedCodeArea.setCaretPosition(position);
 			centerLineInScrollPane(translatedCodeArea);
 		}
 		
-		String searchTextOriginal = translatedCodeArea.getText();
+		// TODO: Implement this later. Have each code pane as a separate scroll pane.
+		// Search the original code and place the caret in the right position
+		/*String searchTextOriginal = translatedCodeArea.getText();
 		if(searchTextOriginal.length() > 0 && searchTextOriginal.contains(targetLine))
 		{
 			// Searches for next availble dialogue line
 			// TODO: Centers in next line if not found in current line, maybe fix this or leave it?
 			int position = searchTextOriginal.indexOf(targetLine) + targetLine.length();
-
-			/*if(searchTextOriginal.contains(targetBot))
+		
+			if(searchTextOriginal.contains(target))
 			{
-				position = searchTextOriginal.indexOf(targetBot, position) + targetBot.length() + positionOffset;
-			}
-			else */
-			if(searchTextOriginal.contains(targetTop))
-			{
-				position = searchTextOriginal.indexOf(targetTop, position) + targetTop.length() +  positionOffset;
+				position = searchTextOriginal.indexOf(target, position) + target.length() +  positionOffset;
 			}
 			
 			originalCodeArea.setCaretPosition(position);
 			centerLineInScrollPane(originalCodeArea);
-		}
+		}*/
 	}
 	
 	// TODO: Delete when tabs are implemented
@@ -669,7 +688,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	 */
 	@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         scriptListScrollPane = new javax.swing.JScrollPane();
@@ -729,8 +749,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         scriptList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         scriptList.setSelectionBackground(new java.awt.Color(102, 153, 255));
-        scriptList.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        scriptList.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 scriptListMouseClicked(evt);
             }
         });
@@ -749,9 +771,12 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         currentLineSlider.setMinorTickSpacing(1);
         currentLineSlider.setPaintLabels(true);
         currentLineSlider.setPaintTicks(true);
+        currentLineSlider.setSnapToTicks(true);
         currentLineSlider.setValue(1);
-        currentLineSlider.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+        currentLineSlider.addChangeListener(new javax.swing.event.ChangeListener()
+        {
+            public void stateChanged(javax.swing.event.ChangeEvent evt)
+            {
                 currentLineSliderStateChanged(evt);
             }
         });
@@ -789,9 +814,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         );
         codePaneLayout.setVerticalGroup(
             codePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(codePaneLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, codePaneLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(codePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(currentLineSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(currentLineSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -799,14 +825,12 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         visualDialogue.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        topTranslatedText.setEditable(false);
         topTranslatedText.setBackground(new java.awt.Color(205, 205, 205));
         topTranslatedText.setBorder(null);
         topTranslatedText.setFont(new java.awt.Font("HGｺﾞｼｯｸE", 0, 21)); // NOI18N
         visualDialogue.add(topTranslatedText);
         topTranslatedText.setBounds(530, 70, 338, 100);
 
-        botTranslatedText.setEditable(false);
         botTranslatedText.setBackground(new java.awt.Color(205, 205, 205));
         botTranslatedText.setBorder(null);
         botTranslatedText.setFont(new java.awt.Font("HGｺﾞｼｯｸE", 0, 21)); // NOI18N
@@ -836,8 +860,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         botOriginalText.setBounds(10, 260, 338, 100);
 
         topCopyButton.setText("Copy");
-        topCopyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        topCopyButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 topCopyButtonActionPerformed(evt);
             }
         });
@@ -845,8 +871,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         topCopyButton.setBounds(10, 180, 80, 23);
 
         botCopyButton.setText("Copy");
-        botCopyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        botCopyButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 botCopyButtonActionPerformed(evt);
             }
         });
@@ -907,8 +935,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         scriptNumberLabel.setBounds(10, 10, 50, 20);
 
         statusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"", "Not Started", "Translation In Progress", "Translation Complete", "Editing In Progress", "Editing Complete", "Complete" }));
-        statusComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        statusComboBox.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 statusComboBoxActionPerformed(evt);
             }
         });
@@ -944,8 +974,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         saveItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         saveItem.setText("Save");
-        saveItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        saveItem.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 saveItemActionPerformed(evt);
             }
         });
@@ -957,8 +989,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         undoItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
         undoItem.setText("Undo");
-        undoItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        undoItem.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 undoItemActionPerformed(evt);
             }
         });
@@ -966,8 +1000,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         redoItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         redoItem.setText("Redo");
-        redoItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        redoItem.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 redoItemActionPerformed(evt);
             }
         });
@@ -979,8 +1015,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         reencodeItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         reencodeItem.setText("Re-encode");
-        reencodeItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        reencodeItem.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 reencodeItemActionPerformed(evt);
             }
         });
@@ -988,8 +1026,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         nextLineItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_J, java.awt.event.InputEvent.CTRL_MASK));
         nextLineItem.setText("Next Line");
-        nextLineItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        nextLineItem.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 nextLineItemActionPerformed(evt);
             }
         });
@@ -997,8 +1037,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         prevLineItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.CTRL_MASK));
         prevLineItem.setText("Previous Line");
-        prevLineItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        prevLineItem.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 prevLineItemActionPerformed(evt);
             }
         });
@@ -1006,8 +1048,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         nextScriptItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
         nextScriptItem.setText("Next Script");
-        nextScriptItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        nextScriptItem.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 nextScriptItemActionPerformed(evt);
             }
         });
@@ -1015,8 +1059,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         prevScriptItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
         prevScriptItem.setText("Previous Script");
-        prevScriptItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        prevScriptItem.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 prevScriptItemActionPerformed(evt);
             }
         });
@@ -1028,8 +1074,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         downloadListItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, java.awt.event.InputEvent.CTRL_MASK));
         downloadListItem.setText("Download List");
-        downloadListItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        downloadListItem.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 downloadListItemActionPerformed(evt);
             }
         });
@@ -1041,8 +1089,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         nameListItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         nameListItem.setText("Names List");
-        nameListItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        nameListItem.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 nameListItemActionPerformed(evt);
             }
         });

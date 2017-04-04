@@ -1,5 +1,5 @@
 // Scene: PL: PoB3b Lost to Manpeita
-// Status: Not Started
+// Status: Translation In Progress
 function Serihu()
 {
    _root.mojiJunji01 = 0;
