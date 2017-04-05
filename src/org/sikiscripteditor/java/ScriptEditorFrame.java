@@ -54,6 +54,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	 */
 	public ScriptEditorFrame()
 	{
+		
+		
 		initComponents();
 		setWindowOptions();
 		setWKList();
@@ -90,12 +92,17 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		
 		scriptArray = new Script[fileList.length];
 
+		SplashScreen loading = new SplashScreen(scriptArray.length);
+		
 		for(int i = 0; i < scriptArray.length; i++)
 		{
 			fileName = fileList[i].getName().substring(0,3);
 			frameNumber = Integer.valueOf(fileName);
 			scriptArray[i] = new Script(frameNumber);
+			loading.increaseProgress();
 		}
+		
+		loading.dispose();
 	}
 	
 	// Sets script list
