@@ -71,7 +71,9 @@ public class Script
     {
 	    try
 	    {
-		    FileWriter fw = new FileWriter("src/org/sikiscripteditor/script/translated/" + String.format("%03d", scriptNumber) + ".as");
+			//String filePath = getClass().getResource("../script/translated/" + String.format("%03d", scriptNumber) + ".as").getFile();
+		    //FileWriter fw = new FileWriter(filePath);
+			FileWriter fw = new FileWriter("src/org/sikiscripteditor/script/translated/" + String.format("%03d", scriptNumber) + ".as");
 		    BufferedWriter bw = new BufferedWriter(fw);
 
 		    bw.write(translatedCode);
@@ -238,71 +240,76 @@ public class Script
 	    }
 
 	    String expr = String.format("%02d", expression);
-	    String filename = "/org/sikiscripteditor/images/portraits/" + charID + "/" + charID + "_" + expr + ".png";
+	    //String filename = getClass().getResource("../images/portraits/" + charID + "/" + charID + "_" + expr + ".png").getFile();
+		String filename = "/org/sikiscripteditor/images/portraits/" + charID + "/" + charID + "_" + expr + ".png";
 
 	    return filename;
     }
 
     public String getLatestEmoji(boolean isTop)
     {
-	String emojiID = "99";
+		String emojiID = "99";
 
-	// Iterate backwards until a valid emoji is found
-	for(int i = getRealIndex(); i >= 0 && emojiID.equals("99"); i--)
-	{
-	    if(!String.format("%02d", originalLines[i].getEmoji(isTop)).equals("99") &&
-			    emojiID.equals("99"))
-	    {
-		emojiID = String.format("%02d", originalLines[i].getEmoji(isTop));
-	    }
-	}
+		// Iterate backwards until a valid emoji is found
+		for(int i = getRealIndex(); i >= 0 && emojiID.equals("99"); i--)
+		{
+			if(!String.format("%02d", originalLines[i].getEmoji(isTop)).equals("99") &&
+					emojiID.equals("99"))
+			{
+			emojiID = String.format("%02d", originalLines[i].getEmoji(isTop));
+			}
+		}
 
-	String filename = "/org/sikiscripteditor/images/emoji/" + emojiID + ".png";
+		//String filename = getClass().getResource("../images/emoji/" + emojiID + ".png").getFile();
+		String filename = "/org/sikiscripteditor/images/emoji/" + emojiID + ".png";
 
-	return filename;
-    }
+		return filename;
+		}
 
-    public String getLatestName(boolean isTop)
-    {
-	String charID = "999";
+		public String getLatestName(boolean isTop)
+		{
+		String charID = "999";
 
-	// Iterate backwards until a valid name is found
-	for(int i = getRealIndex(); i >= 0 && charID.equals("999"); i--)
-	{
-	    if(!Characters.CharacterID.idToString(originalLines[i].getChar(isTop)).equals("999") &&
-			    charID.equals("999"))
-	    {
-		charID = Characters.CharacterID.idToString(originalLines[i].getChar(isTop));
-	    }
-	}
+		// Iterate backwards until a valid name is found
+		for(int i = getRealIndex(); i >= 0 && charID.equals("999"); i--)
+		{
+			if(!Characters.CharacterID.idToString(originalLines[i].getChar(isTop)).equals("999") &&
+					charID.equals("999"))
+			{
+			charID = Characters.CharacterID.idToString(originalLines[i].getChar(isTop));
+			}
+		}
 
-	String filename = "/org/sikiscripteditor/images/name/" + charID + ".png";
+		//String filename = getClass().getResource("../images/name/" + charID + ".png").getFile();
+		String filename = "/org/sikiscripteditor/images/name/" + charID + ".png";
 
-	return filename;
+		return filename;
     }
 
     public String getLatestBox(boolean isTop)
     {
-	String boxID = "1dull";
-	String filename;
+		String boxID = "1dull";
+		String filename;
 
-	// if not first time, sets the textbox to a dull grey instead of white
-	for(int i = getRealIndex(); i >= 0 && boxID.equals("1dull"); i--)
-	{
-		if(!String.format("%01d", originalLines[i].getBox(isTop)).equals("0"))
+		// if not first time, sets the textbox to a dull grey instead of white
+		for(int i = getRealIndex(); i >= 0 && boxID.equals("1dull"); i--)
 		{
-			boxID = String.format("%01d", originalLines[i].getBox(isTop));
+			if(!String.format("%01d", originalLines[i].getBox(isTop)).equals("0"))
+			{
+				boxID = String.format("%01d", originalLines[i].getBox(isTop));
 
-			if(i != getRealIndex())
-				boxID += "dull";
+				if(i != getRealIndex())
+					boxID += "dull";
 
-			filename = "/org/sikiscripteditor/images/chatbox/" + boxID + ".png";
-			return filename;
+				//filename = getClass().getResource("../images/chatbox/" + boxID + ".png").getFile();
+				filename = "/org/sikiscripteditor/images/chatbox/" + boxID + ".png";
+				return filename;
+			}
 		}
-	}
 
-	filename = "/org/sikiscripteditor/images/chatbox/" + boxID + ".png";
+		//filename = getClass().getResource("../images/chatbox/" + boxID + ".png").getFile();
+		filename = "/org/sikiscripteditor/images/chatbox/" + boxID + ".png";
 
-	return filename;
+		return filename;
     }
 }

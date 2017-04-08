@@ -5,12 +5,15 @@
  */
 package org.sikiscripteditor.java;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Varq
  */
 public class HelpNames extends javax.swing.JFrame
 {
+	ImageIcon icon;
 
 	/**
 	 * Creates new form HelpNames
@@ -18,6 +21,17 @@ public class HelpNames extends javax.swing.JFrame
 	public HelpNames()
 	{
 		initComponents();
+		setUp();
+	}
+	
+	private void setUp()
+	{
+		setName("Character Names");
+		try{
+			icon = new ImageIcon(getClass().getResource("../images/icon/icon.png")); 
+			setIconImage(icon.getImage());
+		}catch(NullPointerException | ArrayIndexOutOfBoundsException e) { icon = null;}
+		setVisible(true);
 	}
 
 	/**

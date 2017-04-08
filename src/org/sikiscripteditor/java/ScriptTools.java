@@ -164,8 +164,9 @@ public class ScriptTools
 	    else
 		    original = "translated";
 
-	    String filename = System.getProperty("user.dir") + "\\src\\org\\sikiscripteditor\\script\\" + original + "\\" + frameToString + ".as";
-	    FileReader fr = new FileReader(filename);
+		//String filePath = ScriptTools.class.getResource("../script/" + original + "/" + frameToString + ".as").getFile();
+	    String filePath = System.getProperty("user.dir") + "\\src\\org\\sikiscripteditor\\script\\" + original + "\\" + frameToString + ".as";
+	    FileReader fr = new FileReader(filePath);
 	    BufferedReader textReader = new BufferedReader(fr);
 
 	    String textData = "";

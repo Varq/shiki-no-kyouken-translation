@@ -54,8 +54,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	 */
 	public ScriptEditorFrame()
 	{
-		
-		
+		/*String s = "../script/translated/003.as";
+		JOptionPane.showConfirmDialog(null, "Test: " + getClass().getResource(s), "Confirm", JOptionPane.YES_NO_CANCEL_OPTION);*/
 		initComponents();
 		setWindowOptions();
 		setWKList();
@@ -85,9 +85,12 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		File directory;
 		File[] fileList;
 		String fileName;
+		String targetDirectory;
 		int frameNumber;
 
-		directory = new File("src/org/sikiscripteditor/script/translated");
+		//targetDirectory = "../script/translated/";
+		//directory = new File(getClass().getResource(targetDirectory).getFile());
+		directory = new File("src/org/sikiscripteditor/script/translated/");
 		fileList = directory.listFiles();
 		
 		scriptArray = new Script[fileList.length];
@@ -181,7 +184,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	{
 		ImageIcon icon;
 		try{
-			icon = new ImageIcon(getClass().getResource("/org/sikiscripteditor/images/icon/icon.png")); 
+			icon = new ImageIcon(getClass().getResource("../images/icon/icon.png")); 
 			this.setIconImage(icon.getImage());
 		}catch(NullPointerException | ArrayIndexOutOfBoundsException e) { icon = null;}
 	}
@@ -1237,13 +1240,6 @@ public class ScriptEditorFrame extends javax.swing.JFrame
     private void nameListItemActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nameListItemActionPerformed
     {//GEN-HEADEREND:event_nameListItemActionPerformed
         HelpNames namesListWindow = new HelpNames();
-		namesListWindow.setName("Character Names");
-		ImageIcon icon;
-		try{
-			icon = new ImageIcon(getClass().getResource("/org/sikiscripteditor/images/icon/icon.png")); 
-			this.setIconImage(icon.getImage());
-		}catch(NullPointerException | ArrayIndexOutOfBoundsException e) { icon = null;}
-		namesListWindow.setVisible(true);
     }//GEN-LAST:event_nameListItemActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
