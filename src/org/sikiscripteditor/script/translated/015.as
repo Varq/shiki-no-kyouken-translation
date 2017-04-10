@@ -1,5 +1,5 @@
 // Scene: PL: PrB3b Rematch Manpeita
-// Status: Not Started
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,7 +32,7 @@ function Serihu()
       _root.oKaoBan = 20;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "おーーい万平太ーー！！！";
+      _root.PS01_str = "Heeeeeey! Manpeitaaaaaa!!!";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -46,8 +46,8 @@ function Serihu()
       _root.tKaoBan = 9;
       _root.tKaoBBan = 31;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "お、絶阿ぁ";
-      _root.PS02t_str = "報復戦にきたかぁ？";
+      _root.PS01t_str = "Oh, Zetsua. Have you come";
+      _root.PS02t_str = "back for a grudge match?";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 3)
@@ -58,9 +58,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 1;
       _root.oKaoBan = 8;
-      _root.PS01_str = "報復戦って…やな響きだな…";
-      _root.PS02_str = "でも内容は合ってるぜ！";
-      _root.PS03_str = "";
+      _root.PS01_str = "Grudge match... is that what";
+      _root.PS02_str = "you call it...? Whatever, I'm";
+      _root.PS03_str = "here to fight!";
    }
    if(_root.mojiSerihu == 4)
    {
@@ -70,8 +70,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 7;
       _root.oKaoBan = 13;
-      _root.PS01_str = "今度こそ万平太から";
-      _root.PS02_str = "一本取らせてもらうぜ！！";
+      _root.PS01_str = "This time for sure, you'll be";
+      _root.PS02_str = "the one to pick up the pieces!";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 5)
@@ -81,8 +81,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "あははー、いいぞー";
-      _root.PS02t_str = "何度でもかかってこいよ～";
+      _root.PS01t_str = "Ahaha, that's a good one.";
+      _root.PS02t_str = "I'm ready whenever you are～";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 6)
@@ -93,9 +93,9 @@ function Serihu()
       _root.oHukidasi = 3;
       _root.oManpuH = 0;
       _root.oKaoBan = 3;
-      _root.PS01_str = "下手に攻撃しても逆効果だ";
-      _root.PS02_str = "とにかく、得意範囲内に来た時のみ";
-      _root.PS03_str = "攻撃するようにしよう…";
+      _root.PS01_str = "I have to be more careful with";
+      _root.PS02_str = "my attacks. I should only try";
+      _root.PS03_str = "to strike while he's in range.";
    }
    if(_root.mojiSerihu == 7)
    {
@@ -105,7 +105,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 6;
-      _root.PS01_str = "いっくぜーーー！！！！！";
+      _root.PS01_str = "Here I come!!!!!!";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }

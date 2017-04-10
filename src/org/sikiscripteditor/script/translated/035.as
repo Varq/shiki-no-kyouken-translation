@@ -1,5 +1,5 @@
-// Scene: 
-// Status: Not Started
+// Scene: PL: PoB6 End of Prologue
+// Status: Translation In Progress
 function Serihu()
 {
    _root.mojiJunji01 = 0;

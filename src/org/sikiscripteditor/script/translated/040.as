@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: ST: Cold Open
 // Status: Not Started
 function Serihu()
 {

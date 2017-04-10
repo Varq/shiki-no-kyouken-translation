@@ -1,5 +1,5 @@
-// Scene: 
-// Status: Not Started
+// Scene: PL: MiB5b Death Tutorial
+// Status: Translation In Progress
 function Serihu()
 {
    _root.mojiJunji01 = 0;

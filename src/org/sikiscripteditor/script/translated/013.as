@@ -1,5 +1,5 @@
 // Scene: PL: PoB3b Lost to Manpeita
-// Status: Translation In Progress
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -58,8 +58,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 3;
       _root.tKaoBan = 14;
-      _root.PS01t_str = "My";
-      _root.PS02t_str = "雑…なのか？";
+      _root.PS01t_str = "Am I... really not cut out for";
+      _root.PS02t_str = "this?";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 4)
@@ -70,7 +70,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 2;
       _root.oKaoBan = 3;
-      _root.PS01_str = "・・・・・・・・・・・・・・・";
+      _root.PS01_str = "...............";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -82,9 +82,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 11;
       _root.oKaoBan = 8;
-      _root.PS01_str = "絶阿は小物いじりしてる時は";
-      _root.PS02_str = "驚くほど正確で器用なのに";
-      _root.PS03_str = "なんで刀持つとああかな～";
+      _root.PS01_str = "Zetsua, you can attack really";
+      _root.PS02_str = "fast. You just need to be more";
+      _root.PS03_str = "precise with your aiming～";
    }
    if(_root.mojiSerihu == 6)
    {
@@ -94,8 +94,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 12;
       _root.tKaoBan = 8;
-      _root.PS01t_str = "うぐ、自分でもなんでか";
-      _root.PS02t_str = "よくわかんねぇよ…";
+      _root.PS01t_str = "Ugh, I know, I know. I still";
+      _root.PS02t_str = "don't understand...";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 7)
@@ -106,9 +106,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 2;
       _root.oKaoBan = 4;
-      _root.PS01_str = "まぁ";
-      _root.PS02_str = "二刀流ってのも慣れが必要だから";
-      _root.PS03_str = "焦る事はないさぁ";
+      _root.PS01_str = "Well, you're still learning";
+      _root.PS02_str = "how to handle dual wielding.";
+      _root.PS03_str = "Just be patient and practice.";
    }
    if(_root.mojiSerihu == 8)
    {
@@ -118,9 +118,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 12;
       _root.tKaoBan = 6;
-      _root.PS01t_str = "とは言っても…";
-      _root.PS02t_str = "悔しいものは悔しいし…";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "I've heard that already...";
+      _root.PS02t_str = "It's annoying and it'll keep";
+      _root.PS03t_str = "be annoying...";
    }
    if(_root.mojiSerihu == 9)
    {
@@ -130,9 +130,9 @@ function Serihu()
       _root.tHukidasi = 3;
       _root.tManpuH = 0;
       _root.tKaoBan = 8;
-      _root.PS01t_str = "くそ、やっぱり攻撃が雑だったか…";
-      _root.PS02t_str = "次はちゃんと得意範囲に";
-      _root.PS03t_str = "敵収めてから攻撃しよう…";
+      _root.PS01t_str = "Damn it, my offense is bad...";
+      _root.PS02t_str = "Next time I'll focus on";
+      _root.PS03t_str = "keeping him in my sweet spot...";
    }
    if(_root.mojiSerihu == 10)
    {

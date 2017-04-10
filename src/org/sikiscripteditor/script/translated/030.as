@@ -1,5 +1,5 @@
 // Scene: PL: PrB4 Rematch Kiki
-// Status: Not Started
+// Status: Translation In Progress
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,7 +32,7 @@ function Serihu()
       _root.oKaoBan = 6;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "姫喜姉！！";
+      _root.PS01_str = "Kiki!!";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -46,9 +46,9 @@ function Serihu()
       _root.tKaoBan = 4;
       _root.tKaoBBan = 33.5;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "お、絶阿～再戦に来たの？";
-      _root.PS02t_str = "う～、可愛いやつめ～";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Oh, Zetsua～ You came for our";
+      _root.PS02t_str = "rematch? Ooo～ This'll be";
+      _root.PS03t_str = "cute～";
    }
    if(_root.mojiSerihu == 3)
    {
@@ -58,8 +58,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 1;
       _root.oKaoBan = 9;
-      _root.PS01_str = "う、こんなのに負けたんだ俺…";
-      _root.PS02_str = "";
+      _root.PS01_str = "Hmph, you already think I'm";
+      _root.PS02_str = "going to lose...";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 4)
@@ -70,9 +70,9 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 7;
       _root.oKaoBan = 13;
-      _root.PS01_str = "とにかく、作戦は立ててきたぜ";
-      _root.PS02_str = "今度はこの前みたいには";
-      _root.PS03_str = "いかないぜ！";
+      _root.PS01_str = "However, I have a new";
+      _root.PS02_str = "strategy! You won't be able";
+      _root.PS03_str = "to win this time around!";
    }
    if(_root.mojiSerihu == 5)
    {
@@ -82,8 +82,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 15;
       _root.tKaoBan = 8;
-      _root.PS01t_str = "へぇ、作戦かぁ…";
-      _root.PS02t_str = "楽しみだなぁ";
+      _root.PS01t_str = "Oh, a new strategy... I can't";
+      _root.PS02t_str = "wait to see.";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 6)
@@ -94,9 +94,9 @@ function Serihu()
       _root.oHukidasi = 3;
       _root.oManpuH = 0;
       _root.oKaoBan = 7;
-      _root.PS01_str = "とにかく、特殊状況が終了した直後";
-      _root.PS02_str = "姫喜姉よりも先に攻撃するんだ！";
-      _root.PS03_str = "はずしてもかまわない…";
+      _root.PS01_str = "Alright, after a situtation,";
+      _root.PS02_str = "I need to pay attention to the";
+      _root.PS03_str = "results. Win or lose...";
    }
    if(_root.mojiSerihu == 7)
    {
@@ -106,7 +106,7 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 16;
       _root.oKaoBan = 11;
-      _root.PS01_str = "いくぜ姫喜姉！！！！";
+      _root.PS01_str = "Let's go, Kiki!!!!";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }

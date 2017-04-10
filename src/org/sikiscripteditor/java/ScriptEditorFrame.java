@@ -231,7 +231,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		int maxValue = scriptArray[scriptArrayIndex].getNumberOfLines();
 		if(maxValue < 1)
 			maxValue = 1;
-		currentLineSlider.setMaximum(maxValue);
+		currentLineSlider.setMaximum(maxValue - 1);
 		currentLineSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, maxValue, 1));
 		
 		// TODO: Do I want this to work?
@@ -257,13 +257,14 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	private void setLine(int targetLine)
 	{
 		// If the line isn't within bounds, set to one in bounds
-		try{
+		// TODO: Remove try catch if it works?
+		//try{
 		scriptArray[scriptArrayIndex].setIndex(targetLine);
 		int validLine = scriptArray[scriptArrayIndex].getIndex();
 		currentLineSpinner.setValue(validLine);
 		setDisplay();
 		setCodeAreaCaret();
-		}catch(Exception e){System.out.println(e.getMessage());}
+		//}catch(Exception e){System.out.println("Error: " + e.getMessage());}
 	}
 	
 	// Sets up everything in the visual dialogue and the point in the code
@@ -315,7 +316,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		botEmoji.setIcon(botIcon);
 	}
 	
-	// Sets the text in the visual dialogue
+	// Sets the text box in the visual dialogue
 	private void setTextBox()
 	{
 		// Set a dull color for possible inactive texts
@@ -358,8 +359,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		botText = botText.replace("\\", "");
 		try{
 		topTranslatedText.setText(topText);
+		}catch(Exception e){ topTranslatedText.setText(" "); }
+		try{
 		botTranslatedText.setText(botText);
-		}catch(Exception e){ System.out.println(topText + "\n" + botText); System.out.println("HERE"); }
+		}catch(Exception e){ botTranslatedText.setText(" "); }
 	}
 	
 	private void highlightText(JTextPane pane)

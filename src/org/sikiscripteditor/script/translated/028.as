@@ -1,5 +1,5 @@
 // Scene: PL: PoB4 Lost to Kiki
-// Status: Not Started
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,8 +32,8 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 33.5;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "ありゃあ…こんなもんか～";
-      _root.PS02t_str = "";
+      _root.PS01t_str = "Wow wee... That was a little";
+      _root.PS02t_str = "troublesome～";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 2)
@@ -46,9 +46,9 @@ function Serihu()
       _root.oKaoBan = 9;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "だ、だってしょうがないじゃん…";
-      _root.PS02_str = "姫喜姉相手に勝てるわけ無いじゃん";
-      _root.PS03_str = "";
+      _root.PS01_str = "I, I really can't do much...";
+      _root.PS02_str = "Especially when I have to go";
+      _root.PS03_str = "up against you...";
    }
    if(_root.mojiSerihu == 3)
    {
@@ -58,9 +58,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 2;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "いやいや、";
-      _root.PS02t_str = "もちろん本気は出してないよ";
-      _root.PS03t_str = "でもそれにしてもぉ…";
+      _root.PS01t_str = "Sure you can! I wasn't going";
+      _root.PS02t_str = "all out this time. I can try";
+      _root.PS03t_str = "harder if you want...";
    }
    if(_root.mojiSerihu == 4)
    {
@@ -70,8 +70,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 3;
       _root.oKaoBan = 14;
-      _root.PS01_str = "や、やめてくれ！！！";
-      _root.PS02_str = "そんな目で見るのは！！！";
+      _root.PS01_str = "N- no, that's okay!!! I don't";
+      _root.PS02_str = "think I could bare it all!!!";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 5)
@@ -82,7 +82,7 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 12;
       _root.tKaoBan = 6;
-      _root.PS01t_str = "・・・・・・・・・・・・・・";
+      _root.PS01t_str = "...............";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -94,9 +94,9 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 16;
       _root.oKaoBan = 18;
-      _root.PS01_str = "わ、わかった！！！";
-      _root.PS02_str = "もう一度！！";
-      _root.PS03_str = "もう一度勝負すっから！！！";
+      _root.PS01_str = "O-Okay! Fine!!!";
+      _root.PS02_str = "One more time!! I'll try one";
+      _root.PS03_str = "more match!!!";
    }
    if(_root.mojiSerihu == 7)
    {
@@ -106,8 +106,8 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 12;
       _root.oKaoBan = 6;
-      _root.PS01_str = "だから今日の所は";
-      _root.PS02_str = "作戦考えさせてくれ！！";
+      _root.PS01_str = "So today, I need to consider";
+      _root.PS02_str = "my battle strategy!!";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 8)
@@ -118,8 +118,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 9;
       _root.tKaoBan = 8;
-      _root.PS01t_str = "ほぉ、作戦？";
-      _root.PS02t_str = "面白そうだね～";
+      _root.PS01t_str = "Oh, battle strategy? This";
+      _root.PS02t_str = "should be interesting～";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 9)
@@ -130,8 +130,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 6;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "じゃあ再戦を楽しみにしてるよ～";
-      _root.PS02t_str = "";
+      _root.PS01t_str = "Well, I hope our rematch will";
+      _root.PS02t_str = "be an exciting one～";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 10)
@@ -157,9 +157,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 12;
       _root.oKaoBan = 8;
-      _root.PS01_str = "ふぅ、姫喜姉容赦ねぇのな…";
-      _root.PS02_str = "しっかし、作戦か…どうするかなぁ";
-      _root.PS03_str = "";
+      _root.PS01_str = "Wow, Kiki doesn't hold back...";
+      _root.PS02_str = "However, this rematch... How";
+      _root.PS03_str = "should I handle this?";
    }
    if(_root.mojiSerihu == 12)
    {
@@ -169,8 +169,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 7;
-      _root.PS01_str = "姫喜姉は攻撃の振りが遅かったな…";
-      _root.PS02_str = "と言う事は…";
+      _root.PS01_str = "Kiki's attacks start really";
+      _root.PS02_str = "slow... maybe I can...";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 13)
@@ -181,9 +181,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 11;
       _root.oKaoBan = 8;
-      _root.PS01_str = "う～ん、";
-      _root.PS02_str = "うまくいくかわかんねぇけど";
-      _root.PS03_str = "やってみるしかないか！！";
+      _root.PS01_str = "Yeah, I need to be quick. I";
+      _root.PS02_str = "don't have a choice but to";
+      _root.PS03_str = "take my chances on this.";
    }
    if(_root.mojiSerihu == 14)
    {
