@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: EX: True Zetsua Ending
 // Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "緋月絶阿はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "どうなったかをここに書くまでもないだろう";

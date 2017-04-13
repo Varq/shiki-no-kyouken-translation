@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: EX: Intro
 // Status: Not Started
 function Serihu()
 {

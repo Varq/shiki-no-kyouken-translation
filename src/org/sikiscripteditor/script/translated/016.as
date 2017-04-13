@@ -1,5 +1,5 @@
 // Scene: PL: PrB5a Kennosuke
-// Status: Translation In Progress
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,8 +32,8 @@ function Serihu()
       _root.tKaoBan = 3;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "あ、絶阿";
-      _root.PS02t_str = "どうだい？調子は";
+      _root.PS01t_str = "Oh, Zetsua. How's it going?";
+      _root.PS02t_str = "Is the training going well?";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 2)
@@ -46,8 +46,8 @@ function Serihu()
       _root.oKaoBan = 5;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "おう兄貴～";
-      _root.PS02_str = "絶好調よ！！";
+      _root.PS01_str = "Hey, brother～ It's been going";
+      _root.PS02_str = "great!!";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 3)
@@ -58,9 +58,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 5;
-      _root.PS01t_str = "そうか、それはよかった";
-      _root.PS02t_str = "じゃあそろそろ";
-      _root.PS03t_str = "僕が相手をする頃合いかな？";
+      _root.PS01t_str = "That's good. Then would this";
+      _root.PS02t_str = "be a good time to ask if you";
+      _root.PS03t_str = "could help me?";
    }
    if(_root.mojiSerihu == 4)
    {
@@ -70,7 +70,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 15;
       _root.oKaoBan = 15;
-      _root.PS01_str = "え？兄貴自ら？";
+      _root.PS01_str = "Huh? You need help?";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -82,9 +82,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "一応、絶阿達の監督責任は";
-      _root.PS02t_str = "僕にあるからね";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "More or less. I need you to";
+      _root.PS02t_str = "watch me and see how I'm";
+      _root.PS03t_str = "doing.";
    }
    if(_root.mojiSerihu == 6)
    {
@@ -94,9 +94,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "だからこそ、絶阿達には";
-      _root.PS02t_str = "しっかりと強くなってもらわないと";
-      _root.PS03t_str = "いけないからね";
+      _root.PS01t_str = "You've been getting stronger,";
+      _root.PS02t_str = "so I'd like to see how we";
+      _root.PS03t_str = "compare.";
    }
    if(_root.mojiSerihu == 7)
    {
@@ -106,8 +106,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 5;
-      _root.PS01t_str = "ちゃんと、";
-      _root.PS02t_str = "先生のお役に立てるようにね";
+      _root.PS01t_str = "Seriously, I heard that Master";
+      _root.PS02t_str = "gave you a special task.";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 8)
@@ -118,9 +118,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 12;
       _root.oKaoBan = 8;
-      _root.PS01_str = "ん～、俺は戦いじゃなくて";
-      _root.PS02_str = "建築とかその辺で期待されてる気が";
-      _root.PS03_str = "するんだけどなぁ…";
+      _root.PS01_str = "Hm... I'm still working on";
+      _root.PS02_str = "combat. I was just going to be";
+      _root.PS03_str = "checking out the architecture.";
    }
    if(_root.mojiSerihu == 9)
    {
@@ -130,9 +130,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 10;
-      _root.PS01t_str = "それでも強さは絶対条件だよ";
-      _root.PS02t_str = "いざと言う時自分の身を守れるのは";
-      _root.PS03t_str = "自分しかいないからね";
+      _root.PS01t_str = "Still, your power is scary.";
+      _root.PS02t_str = "If I were in a bind, I would";
+      _root.PS03t_str = "definitely want you on my side.";
    }
    if(_root.mojiSerihu == 10)
    {
@@ -142,9 +142,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 11;
       _root.oKaoBan = 10;
-      _root.PS01_str = "わかったよ兄貴…";
-      _root.PS02_str = "どっちも精進するよ";
-      _root.PS03_str = "";
+      _root.PS01_str = "Ok, I get it, brother...";
+      _root.PS02_str = "I'm always trying my best, and";
+      _root.PS03_str = "such.";
    }
    if(_root.mojiSerihu == 11)
    {
@@ -154,8 +154,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "よし、それじゃそろそろ";
-      _root.PS02t_str = "絶阿には上昇系を教えておこうか";
+      _root.PS01t_str = "Well, would you like to learn";
+      _root.PS02t_str = "about the Increase mechanic?";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 12)
@@ -166,7 +166,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 11;
       _root.oKaoBan = 15;
-      _root.PS01_str = "上昇系？";
+      _root.PS01_str = "Increase mechanic?";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -178,8 +178,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "じゃあとりあえず、";
-      _root.PS02t_str = "戦闘態勢をとってみよう";
+      _root.PS01t_str = "Let's get started right away.";
+      _root.PS02t_str = "Prepare your fighting stance.";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 14)

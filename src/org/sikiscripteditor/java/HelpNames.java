@@ -32,6 +32,7 @@ public class HelpNames extends javax.swing.JFrame
 			setIconImage(icon.getImage());
 		}catch(NullPointerException | ArrayIndexOutOfBoundsException e) { icon = null;}
 		setVisible(true);
+		scrollPane.getVerticalScrollBar().setUnitIncrement(16);
 	}
 
 	/**

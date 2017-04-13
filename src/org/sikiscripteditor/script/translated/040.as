@@ -1,5 +1,5 @@
 // Scene: ST: Cold Open
-// Status: Not Started
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,7 +32,7 @@ function Serihu()
       _root.oKaoBan = 6;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "はぁ！はぁ！！はぁ！！！！";
+      _root.PS01_str = "Ah! Ahhh!! Ahhhh!!!!";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -43,8 +43,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 26;
-      _root.PS01_str = "まずい、くそ！！";
-      _root.PS02_str = "こんなところで追いつかれたら…";
+      _root.PS01_str = "Crap, come on!! They'll";
+      _root.PS02_str = "catch me here for sure...";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 3)
@@ -54,7 +54,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 17;
-      _root.PS01_str = "ぐ、ちく・・・・しょう・・・・";
+      _root.PS01_str = "Ugh, damn... it...";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }

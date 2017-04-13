@@ -157,7 +157,7 @@ public class Script
 
     public int getNumberOfLines()
     {
-	    return originalLines.length;
+	    return originalLines.length - 1;
     }
 
     public String getCode(boolean isOriginal)

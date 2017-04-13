@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: EX: True Sakaiki Ending
 // Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "逆活のその後は、あえて語らないでおこう";
 _parent.DText_mc.itibun02_mc.saigo02 = "ここで、彼の言い分に一理あると思うかどうか";

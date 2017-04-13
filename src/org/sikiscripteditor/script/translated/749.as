@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: EX: Kureha Ending
 // Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "岡田呉羽はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "東山総連と会談で決着をつけ、白煙を除去し";

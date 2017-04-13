@@ -1,5 +1,5 @@
 // Scene: 
-// Status: Not Started
+// Status: Translation In Progress
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,7 +32,7 @@ function Serihu()
       _root.oKaoBan = 31;
       _root.oKaoBBan = 44;
       _root.oKaoBHenkou();
-      _root.PS01_str = "あ、ああ・・・・・・・";
+      _root.PS01_str = "Ah, ahhhhh.......";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }

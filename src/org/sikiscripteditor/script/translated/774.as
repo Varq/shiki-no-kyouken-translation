@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: EX: Kunimatsu Ending
 // Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "国松自己診断";
 _parent.DText_mc.itibun02_mc.saigo02 = "僕はみんなのバランサー";

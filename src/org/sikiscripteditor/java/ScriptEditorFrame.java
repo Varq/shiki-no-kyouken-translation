@@ -7,6 +7,7 @@ package org.sikiscripteditor.java;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Desktop;
 import javax.swing.ImageIcon;
 import javax.swing.JList;
 import javax.swing.JSlider;
@@ -22,6 +23,10 @@ import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
@@ -44,10 +49,12 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	
 	private WKKanjiList wklist;
 	private DefaultHighlighter.DefaultHighlightPainter cyanPainter = new DefaultHighlighter.DefaultHighlightPainter(Color.CYAN);
+	private URL jishoURL;
 	
 	private String[] frameNames;
 	
 	private boolean justSaved;
+	private double currentProgress;
 	
 	/**
 	 * Creates new form ScriptEditorFrame
@@ -65,7 +72,98 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		setScriptArray();
 		setList();
 		setTextListeners();
+		setProgress();
 		justSaved = true;
+	}
+	
+	private void setProgress()
+	{
+		totalProgressBar.setMaximum(scriptArray.length);
+	}
+	
+	// Sets the progress bar and text
+	private void calculateProgress()
+	{
+		int totalScripts;
+		int totalLines;
+		int totalLinesDone;
+		double percentDone;
+		double completeValue;
+		double editedValue;
+		double editingValue;
+		double translatedValue;
+		double translatingValue;
+		double incompleteValue;
+		int completeScripts;
+		int editedScripts;
+		int editingScripts;
+		int translatedScripts;
+		int translatingScripts;
+		int incompleteScripts;
+		
+		// Get the total scripts and sets various values to 0
+		totalScripts = scriptArray.length;
+		totalLines = 0;
+		totalLinesDone = 0;
+		percentDone = 0;
+		completeScripts = 0;
+		editedScripts = 0;
+		editingScripts = 0;
+		translatedScripts = 0;
+		translatingScripts = 0;
+		incompleteScripts = 0;
+		
+		// Sets how much each type of script is valued
+		completeValue = 1.0;
+		editedValue = 0.8;
+		editingValue = 0.6;
+		translatedValue = 0.4;
+		translatingValue = 0.2;
+		incompleteValue = 0.0;
+		
+		// Go through the script array and add all the values of the progress
+		for(int i = 0; i < totalScripts; i++)
+		{
+			String scriptStatus = scriptArray[i].getStatus();
+			totalLines += scriptArray[i].getNumberOfLines();
+			
+			switch(scriptStatus)
+			{
+			case ScriptTools.COMPLETE:
+				completeScripts++;
+				totalLinesDone += scriptArray[i].getNumberOfLines();
+				break;
+			case ScriptTools.EDITING_COMPLETE:
+				editedScripts++;
+				totalLinesDone += scriptArray[i].getNumberOfLines();
+				break;
+			case ScriptTools.EDITING_IN_PROGRESS:
+				totalLinesDone += scriptArray[i].getNumberOfLines();
+				editingScripts++;
+				break;
+			case ScriptTools.TRANSLATIONG_COMPLETE:
+				totalLinesDone += scriptArray[i].getNumberOfLines();
+				translatedScripts++;
+				break;
+			case ScriptTools.TRANSLATION_IN_PROGRESS:
+				translatingScripts++;
+				break;
+			case ScriptTools.NOT_STARTED:
+			default:
+				incompleteScripts++;
+				break;
+			}
+		}
+		
+		percentDone =  completeValue * completeScripts+ editedValue * editedScripts +
+				editingValue * editingScripts + translatedValue * translatedScripts +
+				translatingValue * translatingScripts + incompleteValue * incompleteScripts;
+		
+		// Update progress bar and progress text
+		totalProgressBar.setValue((int) Math.round(percentDone));
+		totalProgressText.setText(	"Percent:\t" + String.valueOf(percentDone).substring(0, 4) + "\n" +
+									"Scripts:\t" + (completeScripts + editedScripts) + "/" + totalScripts + "\n" +
+									"Lines:\t" + totalLinesDone + "/" + totalLines);
 	}
 	
 	private void setWindowOptions()
@@ -75,8 +173,9 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 			public void windowClosing(WindowEvent e) {
 				if(undoManager.canUndo() && justSaved == false)
 					checkSave();
-			}	
+			}
 		});
+		codeScrollPane.getVerticalScrollBar().setUnitIncrement(16);
 	}
 	
 	// Sets the script array up
@@ -106,6 +205,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		}
 		
 		loading.dispose();
+		
+		calculateProgress();
 	}
 	
 	// Sets script list
@@ -115,7 +216,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	    
 	    for(int i = 0; i < frameNames.length; i++)
 	    {
-			frameNames[i] = scriptArray[i].getFrame() + ":" + scriptArray[i].getFrameName();
+			frameNames[i] = scriptArray[i].getFrame() + "." + scriptArray[i].getNumberOfLines() + ":" + scriptArray[i].getFrameName();
 	    }
 	    
 	    scriptList.setListData(frameNames);
@@ -231,7 +332,7 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		int maxValue = scriptArray[scriptArrayIndex].getNumberOfLines();
 		if(maxValue < 1)
 			maxValue = 1;
-		currentLineSlider.setMaximum(maxValue - 1);
+		currentLineSlider.setMaximum(maxValue);
 		currentLineSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, maxValue, 1));
 		
 		// TODO: Do I want this to work?
@@ -245,12 +346,16 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		else
 			currentLineSlider.setMajorTickSpacing(5);*/
 		
-		
 		scriptList.setSelectedIndex(scriptArrayIndex);
+		
+		setCodeAreaCaret();
 		
 		// Get rid of all undoables
 		undoManager.discardAllEdits();
+		
 		allowSync = true;
+		
+		calculateProgress();
 	}
 	
 	// Sets the curernt line in the visual dialogue
@@ -359,10 +464,14 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		botText = botText.replace("\\", "");
 		try{
 		topTranslatedText.setText(topText);
-		}catch(Exception e){ topTranslatedText.setText(" "); }
+		}catch(Exception e){ topTranslatedText.setText(" ");
+		System.out.println("Top is giving an error: " + topText.length() + " : ");
+		e.printStackTrace();}
 		try{
 		botTranslatedText.setText(botText);
-		}catch(Exception e){ botTranslatedText.setText(" "); }
+		}catch(Exception e){ botTranslatedText.setText(" ");
+		System.out.println("Bot is giving an error: " + botText.length() + " : ");
+		e.printStackTrace();}
 	}
 	
 	private void highlightText(JTextPane pane)
@@ -474,8 +583,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 					{
 						lastCaretPosition = translatedCodeArea.getCaretPosition();
 						translatedCodeArea.setText(changedCode);
+						try{
 						translatedCodeArea.setCaretPosition(lastCaretPosition + (statusComboBox.getSelectedItem().toString().length() - textCheck.length()));
 						centerLineInScrollPane(translatedCodeArea);
+						} catch(IllegalArgumentException e){ e.printStackTrace();}
 					}
 					break;
 				case TextBoxDocumentListener.CODE_TEXT:
@@ -670,6 +781,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 	
 	private void saveTranslatedCode()
 	{
+		allowSync = false;
+		
 		scriptArray[scriptArrayIndex].setCode(ScriptTools.TRANSLATED, translatedCodeArea.getText());
 		scriptArray[scriptArrayIndex].saveTranslationCode(scriptArray[scriptArrayIndex].getFrame());
 		
@@ -684,13 +797,14 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 		infoText.setText("Save Sucessful");
 		
 		justSaved = true;
+		
+		allowSync = true;
 	}
 	
 	private void reencodeText()
 	{
 		scriptArray[scriptArrayIndex].setCode(ScriptTools.TRANSLATED, translatedCodeArea.getText());
 		scriptArray[scriptArrayIndex].setLines(ScriptTools.TRANSLATED, ScriptTools.decodeCode(scriptArray[scriptArrayIndex].getCode(ScriptTools.TRANSLATED)));
-		//setLine(scriptArray[scriptArrayIndex].getIndex() + 1);
 		setText();
 	}
 	
@@ -705,15 +819,13 @@ public class ScriptEditorFrame extends javax.swing.JFrame
     {
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        scriptListScrollPane = new javax.swing.JScrollPane();
-        scriptList = new javax.swing.JList();
         tabbedPanel = new javax.swing.JTabbedPane();
         currentScriptPane = new javax.swing.JPanel();
         codePane = new javax.swing.JPanel();
         currentLineSpinner = new javax.swing.JSpinner();
         currentLineSlider = new javax.swing.JSlider();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jSplitPane1 = new javax.swing.JSplitPane();
+        codeScrollPane = new javax.swing.JScrollPane();
+        codeSplitPane = new javax.swing.JSplitPane();
         originalCodeArea = new javax.swing.JTextPane();
         translatedCodeArea = new javax.swing.JTextPane();
         visualDialogue = new javax.swing.JLayeredPane();
@@ -725,6 +837,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         botOriginalText = new javax.swing.JTextPane();
         topCopyButton = new javax.swing.JButton();
         botCopyButton = new javax.swing.JButton();
+        topLookUpButton = new javax.swing.JButton();
+        botLookUpButton = new javax.swing.JButton();
         portraitPane = new javax.swing.JLayeredPane();
         topName = new javax.swing.JLabel();
         topPlate = new javax.swing.JLabel();
@@ -738,6 +852,12 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         scriptNumberLabel = new javax.swing.JLabel();
         statusComboBox = new javax.swing.JComboBox<>();
         infoText = new javax.swing.JTextArea();
+        sidePanel = new javax.swing.JPanel();
+        totalProgressPanel = new javax.swing.JPanel();
+        totalProgressText = new javax.swing.JTextPane();
+        totalProgressBar = new javax.swing.JProgressBar();
+        scriptListScrollPane = new javax.swing.JScrollPane();
+        scriptList = new javax.swing.JList();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         saveItem = new javax.swing.JMenuItem();
@@ -759,17 +879,6 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         setTitle("Shiki no Kyouken Translator");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(1150, 800));
-
-        scriptList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        scriptList.setSelectionBackground(new java.awt.Color(102, 153, 255));
-        scriptList.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                scriptListMouseClicked(evt);
-            }
-        });
-        scriptListScrollPane.setViewportView(scriptList);
 
         tabbedPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -794,22 +903,22 @@ public class ScriptEditorFrame extends javax.swing.JFrame
             }
         });
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        codeScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        codeScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        jSplitPane1.setResizeWeight(0.5);
+        codeSplitPane.setResizeWeight(0.5);
 
         originalCodeArea.setEditable(false);
         originalCodeArea.setBackground(new java.awt.Color(238, 238, 238));
         originalCodeArea.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
         originalCodeArea.setMaximumSize(new java.awt.Dimension(60, 600));
-        jSplitPane1.setLeftComponent(originalCodeArea);
+        codeSplitPane.setLeftComponent(originalCodeArea);
 
         translatedCodeArea.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
         translatedCodeArea.setMaximumSize(new java.awt.Dimension(600, 600));
-        jSplitPane1.setRightComponent(translatedCodeArea);
+        codeSplitPane.setRightComponent(translatedCodeArea);
 
-        jScrollPane1.setViewportView(jSplitPane1);
+        codeScrollPane.setViewportView(codeSplitPane);
 
         javax.swing.GroupLayout codePaneLayout = new javax.swing.GroupLayout(codePane);
         codePane.setLayout(codePaneLayout);
@@ -819,17 +928,17 @@ public class ScriptEditorFrame extends javax.swing.JFrame
                 .addGap(2, 2, 2)
                 .addComponent(currentLineSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(currentLineSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 891, Short.MAX_VALUE)
+                .addComponent(currentLineSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(2, 2, 2))
             .addGroup(codePaneLayout.createSequentialGroup()
-                .addComponent(jScrollPane1)
+                .addComponent(codeScrollPane)
                 .addGap(6, 6, 6))
         );
         codePaneLayout.setVerticalGroup(
             codePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, codePaneLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                .addComponent(codeScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(codePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(currentLineSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -838,12 +947,14 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 
         visualDialogue.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        topTranslatedText.setEditable(false);
         topTranslatedText.setBackground(new java.awt.Color(205, 205, 205));
         topTranslatedText.setBorder(null);
         topTranslatedText.setFont(new java.awt.Font("HGｺﾞｼｯｸE", 0, 21)); // NOI18N
         visualDialogue.add(topTranslatedText);
         topTranslatedText.setBounds(530, 70, 338, 100);
 
+        botTranslatedText.setEditable(false);
         botTranslatedText.setBackground(new java.awt.Color(205, 205, 205));
         botTranslatedText.setBorder(null);
         botTranslatedText.setFont(new java.awt.Font("HGｺﾞｼｯｸE", 0, 21)); // NOI18N
@@ -893,6 +1004,28 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         });
         visualDialogue.add(botCopyButton);
         botCopyButton.setBounds(10, 370, 80, 23);
+
+        topLookUpButton.setText("Look Up");
+        topLookUpButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                topLookUpButtonActionPerformed(evt);
+            }
+        });
+        visualDialogue.add(topLookUpButton);
+        topLookUpButton.setBounds(100, 180, 90, 23);
+
+        botLookUpButton.setText("Look Up");
+        botLookUpButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                botLookUpButtonActionPerformed(evt);
+            }
+        });
+        visualDialogue.add(botLookUpButton);
+        botLookUpButton.setBounds(100, 370, 90, 23);
 
         portraitPane.setPreferredSize(new java.awt.Dimension(100, 100));
         portraitPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -963,9 +1096,9 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         currentScriptPaneLayout.setHorizontalGroup(
             currentScriptPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(currentScriptPaneLayout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(visualDialogue, javax.swing.GroupLayout.PREFERRED_SIZE, 911, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(codePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         currentScriptPaneLayout.setVerticalGroup(
@@ -982,6 +1115,52 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         infoText.setBackground(new java.awt.Color(240, 240, 240));
         infoText.setColumns(20);
         infoText.setRows(5);
+
+        totalProgressText.setEditable(false);
+        totalProgressText.setBackground(new java.awt.Color(240, 240, 240));
+
+        javax.swing.GroupLayout totalProgressPanelLayout = new javax.swing.GroupLayout(totalProgressPanel);
+        totalProgressPanel.setLayout(totalProgressPanelLayout);
+        totalProgressPanelLayout.setHorizontalGroup(
+            totalProgressPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(totalProgressText, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(totalProgressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        totalProgressPanelLayout.setVerticalGroup(
+            totalProgressPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(totalProgressPanelLayout.createSequentialGroup()
+                .addComponent(totalProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(totalProgressText, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        scriptList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        scriptList.setSelectionBackground(new java.awt.Color(102, 153, 255));
+        scriptList.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                scriptListMouseClicked(evt);
+            }
+        });
+        scriptListScrollPane.setViewportView(scriptList);
+
+        javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
+        sidePanel.setLayout(sidePanelLayout);
+        sidePanelLayout.setHorizontalGroup(
+            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(scriptListScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(totalProgressPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        sidePanelLayout.setVerticalGroup(
+            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(totalProgressPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(scriptListScrollPane)
+                .addGap(0, 0, 0))
+        );
 
         fileMenu.setText("File");
 
@@ -1120,8 +1299,9 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(scriptListScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addComponent(sidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
                 .addComponent(tabbedPanel))
             .addComponent(infoText)
         );
@@ -1129,8 +1309,10 @@ public class ScriptEditorFrame extends javax.swing.JFrame
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tabbedPanel)
-                    .addComponent(scriptListScrollPane))
+                    .addComponent(tabbedPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(sidePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(6, 6, 6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(infoText, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2))
@@ -1245,9 +1427,32 @@ public class ScriptEditorFrame extends javax.swing.JFrame
         HelpNames namesListWindow = new HelpNames();
     }//GEN-LAST:event_nameListItemActionPerformed
 
+    private void botLookUpButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_botLookUpButtonActionPerformed
+    {//GEN-HEADEREND:event_botLookUpButtonActionPerformed
+		String str = botOriginalText.getText().replace("\n", "");
+		try {
+			jishoURL = new URL("http://jisho.org/search/" + str);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		openWebpage(jishoURL);
+    }//GEN-LAST:event_botLookUpButtonActionPerformed
+
+    private void topLookUpButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_topLookUpButtonActionPerformed
+    {//GEN-HEADEREND:event_topLookUpButtonActionPerformed
+		String str = topOriginalText.getText().replace("\n", "");
+		try {
+			jishoURL = new URL("http://jisho.org/search/" + str);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		openWebpage(jishoURL);
+    }//GEN-LAST:event_topLookUpButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botCopyButton;
     private javax.swing.JLabel botEmoji;
+    private javax.swing.JButton botLookUpButton;
     private javax.swing.JLabel botName;
     private javax.swing.JTextPane botOriginalText;
     private javax.swing.JLabel botPlate;
@@ -1255,6 +1460,8 @@ public class ScriptEditorFrame extends javax.swing.JFrame
     private javax.swing.JLabel botTranslatedBox;
     private javax.swing.JTextPane botTranslatedText;
     private javax.swing.JPanel codePane;
+    private javax.swing.JScrollPane codeScrollPane;
+    private javax.swing.JSplitPane codeSplitPane;
     private javax.swing.JSlider currentLineSlider;
     private javax.swing.JSpinner currentLineSpinner;
     private javax.swing.JPanel currentScriptPane;
@@ -1264,8 +1471,6 @@ public class ScriptEditorFrame extends javax.swing.JFrame
     private javax.swing.JTextField frameNameText;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JTextArea infoText;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem nameListItem;
     private javax.swing.JMenuItem nextLineItem;
@@ -1281,16 +1486,21 @@ public class ScriptEditorFrame extends javax.swing.JFrame
     private javax.swing.JScrollPane scriptListScrollPane;
     private javax.swing.JMenu scriptMenu;
     private javax.swing.JLabel scriptNumberLabel;
+    private javax.swing.JPanel sidePanel;
     private javax.swing.JComboBox<String> statusComboBox;
     private javax.swing.JTabbedPane tabbedPanel;
     private javax.swing.JButton topCopyButton;
     private javax.swing.JLabel topEmoji;
+    private javax.swing.JButton topLookUpButton;
     private javax.swing.JLabel topName;
     private javax.swing.JTextPane topOriginalText;
     private javax.swing.JLabel topPlate;
     private javax.swing.JLabel topPortrait;
     private javax.swing.JLabel topTranslatedBox;
     private javax.swing.JTextPane topTranslatedText;
+    private javax.swing.JProgressBar totalProgressBar;
+    private javax.swing.JPanel totalProgressPanel;
+    private javax.swing.JTextPane totalProgressText;
     private javax.swing.JTextPane translatedCodeArea;
     private javax.swing.JMenuItem undoItem;
     private javax.swing.JLayeredPane visualDialogue;
@@ -1331,6 +1541,27 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 			}
 
 			return this;
+		}
+	}
+	
+	public static void openWebpage(URI uri) 
+	{
+		Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+		if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+			try {
+				desktop.browse(uri);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public static void openWebpage(URL url)
+	{
+		try {
+			openWebpage(url.toURI());
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
 		}
 	}
 }

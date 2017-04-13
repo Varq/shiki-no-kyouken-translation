@@ -1,5 +1,5 @@
-// Scene: PL: PoB4
-// Status: Translation In Progress
+// Scene: PL: PoB4 A chance to leave
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,9 +32,9 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 52;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "ここに雨水を溜め込んで";
-      _root.PS02t_str = "最終的には私達にも飲める水に変え";
-      _root.PS03t_str = "抽出するのだ";
+      _root.PS01t_str = "This is where we store rain";
+      _root.PS02t_str = "water. We gather it here so we";
+      _root.PS03t_str = "can have drinking water later.";
    }
    if(_root.mojiSerihu == 2)
    {
@@ -46,9 +46,9 @@ function Serihu()
       _root.oKaoBan = 20;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "へ～";
-      _root.PS02_str = "でも先生、水をずっと置いとくと";
-      _root.PS03_str = "腐っちゃうよ？";
+      _root.PS01_str = "Huh? But Master, is it really";
+      _root.PS02_str = "safe to drink this water?";
+      _root.PS03_str = "What if it's all polluted?";
    }
    if(_root.mojiSerihu == 3)
    {
@@ -58,9 +58,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 6;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "それでは川の水は全て";
-      _root.PS02t_str = "腐りきっている事に";
-      _root.PS03t_str = "なってしまうなぁ";
+      _root.PS01t_str = "Then that means all the";
+      _root.PS02t_str = "water in the rivers are";
+      _root.PS03t_str = "polluted too.";
    }
    if(_root.mojiSerihu == 4)
    {
@@ -70,7 +70,7 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 9;
       _root.oKaoBan = 21;
-      _root.PS01_str = "あ！！";
+      _root.PS01_str = "Ah!!";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -82,9 +82,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "いずれはろ過の技術も含めて";
-      _root.PS02t_str = "教えてやろう";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Well, it doesn't matter. We";
+      _root.PS02t_str = "filter it so it stays clean,";
+      _root.PS03t_str = "or so I've been told.";
    }
    if(_root.mojiSerihu == 6)
    {
@@ -94,9 +94,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "最終的には、その辺りの事は";
-      _root.PS02t_str = "全て絶阿に任せても";
-      _root.PS03t_str = "かまわないと思っている";
+      _root.PS01t_str = "With that said, I think you're";
+      _root.PS02t_str = "ready to start standing guard";
+      _root.PS03t_str = "along the river bank.";
    }
    if(_root.mojiSerihu == 7)
    {
@@ -106,7 +106,7 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 7;
       _root.oKaoBan = 22;
-      _root.PS01_str = "ほ、ほんとですか！？";
+      _root.PS01_str = "Re-Really?!";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -118,8 +118,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "絶阿にはそれだけの発想力がある";
-      _root.PS02t_str = "";
+      _root.PS01t_str = "You definitely have the";
+      _root.PS02t_str = "strength.";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 9)
@@ -130,9 +130,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "それを活かすために";
-      _root.PS02t_str = "少々の自由は許しているだろう？";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "I think you can hold your own";
+      _root.PS02t_str = "and make your own decisions,";
+      _root.PS03t_str = "right?";
    }
    if(_root.mojiSerihu == 10)
    {
@@ -142,9 +142,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 1;
       _root.oKaoBan = 5;
-      _root.PS01_str = "あ、はははは";
-      _root.PS02_str = "あんまり先生の講義に参加して";
-      _root.PS03_str = "なかったりとか…";
+      _root.PS01_str = "Ah, hahahaha. Through all the";
+      _root.PS02_str = "lessons I've gone through,";
+      _root.PS03_str = "I think I can handle it...";
    }
    if(_root.mojiSerihu == 11)
    {
@@ -154,9 +154,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "かまわん、私の講義は";
-      _root.PS02t_str = "発想の手助けにはならないからね";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Keep in mind, the lessons are";
+      _root.PS02t_str = "only practice. You need to";
+      _root.PS03t_str = "have real experience, too.";
    }
    if(_root.mojiSerihu == 12)
    {
@@ -166,9 +166,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "様々な物を見て";
-      _root.PS02t_str = "よく学び、よく遊ぶ事が大切だよ";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "There's more you need to see";
+      _root.PS02t_str = "and learn, but it's still";
+      _root.PS03t_str = "important to have fun.";
    }
    if(_root.mojiSerihu == 13)
    {
@@ -178,8 +178,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 12;
-      _root.PS01_str = "まぁ、";
-      _root.PS02_str = "遊びは遠慮してませんけどね…";
+      _root.PS01_str = "Well, I don't think I'll be";
+      _root.PS02_str = "having too much fun...";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 14)
@@ -190,9 +190,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "実は円琥を呼び戻したのは";
-      _root.PS02t_str = "絶阿を外界に連れて行って";
-      _root.PS03t_str = "もらおうと思ってだな";
+      _root.PS01t_str = "The truth is, Enku asked if";
+      _root.PS02t_str = "she could take you to go see";
+      _root.PS03t_str = "places off the mountain.";
    }
    if(_root.mojiSerihu == 15)
    {
@@ -202,7 +202,7 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 5;
       _root.oKaoBan = 15;
-      _root.PS01_str = "外界！？";
+      _root.PS01_str = "Off the mountain!?";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -214,9 +214,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "ああ、今まではこの屋敷のある";
-      _root.PS02t_str = "山の中以外の出入りは";
-      _root.PS03t_str = "絶対禁止していたが…";
+      _root.PS01t_str = "Ah, it's been forbidden for";
+      _root.PS02t_str = "people to come and go from the";
+      _root.PS03t_str = "mountain, hasn't it...";
    }
    if(_root.mojiSerihu == 17)
    {
@@ -226,9 +226,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 6;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "絶阿にはいろんな物を";
-      _root.PS02t_str = "見ておいてもらいたいからね";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Let's make an exception. I";
+      _root.PS02t_str = "think this would be a good";
+      _root.PS03t_str = "chance for you to learn.";
    }
    if(_root.mojiSerihu == 18)
    {
@@ -238,9 +238,9 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 16;
       _root.oKaoBan = 6;
-      _root.PS01_str = "う、うお！！";
-      _root.PS02_str = "わかりました先生！！！";
-      _root.PS03_str = "俺、がんばります！！！！";
+      _root.PS01_str = "O-Oh!! Thank you, Master!!!";
+      _root.PS02_str = "I won't let you down!!!!";
+      _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 19)
    {
@@ -250,9 +250,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "ただし、西中や万平太には内密に";
-      _root.PS02t_str = "する事と、円琥の言う事には";
-      _root.PS03t_str = "絶対に従う事…約束できるかね？";
+      _root.PS01t_str = "However, Enku wants to keep";
+      _root.PS02t_str = "this a secret. Do not tell";
+      _root.PS03t_str = "anyone, do you understand?";
    }
    if(_root.mojiSerihu == 20)
    {
@@ -262,7 +262,7 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 7;
       _root.oKaoBan = 4;
-      _root.PS01_str = "はい！！もちろんです！！";
+      _root.PS01_str = "Yes!! Of course!!";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -274,9 +274,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "うむ、近いうちに円琥から";
-      _root.PS02t_str = "声がかかるだろうから";
-      _root.PS03t_str = "準備をしておきなさい";
+      _root.PS01t_str = "Good. Enku will meet up with";
+      _root.PS02t_str = "you soon and she'll get you";
+      _root.PS03t_str = "prepared to head out.";
    }
    if(_root.mojiSerihu == 22)
    {
@@ -286,7 +286,7 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 16;
       _root.oKaoBan = 4;
-      _root.PS01_str = "わっかりましたーーー！！！！";
+      _root.PS01_str = "Got it!!!!";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -298,8 +298,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "それでは、私は別用があるから";
-      _root.PS02t_str = "";
+      _root.PS01t_str = "Well then, I have other";
+      _root.PS02t_str = "business to attend to.";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 24)
@@ -326,9 +326,9 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 6;
       _root.oKaoBan = 5;
-      _root.PS01_str = "やったやった！！！！";
-      _root.PS02_str = "俺すげー期待されてるよ！！！";
-      _root.PS03_str = "";
+      _root.PS01_str = "Yeah, alright!!!! ";
+      _root.PS02_str = "I can't believe I'd actually";
+      _root.PS03_str = "get a chance to leave!!!";
    }
    if(_root.mojiSerihu == 26)
    {
@@ -338,9 +338,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 2;
-      _root.PS01_str = "外界かぁ…";
-      _root.PS02_str = "いろんな建物があるんだろうなぁ";
-      _root.PS03_str = "くっそー楽しみだなぁ！！";
+      _root.PS01_str = "Outside the village... What";
+      _root.PS02_str = "do the buildings look like...";
+      _root.PS03_str = "Damn, I can't wait!!";
    }
    if(_root.mojiSerihu == 27)
    {
@@ -350,9 +350,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 2;
       _root.oKaoBan = 7;
-      _root.PS01_str = "おっと、好奇心だけじゃダメだ";
-      _root.PS02_str = "ちゃんと先生の言いつけ通り";
-      _root.PS03_str = "よく学ばないとな";
+      _root.PS01_str = "Ugh, I can't let my curiousity";
+      _root.PS02_str = "get the best of me, or I won't";
+      _root.PS03_str = "be able to focus.";
    }
    if(_root.mojiSerihu == 28)
    {
@@ -362,9 +362,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 15;
       _root.oKaoBan = 23;
-      _root.PS01_str = "…水門か…んでこの水路が直接";
-      _root.PS02_str = "川に通じているって事は…";
-      _root.PS03_str = "";
+      _root.PS01_str = "...That's the flood gates, I";
+      _root.PS02_str = "think. It should lead right ";
+      _root.PS03_str = "into the river...";
    }
    if(_root.mojiSerihu == 29)
    {
@@ -374,9 +374,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 2;
-      _root.PS01_str = "ここを開けば大量の雨水が";
-      _root.PS02_str = "一気に川に流れ込むってわけかぁ…";
-      _root.PS03_str = "";
+      _root.PS01_str = "If this were to open, there";
+      _root.PS02_str = "would be a rush of rain water";
+      _root.PS03_str = "pouring through the river.";
    }
    if(_root.mojiSerihu == 30)
    {
@@ -386,8 +386,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 6;
       _root.oKaoBan = 5;
-      _root.PS01_str = "何かの罠に使えねぇかな？";
-      _root.PS02_str = "";
+      _root.PS01_str = "Maybe I can think of a way";
+      _root.PS02_str = "to use it as a trap?";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 31)

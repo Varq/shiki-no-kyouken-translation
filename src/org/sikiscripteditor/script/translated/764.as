@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: EX: Gaboumaru Ending
 // Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "我忘丸は、東日本の秩序を乱すだけ乱して、死んだ";
 _parent.DText_mc.itibun02_mc.saigo02 = "楽をはじめ、彼と戦った者は皆";

@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: EX: Enku Ending
 // Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "姫喜円琥はその後";
 _parent.DText_mc.itibun02_mc.saigo02 = "たまに抜け出しては新井瞬平と交流を深めた";

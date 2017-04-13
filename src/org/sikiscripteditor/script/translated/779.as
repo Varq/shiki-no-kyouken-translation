@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: EX: Shibashou Ending
 // Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "妖怪松田はその姿を消した";
 _parent.DText_mc.itibun02_mc.saigo02 = "同時に、東日本からは妖怪の気配は完全に消え去り";

@@ -1,5 +1,5 @@
 // Scene: PL: PoB5a Lost to Kennosuke
-// Status: Translation In Progress
+// Status: Not Started
 function Serihu()
 {
    _root.mojiJunji01 = 0;

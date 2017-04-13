@@ -1,4 +1,4 @@
-// Scene: PL: MiB5a Buffs Tutorial
+// Scene: PL: MiB5a Rising Tutorial
 // Status: Translation In Progress
 function Serihu()
 {
@@ -32,7 +32,7 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "絶阿は今まで戦ってきて攻撃力や";
+      _root.PS01t_str = "d絶阿は今まで戦ってきて攻撃力や";
       _root.PS02t_str = "防御力…移動力とかが上昇していく";
       _root.PS03t_str = "感覚を味わった事は無いかい？";
    }

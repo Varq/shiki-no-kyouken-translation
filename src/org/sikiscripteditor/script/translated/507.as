@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: EX: Satomi vs Enku
 // Status: Not Started
 function Serihu()
 {

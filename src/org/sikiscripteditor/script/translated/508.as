@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: EX: Satomi Boss Win
 // Status: Not Started
 function Serihu()
 {

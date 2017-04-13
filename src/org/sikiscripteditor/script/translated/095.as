@@ -1,5 +1,5 @@
 // Scene: 
-// Status: Not Started
+// Status: Editing Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,7 +32,7 @@ function Serihu()
       _root.tKaoBan = 1;
       _root.tKaoBBan = 51;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "・・・・・・・・・・・・・・・・";
+      _root.PS01t_str = "...............";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -43,7 +43,7 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 1;
-      _root.PS01t_str = "・・・・・・・・";
+      _root.PS01t_str = "........";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -54,7 +54,7 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 1;
-      _root.PS01t_str = "・";
+      _root.PS01t_str = ".";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }

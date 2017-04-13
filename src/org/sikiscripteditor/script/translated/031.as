@@ -1,4 +1,4 @@
-// Scene: PL: PoB3 Living on the mountain Context
+// Scene: PL: PoB3 Living on the mountain
 // Status: Editing In Progress
 function Serihu()
 {

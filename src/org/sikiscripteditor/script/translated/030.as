@@ -1,5 +1,5 @@
 // Scene: PL: PrB4 Rematch Kiki
-// Status: Translation In Progress
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;

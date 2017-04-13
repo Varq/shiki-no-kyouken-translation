@@ -1,4 +1,4 @@
-// Scene: 
+// Scene: EX: Zetsua Ending
 // Status: Not Started
 _parent.DText_mc.itibun01_mc.saigo01 = "緋月絶阿はリーチェルディッヒの死後";
 _parent.DText_mc.itibun02_mc.saigo02 = "屋敷を纏める代表格としてその腕を振るい";

@@ -1,5 +1,5 @@
 // Scene: PL: PrB5b Gahyou Tutorial
-// Status: Translation In Progress
+// Status: Not Started
 function Serihu()
 {
    _root.mojiJunji01 = 0;
