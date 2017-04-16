@@ -1,5 +1,5 @@
 // Scene: PL: PrB3a Rematch Saichuu
-// Status: Translation Complete
+// Status: Editing Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;

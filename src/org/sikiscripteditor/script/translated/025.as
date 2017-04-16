@@ -1,5 +1,5 @@
 // Scene: PL: PrB5b Rematch Gahyou
-// Status: Not Started
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,7 +32,7 @@ function Serihu()
       _root.oKaoBan = 11;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "牙氷！！！";
+      _root.PS01_str = "Gahyou!!!";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -46,8 +46,8 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 33;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "逃げずに来た…";
-      _root.PS02t_str = "";
+      _root.PS01t_str = "So you're not gonna' try";
+      _root.PS02t_str = "running away...";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 3)
@@ -58,9 +58,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 12;
       _root.oKaoBan = 8;
-      _root.PS01_str = "どこに逃げたって追ってくるだろ？";
-      _root.PS02_str = "牙氷はそういう女だよ";
-      _root.PS03_str = "";
+      _root.PS01_str = "Where would I even run to?";
+      _root.PS02_str = "The way you are, you'll track";
+      _root.PS03_str = "me down without trouble.";
    }
    if(_root.mojiSerihu == 4)
    {
@@ -70,8 +70,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 9;
-      _root.PS01t_str = "まあね、";
-      _root.PS02t_str = "で、ここでする？";
+      _root.PS01t_str = "Is that so? But you decided";
+      _root.PS02t_str = "come back here?";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 5)
@@ -82,8 +82,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 7;
-      _root.PS01_str = "おう、かまわねぇ…";
-      _root.PS02_str = "はじめよう";
+      _root.PS01_str = "Yeah, keep on talking... Let's";
+      _root.PS02_str = "just get this started.";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 6)
@@ -94,9 +94,9 @@ function Serihu()
       _root.oHukidasi = 3;
       _root.oManpuH = 0;
       _root.oKaoBan = 7;
-      _root.PS01_str = "相手の体力の状態を良く見て…";
-      _root.PS02_str = "あと一息の所で一気に決めるんだ！！";
-      _root.PS03_str = "";
+      _root.PS01_str = "I have to keep on fighting...";
+      _root.PS02_str = "No matter how bad of a shape";
+      _root.PS03_str = "I'm in, I can still fight!!";
    }
    if(_root.mojiSerihu == 7)
    {
@@ -106,7 +106,7 @@ function Serihu()
       _root.tHukidasi = 2;
       _root.tManpuH = 0;
       _root.tKaoBan = 8;
-      _root.PS01t_str = "いくわよ！！！！！";
+      _root.PS01t_str = "Prepare yourself!!!!!";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }

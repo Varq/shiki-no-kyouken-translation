@@ -1,5 +1,5 @@
 // Scene: PL: PrB5a Kennosuke
-// Status: Translation Complete
+// Status: Editing Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -155,7 +155,7 @@ function Serihu()
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
       _root.PS01t_str = "Well, would you like to learn";
-      _root.PS02t_str = "about the Increase mechanic?";
+      _root.PS02t_str = "about the Rising mechanic?";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 12)
@@ -166,7 +166,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 11;
       _root.oKaoBan = 15;
-      _root.PS01_str = "Increase mechanic?";
+      _root.PS01_str = "Rising mechanic?";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }

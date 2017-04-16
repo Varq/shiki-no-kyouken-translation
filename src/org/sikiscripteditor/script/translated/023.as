@@ -1,5 +1,5 @@
 // Scene: PL: PoB5b Lost to Gahyou
-// Status: Not Started
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,7 +32,7 @@ function Serihu()
       _root.oKaoBan = 16;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "あ、あ…";
+      _root.PS01_str = "A- Ah...";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -46,9 +46,9 @@ function Serihu()
       _root.tKaoBan = 3;
       _root.tKaoBBan = 33;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "脅かしすぎたか…";
-      _root.PS02t_str = "完全に腰が引けてた…";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Where's that big talk now...?";
+      _root.PS02t_str = "It looks like you can barely";
+      _root.PS03t_str = "even stand...";
    }
    if(_root.mojiSerihu == 3)
    {
@@ -58,7 +58,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 8;
       _root.oKaoBan = 16;
-      _root.PS01_str = "な、な…";
+      _root.PS01_str = "It- It was...";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -70,9 +70,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 7;
-      _root.PS01t_str = "覚えておきなさい";
-      _root.PS02t_str = "高い攻撃力ならば敵に覚悟の暇を";
-      _root.PS03t_str = "与えることなく殺す事もできるわ";
+      _root.PS01t_str = "Don't forget to breathe. Your";
+      _root.PS02t_str = "enemies won't hold back. You";
+      _root.PS03t_str = "can't cry if you're dead.";
    }
    if(_root.mojiSerihu == 5)
    {
@@ -82,9 +82,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "敵の覚悟が怖ければ…";
-      _root.PS02t_str = "大きな一撃で";
-      _root.PS03t_str = "しとめるようにしなさい";
+      _root.PS01t_str = "A determined enemy is a scary";
+      _root.PS02t_str = "thing. One strike can bring";
+      _root.PS03t_str = "you down to your knees.";
    }
    if(_root.mojiSerihu == 6)
    {
@@ -94,7 +94,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 17;
-      _root.PS01_str = "はぁ…はぁ…";
+      _root.PS01_str = "Haaa... Haa...";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -106,9 +106,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 12;
       _root.tKaoBan = 6;
-      _root.PS01t_str = "っと、今回はそれを教えるのを";
-      _root.PS02t_str = "忘れていたわね…";
-      _root.PS03t_str = "ちょっとずるかった";
+      _root.PS01t_str = "Hmph, this time, don't forget";
+      _root.PS02t_str = "what I've taught... Cornered";
+      _root.PS03t_str = "animals can still bite.";
    }
    if(_root.mojiSerihu == 8)
    {
@@ -118,9 +118,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 8;
-      _root.PS01t_str = "じゃあもう一回だけ機会を与えるわ";
-      _root.PS02t_str = "もちろん、回避手段は無いわよ";
-      _root.PS03t_str = "それじゃ…";
+      _root.PS01t_str = "Well, you can give it one more";
+      _root.PS02t_str = "shot. Of course, next time";
+      _root.PS03t_str = "won't be different.";
    }
    if(_root.mojiSerihu == 9)
    {
@@ -145,8 +145,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 8;
       _root.oKaoBan = 16;
-      _root.PS01_str = "が、牙氷のやつ…";
-      _root.PS02_str = "本気だった！！";
+      _root.PS01_str = "Ga- Gahyou was... She was";
+      _root.PS02_str = "being serious!!";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 11)
@@ -157,9 +157,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 12;
       _root.oKaoBan = 8;
-      _root.PS01_str = "くそ、確かに腰が引けてた…";
-      _root.PS02_str = "あれじゃあ攻撃力の高い一撃は";
-      _root.PS03_str = "放てない…";
+      _root.PS01_str = "Damn, she's right. I can't";
+      _root.PS02_str = "stop shaking. One hit from";
+      _root.PS03_str = "a dying opponent is terrifying.";
    }
    if(_root.mojiSerihu == 12)
    {
@@ -169,9 +169,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 7;
-      _root.PS01_str = "牙氷に覚悟をさせる前に…";
-      _root.PS02_str = "強力な一撃で止めを刺す…";
-      _root.PS03_str = "「動動」の俺にできるのか？";
+      _root.PS01_str = "Has she been through it for";
+      _root.PS02_str = "real? That kind of strength...";
+      _root.PS03_str = "Can [ActAct] really do that?";
    }
    if(_root.mojiSerihu == 13)
    {
@@ -181,7 +181,7 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 16;
       _root.oKaoBan = 18;
-      _root.PS01_str = "くそ、やってやる！！";
+      _root.PS01_str = "Damn, I can't give up!!";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }

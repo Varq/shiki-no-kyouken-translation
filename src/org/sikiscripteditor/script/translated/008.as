@@ -1,5 +1,5 @@
 // Scene: PL: PoB3a Lost to Saichuu
-// Status: Translation Complete
+// Status: Editing Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;

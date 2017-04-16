@@ -7,6 +7,9 @@ package org.sikiscripteditor.java;
 
 import javax.swing.ImageIcon;
 
+
+// TODO: Closing names list also closes the program! Major bug
+
 /**
  *
  * @author Varq

@@ -1,5 +1,5 @@
 // Scene: PL: PoB3b Won to Manpeita
-// Status: Translation Complete
+// Status: Editing Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -219,7 +219,7 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 6;
       _root.tKaoBan = 4;
-      _root.PS01t_str = "Well, whatever. Thanks,";
+      _root.PS01t_str = "Aw, well, whatever. Thanks,";
       _root.PS02t_str = "Manpeita.";
       _root.PS03t_str = "";
    }

@@ -155,12 +155,13 @@ public class ScriptEditorFrame extends javax.swing.JFrame
 			}
 		}
 		
-		percentDone =  completeValue * completeScripts+ editedValue * editedScripts +
+		percentDone =  (completeValue * completeScripts+ editedValue * editedScripts +
 				editingValue * editingScripts + translatedValue * translatedScripts +
-				translatingValue * translatingScripts + incompleteValue * incompleteScripts;
+				translatingValue * translatingScripts + incompleteValue * incompleteScripts) /
+				totalScripts * 100;
 		
 		// Update progress bar and progress text
-		totalProgressBar.setValue((int) Math.round(percentDone));
+		totalProgressBar.setValue(completeScripts + editedScripts);
 		totalProgressText.setText(	"Percent:\t" + String.valueOf(percentDone).substring(0, 4) + "\n" +
 									"Scripts:\t" + (completeScripts + editedScripts) + "/" + totalScripts + "\n" +
 									"Lines:\t" + totalLinesDone + "/" + totalLines);

@@ -32,9 +32,9 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "d絶阿は今まで戦ってきて攻撃力や";
-      _root.PS02t_str = "防御力…移動力とかが上昇していく";
-      _root.PS03t_str = "感覚を味わった事は無いかい？";
+      _root.PS01t_str = "I'm sure you've noticed by now";
+      _root.PS02t_str = "all the Attack, Defense... and";
+      _root.PS03t_str = "maybe Speed Rising, right?";
    }
    if(_root.mojiSerihu == 2)
    {
@@ -46,9 +46,9 @@ function Serihu()
       _root.tKaoBan = 20;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "あ、あるある！！";
-      _root.PS02t_str = "なんか勝手に体の奥が熱くなって";
-      _root.PS03t_str = "いつも以上の力が出る時が";
+      _root.PS01t_str = "Oh, I've seen those!! It makes";
+      _root.PS02t_str = "me feel so heated inside. It's";
+      _root.PS03t_str = "like I have a rush of power.";
    }
    if(_root.mojiSerihu == 3)
    {
@@ -60,9 +60,9 @@ function Serihu()
       _root.tKaoBan = 11;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "うん、そういうのを上昇系と言って";
-      _root.PS02t_str = "その戦いの最中のみ自分を";
-      _root.PS03t_str = "強化する事ができるんだ";
+      _root.PS01t_str = "Yep, that's the [Rising] mechanic";
+      _root.PS02t_str = "in action. It's a huge boost";
+      _root.PS03t_str = "in the heat of battle.";
    }
    if(_root.mojiSerihu == 4)
    {
@@ -74,9 +74,9 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "そうなんだ！！";
-      _root.PS02t_str = "じゃあ何回も上昇させれば";
-      _root.PS03t_str = "俺も兄貴並に強くなれるって事に…";
+      _root.PS01t_str = "So that's what it was!! It's";
+      _root.PS02t_str = "happened so many times between";
+      _root.PS03t_str = "us, I'm surprised I never asked.";
    }
    if(_root.mojiSerihu == 5)
    {
@@ -88,9 +88,9 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "あはは、残念だけど";
-      _root.PS02t_str = "上昇系は体には相当な負担になるから";
-      _root.PS03t_str = "二回までしか発動しないんだ";
+      _root.PS01t_str = "Ahaha, you should have. One";
+      _root.PS02t_str = "thing to keep in mind. You can't";
+      _root.PS03t_str = "have more than two Risings.";
    }
    if(_root.mojiSerihu == 6)
    {
@@ -100,8 +100,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 6;
-      _root.PS01t_str = "それ以上発動すると…";
-      _root.PS02t_str = "髪が全部抜けて血が噴き出す！！";
+      _root.PS01t_str = "But in order to get one... You";
+      _root.PS02t_str = "have to lose a lot of blood!!";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 7)
@@ -114,9 +114,9 @@ function Serihu()
       _root.tKaoBan = 9;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "血はともかく";
-      _root.PS02t_str = "髪が抜けるのはやだな…";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Only when I lose blood, huh?";
+      _root.PS02t_str = "I'd rather not lose any at";
+      _root.PS03t_str = "all, to be honest...";
    }
    if(_root.mojiSerihu == 8)
    {
@@ -128,9 +128,9 @@ function Serihu()
       _root.tKaoBan = 3;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "二回まででも十分な強化になるよ";
-      _root.PS02t_str = "強化できるのは";
-      _root.PS03t_str = "攻撃力・防御力・移動力の三つ";
+      _root.PS01t_str = "You have more than enough for";
+      _root.PS02t_str = "two. There are three types:";
+      _root.PS03t_str = "Attack - Defense - Speed";
    }
    if(_root.mojiSerihu == 9)
    {
@@ -142,9 +142,9 @@ function Serihu()
       _root.tKaoBan = 8;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "攻撃と防御はわかるんだけど…";
-      _root.PS02t_str = "移動力ってピンとこないな…";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "I get Attack and Defense...";
+      _root.PS02t_str = "but what the heck is Speed";
+      _root.PS03t_str = "about?";
    }
    if(_root.mojiSerihu == 10)
    {
@@ -156,9 +156,9 @@ function Serihu()
       _root.tKaoBan = 6;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "すり足とかの基本行動で";
-      _root.PS02t_str = "進む距離が多くなっているんだ";
-      _root.PS03t_str = "意外に感覚が狂ってしまう物だよ";
+      _root.PS01t_str = "Sliding and other movement";
+      _root.PS02t_str = "get huge boosts. You should";
+      _root.PS03t_str = "really take advantage of it.";
    }
    if(_root.mojiSerihu == 11)
    {
@@ -170,9 +170,9 @@ function Serihu()
       _root.tKaoBan = 8;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "気を付けないと";
-      _root.PS02t_str = "自滅しちまうって事か…それ";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "It's dangerous, though. You'd";
+      _root.PS02t_str = "have to take a lot of damage,";
+      _root.PS03t_str = "right? I'm not so sure.";
    }
    if(_root.mojiSerihu == 12)
    {

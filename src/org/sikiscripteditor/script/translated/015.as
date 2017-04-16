@@ -1,5 +1,5 @@
 // Scene: PL: PrB3b Rematch Manpeita
-// Status: Translation Complete
+// Status: Editing Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;

@@ -1,5 +1,5 @@
 // Scene: EX: Intro
-// Status: Not Started
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,7 +32,7 @@ function Serihu()
       _root.oKaoBan = 38;
       _root.oKaoBBan = 53;
       _root.oKaoBHenkou();
-      _root.PS01_str = "すぱすぱ・・・・・";
+      _root.PS01_str = "Foooooooooooff....";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -44,7 +44,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 16;
       _root.oKaoBan = 39;
-      _root.PS01_str = "ぶっはあぁぁぁ・・・・・";
+      _root.PS01_str = "Bwaaaaaaaaahh.....";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -56,8 +56,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 19;
-      _root.PS01_str = "あー、本日も晴天なり";
-      _root.PS02_str = "無駄に";
+      _root.PS01_str = "Ahhhh, nothing like a";
+      _root.PS02_str = "beautiful, relaxing day.";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 4)
@@ -68,8 +68,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 11;
       _root.oKaoBan = 10;
-      _root.PS01_str = "んっとに、ろくな国じゃないのは";
-      _root.PS02_str = "確かだな～";
+      _root.PS01_str = "Mhm, just a spot to take in,";
+      _root.PS02_str = "ain't that right～";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 5)
@@ -80,9 +80,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 6;
       _root.oKaoBan = 26;
-      _root.PS01_str = "本日もどこぞで殺し合い";
-      _root.PS02_str = "いやあめでたいめでたい";
-      _root.PS03_str = "";
+      _root.PS01_str = "On this kinda' day, people are";
+      _root.PS02_str = "facing off and killing each";
+      _root.PS03_str = "other. Goodie, goodie.";
    }
    if(_root.mojiSerihu == 6)
    {
@@ -92,9 +92,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 28;
-      _root.PS01_str = "それを記録し続ける";
-      _root.PS02_str = "あたしもめでたいめでたい";
-      _root.PS03_str = "";
+      _root.PS01_str = "There'll be a new record set";
+      _root.PS02_str = "at this rate. That's good,";
+      _root.PS03_str = "that's good.";
    }
    if(_root.mojiSerihu == 7)
    {
@@ -104,9 +104,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 11;
       _root.oKaoBan = 38;
-      _root.PS01_str = "はてさて本日もいっとくか";
-      _root.PS02_str = "はたしてどんな物語が始まるか";
-      _root.PS03_str = "";
+      _root.PS01_str = "Ain't these days just a";
+      _root.PS02_str = "blessing? I wonder what kinda'";
+      _root.PS03_str = "stories are starting up.";
    }
    if(_root.mojiSerihu == 8)
    {
@@ -116,9 +116,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 39;
-      _root.PS01_str = "それはただ一つのミスだったり";
-      _root.PS02_str = "相手の油断だったり";
-      _root.PS03_str = "ルーチンワークの穴だったり";
+      _root.PS01_str = "You can't look away for long.";
+      _root.PS02_str = "Your opponent ain't holding";
+      _root.PS03_str = "back. A standard work routine.";
    }
    if(_root.mojiSerihu == 9)
    {
@@ -128,9 +128,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 11;
-      _root.PS01_str = "一つとして同じ話は無いながら";
-      _root.PS02_str = "結局は一つの結果に帰結する";
-      _root.PS03_str = "つまるところ、ただの時間つぶし";
+      _root.PS01_str = "Acourse, you can't see 'em all";
+      _root.PS02_str = "at once. They're all special.";
+      _root.PS03_str = "But also kinda' pointless.";
    }
    if(_root.mojiSerihu == 10)
    {
@@ -140,9 +140,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 14;
-      _root.PS01_str = "あたしの意思抜きで";
-      _root.PS02_str = "さあてどこまでのカオスを";
-      _root.PS03_str = "引き出せるか";
+      _root.PS01_str = "I mean, I have my reasons.";
+      _root.PS02_str = "Alright, where does the chaos";
+      _root.PS03_str = "begin?";
    }
    if(_root.mojiSerihu == 11)
    {
@@ -152,9 +152,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 38;
-      _root.PS01_str = "はいはい請う御期待ってね";
-      _root.PS02_str = "・・・・・すぱすぱ";
-      _root.PS03_str = "";
+      _root.PS01_str = "Yeah, yeah, just what I was";
+      _root.PS02_str = "expecting.";
+      _root.PS03_str = "Fhooooooooooooff.....";
    }
    if(_root.mojiSerihu == 12)
    {
@@ -164,8 +164,8 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 40;
-      _root.PS01_str = "ぶっふわあああぁぁぁあぁ・・・";
-      _root.PS02_str = "・・・・・・いくか";
+      _root.PS01_str = "Bwaaaaaaaaaaaaaaaaaaaaahhh....";
+      _root.PS02_str = "....... Huh? Get outta' here.";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 13)

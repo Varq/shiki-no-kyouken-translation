@@ -1,5 +1,5 @@
 // Scene: ST: Cold Open
-// Status: Translation Complete
+// Status: Editing Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -24,7 +24,7 @@ function Serihu()
    if(_root.mojiSerihu == 1)
    {
       _root.BGMKowai01();
-      _root.KWASEAsiotoT01();
+      _root.KWASEAsiooT01();
       _root.mojiJunji01 = 1;
       _root.oKara();
       _root.oHukidasi = 2;
