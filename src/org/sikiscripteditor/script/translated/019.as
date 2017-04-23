@@ -1,5 +1,5 @@
 // Scene: PL: PoB5a Won to Kennosuke
-// Status: Not Started
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,8 +32,8 @@ function Serihu()
       _root.oKaoBan = 8;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "はぁ、はぁ…";
-      _root.PS02_str = "や、やった…";
+      _root.PS01_str = "Ha, Haa... I- I did it...";
+      _root.PS02_str = "";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 2)
@@ -46,9 +46,9 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "はは、お見事…";
-      _root.PS02t_str = "やられたみたいだね";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Haha, that was magnificent...";
+      _root.PS02t_str = "I've always wanted to have a";
+      _root.PS03t_str = "match like that.";
    }
    if(_root.mojiSerihu == 3)
    {
@@ -58,9 +58,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 5;
-      _root.PS01_str = "や、でもさすが兄貴だ…";
-      _root.PS02_str = "なかなか隙が無いから";
-      _root.PS03_str = "強引に突き破るしかなかったぜ";
+      _root.PS01_str = "Heh, you don't change... You";
+      _root.PS02_str = "keep the pressure on and never";
+      _root.PS03_str = "leave space to breathe.";
    }
    if(_root.mojiSerihu == 4)
    {
@@ -70,8 +70,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 2;
-      _root.PS01t_str = "ああ、相手によっては";
-      _root.PS02t_str = "それも有効な手段だ";
+      _root.PS01t_str = "Well, you also have a very";
+      _root.PS02t_str = "effective means of fighting.";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 5)
@@ -82,9 +82,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 6;
       _root.tKaoBan = 5;
-      _root.PS01t_str = "とにかく、絶阿はもう";
-      _root.PS02t_str = "一人前だと言う事はよくわかったよ";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Anyway, you're the last one";
+      _root.PS02t_str = "left. With the way things are";
+      _root.PS03t_str = "going, this should fair well.";
    }
    if(_root.mojiSerihu == 6)
    {
@@ -94,7 +94,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 15;
-      _root.PS01_str = "い、ちにんまえ…";
+      _root.PS01_str = "I'm the last...";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }
@@ -106,9 +106,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "ああ、剣の腕が必要な時には";
-      _root.PS02t_str = "声をかけるかもしれないから";
-      _root.PS03t_str = "よろしく頼むよ！";
+      _root.PS01t_str = "Ah, people have been saying we";
+      _root.PS02t_str = "need more people to take arms.";
+      _root.PS03t_str = "I trust that you'll do it!";
    }
    if(_root.mojiSerihu == 8)
    {
@@ -118,8 +118,8 @@ function Serihu()
       _root.oHukidasi = 2;
       _root.oManpuH = 7;
       _root.oKaoBan = 5;
-      _root.PS01_str = "ま、任しといてくれ兄貴！！！";
-      _root.PS02_str = "";
+      _root.PS01_str = "Y-You can count on me,";
+      _root.PS02_str = "brother!!!";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 9)
@@ -130,8 +130,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 5;
-      _root.PS01t_str = "うん、じゃあ";
-      _root.PS02t_str = "精進しなよ！";
+      _root.PS01t_str = "Well then, stay diligent!";
+      _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 10)
@@ -157,7 +157,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 8;
       _root.oKaoBan = 3;
-      _root.PS01_str = "・・・・・・・・・・・・・・";
+      _root.PS01_str = ".......................";
       _root.PS02_str = "";
       _root.PS03_str = "";
    }

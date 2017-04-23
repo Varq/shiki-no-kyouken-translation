@@ -1,5 +1,5 @@
 // Scene: PL: MiB5a Rising Tutorial
-// Status: Translation In Progress
+// Status: Translation Complete
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -184,9 +184,9 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "上昇系を発動させるには";
-      _root.PS02t_str = "特殊状況を何度か経験しないと";
-      _root.PS03t_str = "いけないんだ";
+      _root.PS01t_str = "Rising won't happen until you";
+      _root.PS02t_str = "have gone through serveral";
+      _root.PS03t_str = "situations first.";
    }
    if(_root.mojiSerihu == 13)
    {
@@ -196,9 +196,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "特殊な感覚に身を置く事で";
-      _root.PS02t_str = "潜在的な力を引き出す…";
-      _root.PS03t_str = "と言うわけだね";
+      _root.PS01t_str = "There's a certain feeling you";
+      _root.PS02t_str = "get. It's like your draw out";
+      _root.PS03t_str = "the power... or so I think.";
    }
    if(_root.mojiSerihu == 14)
    {
@@ -210,7 +210,7 @@ function Serihu()
       _root.tKaoBan = 14;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "わかるようなわからんような…";
+      _root.PS01t_str = "You're not making any sense...";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -224,8 +224,8 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "特殊状況時にヤジロベーを";
-      _root.PS02t_str = "操作したことがあるだろ？";
+      _root.PS01t_str = "You know how during situations,";
+      _root.PS02t_str = "you manipulate the balance?";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 16)
@@ -236,9 +236,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 5;
-      _root.PS01t_str = "実はアレが上昇系に大きく関係";
-      _root.PS02t_str = "しているんだよ";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "As a matter of fact, it has a";
+      _root.PS02t_str = "big influence on what Risings";
+      _root.PS03t_str = "you get.";
    }
    if(_root.mojiSerihu == 17)
    {
@@ -250,7 +250,7 @@ function Serihu()
       _root.tKaoBan = 21;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "ええーー！？";
+      _root.PS01t_str = "What!? That's what it does!?";
       _root.PS02t_str = "そうだったの！？";
       _root.PS03t_str = "";
    }
@@ -264,9 +264,9 @@ function Serihu()
       _root.tKaoBan = 3;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "自分の取った行動によって";
-      _root.PS02t_str = "何が上昇するかが決まるんだ";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "Depending on what action I";
+      _root.PS02t_str = "choose, it determines what";
+      _root.PS03t_str = "Rising I get.";
    }
    if(_root.mojiSerihu == 19)
    {
@@ -276,9 +276,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 11;
-      _root.PS01t_str = "これからはそれも少し意識すると";
-      _root.PS02t_str = "いいかもしれないね";
-      _root.PS03t_str = "";
+      _root.PS01t_str = "This is something many people";
+      _root.PS02t_str = "don't conciously do, and most";
+      _root.PS03t_str = "don't even know about Risings.";
    }
    if(_root.mojiSerihu == 20)
    {
@@ -290,9 +290,9 @@ function Serihu()
       _root.tKaoBan = 9;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "意識って言っても…";
-      _root.PS02t_str = "俺今まで適当に同じのばっか";
-      _root.PS03t_str = "選んでたぜ…";
+      _root.PS01t_str = "I mean, no one ever told me...";
+      _root.PS02t_str = "I just picked whatever and";
+      _root.PS03t_str = "hoped it worked.";
    }
    if(_root.mojiSerihu == 21)
    {
@@ -304,9 +304,9 @@ function Serihu()
       _root.tKaoBan = 6;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "うーん、それもあまり良くないね…";
-      _root.PS02t_str = "上昇系は一つの数値が高いだけでも";
-      _root.PS03t_str = "発動し難いんだ";
+      _root.PS01t_str = "Hm, that's not very good...";
+      _root.PS02t_str = "Risings give you a huge boost,";
+      _root.PS03t_str = "but I understand it's hard.";
    }
    if(_root.mojiSerihu == 22)
    {
@@ -318,7 +318,7 @@ function Serihu()
       _root.tKaoBan = 6;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "じゃあ結局どうすりゃいいんだよ！！";
+      _root.PS01t_str = "Okay, show me how it's done!!";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -332,9 +332,9 @@ function Serihu()
       _root.tKaoBan = 10;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "だから最初に言ったろ？";
-      _root.PS02t_str = "これだと言う答えは無いんだ";
-      _root.PS03t_str = "好きなようにすればいいよ";
+      _root.PS01t_str = "You don't want me to explain";
+      _root.PS02t_str = "first? I could tell you more,";
+      _root.PS03t_str = "but if that's what you want.";
    }
    if(_root.mojiSerihu == 24)
    {
@@ -346,9 +346,9 @@ function Serihu()
       _root.tKaoBan = 17;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "ひいぃぃぃ！！！";
-      _root.PS02t_str = "なんだこの大雑把！！！";
-      _root.PS03t_str = "俺がおかしいのか！？";
+      _root.PS01t_str = "Aaaaaaaaah!!! How long does";
+      _root.PS02t_str = "this go on for!!! Do you think";
+      _root.PS03t_str = "I enjoy this!?";
    }
    if(_root.mojiSerihu == 25)
    {
@@ -360,8 +360,8 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "絶阿は内心はまめな性格だからね…";
-      _root.PS02t_str = "";
+      _root.PS01t_str = "Zetsua, you don't even try";
+      _root.PS02t_str = "to hide your real feelings...";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 26)
@@ -372,9 +372,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 3;
-      _root.PS01t_str = "それじゃあちょっとやってみようか";
-      _root.PS02t_str = "上昇系は敵の攻撃を受けた時に";
-      _root.PS03t_str = "発動するよ";
+      _root.PS01t_str = "Alright, I'll show you soon.";
+      _root.PS02t_str = "Risings can happen when you";
+      _root.PS03t_str = "receive an attack.";
    }
    if(_root.mojiSerihu == 27)
    {
@@ -384,8 +384,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 6;
       _root.tKaoBan = 7;
-      _root.PS01t_str = "僕の攻撃を何もせずに";
-      _root.PS02t_str = "喰らってみてごらん";
+      _root.PS01t_str = "I'm going to use my attack on";
+      _root.PS02t_str = "you. Try to bare it.";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 28)
@@ -398,7 +398,7 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "またかよーーーー！！！！！";
+      _root.PS01t_str = "Not this again------!!!!!!";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -416,9 +416,9 @@ function Serihu()
       _root.tKaoBan = 3;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "こんな感じだね";
-      _root.PS02t_str = "本当はいきなり発動する事は";
-      _root.PS03t_str = "無いんだけどね";
+      _root.PS01t_str = "That feeling... That's what it";
+      _root.PS02t_str = "really looks like when it";
+      _root.PS03t_str = "actually happens.";
    }
    if(_root.mojiSerihu == 31)
    {
@@ -430,8 +430,8 @@ function Serihu()
       _root.tKaoBan = 9;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "わかったよ…ていうか実演しなくても";
-      _root.PS02t_str = "いいって…";
+      _root.PS01t_str = "I get it... I'm glad it was";
+      _root.PS02t_str = "just pretend...";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 32)
@@ -444,9 +444,9 @@ function Serihu()
       _root.tKaoBan = 2;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "まぁまぁ、";
-      _root.PS02t_str = "少しでもいろんなことを";
-      _root.PS03t_str = "知ってもらわないと…";
+      _root.PS01t_str = "Well, there's still more that";
+      _root.PS02t_str = "you need to learn, but I guess";
+      _root.PS03t_str = "you're done for now...";
    }
    if(_root.mojiSerihu == 33)
    {
@@ -456,8 +456,8 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 7;
-      _root.PS01t_str = "楽しませてくれないだろう？";
-      _root.PS02t_str = "";
+      _root.PS01t_str = "We can't let the fun end,";
+      _root.PS02t_str = "right?";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 34)
@@ -470,7 +470,7 @@ function Serihu()
       _root.tKaoBan = 15;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "う…";
+      _root.PS01t_str = "Uh...";
       _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
@@ -484,9 +484,9 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "手を抜いたとはいえ";
-      _root.PS02t_str = "姫喜姉を倒したのなら";
-      _root.PS03t_str = "いい戦いができそうだ…";
+      _root.PS01t_str = "Words been going around that";
+      _root.PS02t_str = "you bested Kiki. If that's the";
+      _root.PS03t_str = "case, I wannt to take a shot...";
    }
    if(_root.mojiSerihu == 36)
    {
@@ -498,8 +498,8 @@ function Serihu()
       _root.tKaoBan = 5;
       _root.tKaoBBan = 1;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "はは、いいぜ～兄貴";
-      _root.PS02t_str = "俺の成長をしっかりと見てくれよ！！";
+      _root.PS01t_str = "Haha, that's right, brother!";
+      _root.PS02t_str = "Watch how strong I've become!!";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 37)

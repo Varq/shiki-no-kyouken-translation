@@ -1,5 +1,5 @@
 // Scene: PL: PrB5a Rematch Kennosuke
-// Status: Not Started
+// Status: Translation In Progress
 function Serihu()
 {
    _root.mojiJunji01 = 0;
@@ -32,8 +32,8 @@ function Serihu()
       _root.oKaoBan = 6;
       _root.oKaoBBan = 1;
       _root.oKaoBHenkou();
-      _root.PS01_str = "兄貴ーーー！！！！！";
-      _root.PS02_str = "いるかーーー！！？";
+      _root.PS01_str = "Brother!!!!! Where are you!!?";
+      _root.PS02_str = "";
       _root.PS03_str = "";
    }
    if(_root.mojiSerihu == 2)
@@ -46,8 +46,8 @@ function Serihu()
       _root.tKaoBan = 3;
       _root.tKaoBBan = 30;
       _root.tKaoBHenkou();
-      _root.PS01t_str = "お、絶阿";
-      _root.PS02t_str = "来たかい";
+      _root.PS01t_str = "Oh, Zetsua. There you are.";
+      _root.PS02t_str = "";
       _root.PS03t_str = "";
    }
    if(_root.mojiSerihu == 3)
@@ -58,9 +58,9 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 0;
       _root.oKaoBan = 3;
-      _root.PS01_str = "数撃ちゃ当たるってわけじゃ";
-      _root.PS02_str = "ねぇけどさ…";
-      _root.PS03_str = "もう一度戦わせてもらうぜ";
+      _root.PS01_str = "I took a massive beating from";
+      _root.PS02_str = "you last time but... I want";
+      _root.PS03_str = "to have another match.";
    }
    if(_root.mojiSerihu == 4)
    {
@@ -70,9 +70,9 @@ function Serihu()
       _root.tHukidasi = 1;
       _root.tManpuH = 0;
       _root.tKaoBan = 5;
-      _root.PS01t_str = "ああ、望むところだよ";
-      _root.PS02t_str = "だけど、この前の戦いから";
-      _root.PS03t_str = "ちゃんと何かを学んだかい？";
+      _root.PS01t_str = "Ah, that's what you want.";
+      _root.PS02t_str = "Why don't you ever want to try";
+      _root.PS03t_str = "to study as much as you fight?";
    }
    if(_root.mojiSerihu == 5)
    {
@@ -82,7 +82,7 @@ function Serihu()
       _root.oHukidasi = 1;
       _root.oManpuH = 2;
       _root.oKaoBan = 9;
-      _root.PS01_str = "う・・・";
+      _root.PS01_str = "Uh... ";
       _root.PS02_str = "学んだと言えば学んだと言うか…";
       _root.PS03_str = "";
    }
